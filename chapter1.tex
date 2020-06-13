@@ -1,0 +1,48 @@
+\chapter{Kapitola 1: Úvod, základní pojmy}
+Výrok - má pravdivostní hodnotu 0 nebo 1. Mějme A, B výroky:
+
+\begin{figure}[ht!]
+	\begin{center}
+		\begin{tabular}{|C|C|C|C|C|C|C|}
+			\hline
+			& & A\land B & & & (A\Rightarrow B) \land (A\Leftarrow B) & \\
+			A & B & A\&B & A\lor B & A\Rightarrow B & A\Leftrightarrow B & \lnot A \\
+			\hline
+			0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+			0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+			1 & 0 & 0 & 1 & 0 & 0 & 0 \\
+			1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+			\hline
+		\end{tabular}
+		\caption{Tabulka pravdivostních hodnot}
+	\end{center}
+\end{figure}
+
+Důkaz implikace $A\Rightarrow B$:
+\begin{enumerate}
+	\item přímý: ukážeme, že když $A = 1$, pak $B = 1$
+	\item nepřímý: plyne z $\lnot B \Rightarrow \lnot A$
+	\item sporem: předpokládáme, že $A = 1 \land B = 0$ a odvodíme spor (např.: $1=2$)
+\end{enumerate}
+
+\begin{lemma}
+	(tvrzení) $\forall n\in \mathbb{N} : n^2~\text{liché} \Rightarrow n~\text{liché}$
+\end{lemma}
+
+\begin{proof}[Důkaz 1]
+	Fixuj $n\in \mathbb{N}$. Prvočíselný rozklad:
+	\begin{equation}
+		n = p_1^{\alpha_1} \cdot \ldots \cdot p_k^{\alpha_k}
+	\end{equation}
+	\begin{equation}
+		n^2 = p_1^{2\alpha_1} \cdot \ldots \cdot p_k^{2\alpha_k}
+	\end{equation}
+\end{proof}
+
+% \begin{figure}[ht!]
+% 	\begin{center}
+% 		\includegraphics[width=0.49\textwidth,keepaspectratio]{img/spintronika/SFET3.png}
+% 		\includegraphics[width=0.49\textwidth,keepaspectratio]{img/spintronika/GMR.png}
+% 		\caption{(a,b) Realizace \textit{field effect tranzistor} (spin-FET)[3]. (c)  na jevu GMR [4].}
+% 	\end{center}
+% \end{figure}\FloatBarrier

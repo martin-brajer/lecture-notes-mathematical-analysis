@@ -1,0 +1,43 @@
+\chapter*{Úvod}
+\addcontentsline{toc}{chapter}{Úvod}
+
+Přednášející:
+\begin{itemize}
+    \item Petr Kaplický, KMA
+    \item kaplicky@karlin.mff.cuni.cz
+    \item www.karlin.mff.cuni.cz
+\end{itemize}
+
+Literatura:
+\begin{itemize}
+    \item J. Kopáček: Matematická analýza (nejen) pro fyziky I (II) + příklady
+    \item J. Souček: www.karlin.mff.cuni.cz/soucek
+    \item V. Jarník: Diferenciální počet I
+    \item V. Jarník: Integrální počet I
+    \item W. Rudin: Principles of MA
+    \item I. Černý, M. Rokyta: Differential and integral calculus of one real variable
+\end{itemize}
+
+\section{Diferenciální počet}
+Mějme funkci $f(t)$ vyjadřující pozici bodu v čase. Základní úloha:
+
+\begin{alignat}{2}
+    \text{průměrná rychlost:}&\quad  &   &\frac{f(t) - f(t_0)}{t - t_0} \\
+    \text{okamžitá rychlost:}&\quad  &   \lim_{t \to t_0}&\frac{f(t) - f(t_0)}{t - t_0} = f'(t_0)
+\end{alignat}
+
+\section{Integrální počet}
+Plocha pod grafem. Interval $[a, b]$ rozdělme na $n$ částí délky $\Delta_n$ v bodech $a_n$.
+
+% \begin{alignat}{2}
+%     \text{přibližně:}&\quad  &   f(a_0)&\Delta_1 + f(a_1)\Delta_2 + \text{...} +
+%         f(a_{n-1})\Delta_n = \nonumber \\
+%         &    &   =~&S(\Delta) = \sum_{j=1}^{n}f(a_{j-1})\Delta_j \\
+%     \text{přesně:}&\quad &   \lim_{\Delta \to 0} &S(\Delta) = \int_{a}^{b}f(x)dx
+% \end{alignat}
+\begin{align}
+    \text{přibližně:}\quad  &   f(a_0)\Delta_1 + f(a_1)\Delta_2 + \text{...} +
+        f(a_{n-1})\Delta_n = \nonumber \\
+            &   =~S(\Delta) = \sum_{j=1}^{n}f(a_{j-1})\Delta_j \\
+    \text{přesně:}\quad &   \lim_{\Delta \to 0} S(\Delta) = \int_{a}^{b}f(x)dx
+\end{align}

@@ -1,0 +1,151 @@
+%%% Main file. General parameters are defined here as well as other parts are referenced.
+
+%% One-sided print version:
+% Margins: left 40mm, right 25mm, top and bottom 25mm.
+% Warning: LaTeX adds 1in by itself.
+\documentclass[12pt,a4paper]{report}
+\setlength\textwidth{145mm}
+\setlength\textheight{247mm}
+\setlength\oddsidemargin{15mm}
+\setlength\evensidemargin{15mm}
+\setlength\topmargin{0mm}
+\setlength\headsep{0mm}
+\setlength\headheight{0mm}
+% \openright makes the next text to begin on the right side of the book.
+\let\openright=\clearpage
+
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+
+%% Other packages
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{setspace}  % Allows for easy 1.5 spacing
+\usepackage{placeins}  % Adds command \FloatBarrier, which draws all images in the queue.
+\usepackage{amsmath}
+\usepackage{amsfonts}  % Number sets (naturals etc.).
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
+\usepackage{verbatim}  % \begin{comment}
+
+%% Package hyperref creates clickable pdf hyperlinks, but mainly we are
+%% going to use it to save metadata to pdf (including table of contents).
+%% WARNING, do not forget to fill in title and author.
+\usepackage[pdfpagelabels,unicode]{hyperref}   % Must be after all other packages [ps2pdf,unicode].
+\hypersetup{pdftitle=Matematická analýza}
+\hypersetup{pdfauthor=Martin Brajer}
+
+%%% Little changes to the style.
+
+% Those macros use nasty trick to force LaTeX to typeset chapter headers more
+% decently without leaving so much space above them. Feel free to ignore.
+\makeatletter
+\def\@makechapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries \thechapter. #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\def\@makeschapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\makeatother
+\renewcommand{\deg}{^{\circ}}  % Degree sign for math mode (\deg).
+
+% This macro defines chapter which is not numbered, but is listed in the content.
+\def\chapwithtoc#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+\begin{document}
+
+% Different page numbering style, so it doesn't override the following one (1/2).
+\pagenumbering{Alph}
+% Set hyphenation to be a bit looser compared to default.
+\lefthyphenmin=2
+\righthyphenmin=2
+
+%%% Title page
+
+\pagestyle{empty}
+\begin{center}
+
+\large
+
+Univerzita Karlova v Praze
+
+\medskip
+
+Matematicko-fyzikální fakulta
+
+\vfill
+
+{\bf\Large MATEMATIKA}
+
+\vfill
+
+\centerline{\mbox{\includegraphics[width=60mm]{img/LogoMFF.png}}}
+
+\vfill
+\vspace{5mm}
+
+{\LARGE Martin Brajer}
+
+\vspace{15mm}
+
+% Title.
+{\LARGE\bfseries Matematická analýza}
+
+\vfill
+
+% Where the text comes from.
+bakalářské přednášky
+
+\vfill
+
+\begin{tabular}{rl}
+
+Přednášející: & doc. Mgr. Petr Kaplický, Ph.D. \\
+\noalign{\vspace{2mm}}
+Studijní program: & Fyzika \\
+\noalign{\vspace{2mm}}
+Studijní obor: & FOF \\
+\end{tabular}
+
+\vfill
+
+% Year.
+Praha 2020
+
+\end{center}
+
+
+\openright
+\tableofcontents
+\thispagestyle{empty}  % Unnumbered content.
+\pagestyle{plain}  % Start numbering again.
+\pagenumbering{arabic}  % Different page numbering style, so it doesn't override the following one (2/2).
+\setcounter{page}{0}
+
+\renewcommand{\figurename}{Obr.}  % Picture label change from "Obrázek" to "Obr".
+\onehalfspacing  % Line spacing 1.5.
+%\renewcommand{\baselinestretch}{2}
+
+%%% Individual chapters are placed into their respective files for convenience.
+\setlength{\parindent}{0cm}
+% Theorem settings.
+\newtheorem{lemma}{Lemma}%[chapter]
+\renewcommand\qedsymbol{QED}
+% \renewcommand\qedsymbol{$\bot$}
+
+\include{introduction}
+\include{chapter1}  % Basic concepts.
+
+%\chapwithtoc{Seznam použitých zkratek}	% Abbreviations.
+
+\openright
+\end{document}
