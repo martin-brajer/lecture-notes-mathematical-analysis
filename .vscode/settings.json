@@ -5,5 +5,6 @@
         "Rokyta",
         "Rudin",
         "soucek"
-    ]
+    ],
+    "latex-workshop.latex.outDir": "../build",
 }

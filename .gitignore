@@ -1,5 +1,7 @@
 ## Mine
-__latexindent_temp.tex
+/build/*
+!/build/document.pdf
+/TeX/__latexindent_temp.tex
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
