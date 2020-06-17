@@ -20,12 +20,12 @@
 %% Other packages
 \usepackage{graphicx}
 \usepackage{amsthm}
+\usepackage{tocloft}
 \usepackage{setspace}  % Allows for easy 1.5 spacing
 \usepackage{placeins}  % Adds command \FloatBarrier, which draws all images in the queue.
 \usepackage{amsmath}
 \usepackage{amsfonts}  % Number sets (naturals etc.).
 \usepackage{array}   % for \newcolumntype macro
-\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
 \usepackage{verbatim}  % \begin{comment}
 
 %% Package hyperref creates clickable pdf hyperlinks, but mainly we are
@@ -41,24 +41,23 @@
 % decently without leaving so much space above them. Feel free to ignore.
 \makeatletter
 \def\@makechapterhead#1{
-  {\parindent \z@ \raggedright \normalfont
-   \Huge\bfseries \thechapter. #1
-   \par\nobreak
-   \vskip 20\p@
+    {\parindent \z@ \raggedright \normalfont
+    \Huge\bfseries \thechapter. kapitola: #1
+    \par\nobreak
+    \vskip 20\p@
 }}
 \def\@makeschapterhead#1{
-  {\parindent \z@ \raggedright \normalfont
-   \Huge\bfseries #1
-   \par\nobreak
-   \vskip 20\p@
+    {\parindent \z@ \raggedright \normalfont
+    \Huge\bfseries #1
+    \par\nobreak
+    \vskip 20\p@
 }}
 \makeatother
-\renewcommand{\deg}{^{\circ}}  % Degree sign for math mode (\deg).
 
 % This macro defines chapter which is not numbered, but is listed in the content.
 \def\chapwithtoc#1{
-\chapter*{#1}
-\addcontentsline{toc}{chapter}{#1}
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}
 }
 
 \begin{document}
@@ -137,14 +136,24 @@ Praha 2020
 
 %%% Individual chapters are placed into their respective files for convenience.
 \setlength{\parindent}{0cm}
-% Theorem settings.
-\newtheorem{lemma}{Lemma}%[chapter]
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type, using "array" package
+\renewcommand{\deg}{^{\circ}}  % Degree sign for math mode (\deg).
+
+%% Theorem settings.
+\newtheorem{lemma}{Lemma}[chapter]
+% \newtheorem{theorem}{Věta}[chapter]
+\newtheorem{theoremnum}{Věta}[chapter]
+\renewcommand*{\thetheoremnum}{\Alph{theoremnum}}
 \renewcommand\qedsymbol{QED}
 % \renewcommand\qedsymbol{$\bot$}
 
+%% Itemize settings.
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{*}
+
 \include{introduction}
 \include{chapter1}  % Basic concepts.
-
 %\chapwithtoc{Seznam použitých zkratek}	% Abbreviations.
 
 \openright

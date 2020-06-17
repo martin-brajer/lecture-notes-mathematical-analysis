@@ -1,4 +1,4 @@
-\chapter{Kapitola 1: Úvod, základní pojmy}
+\chapter{Úvod, základní pojmy}
 Výrok - má pravdivostní hodnotu 0 nebo 1. Mějme A, B výroky:
 
 \begin{figure}[ht!]
@@ -31,17 +31,60 @@ Důkaz implikace $A\Rightarrow B$:
 
 \begin{proof}[Důkaz 1]
 	Fixuj $n\in \mathbb{N}$. Prvočíselný rozklad:
-	\begin{equation}
-		n = p_1^{\alpha_1} \cdot \ldots \cdot p_k^{\alpha_k}
-	\end{equation}
-	\begin{equation}
-		n^2 = p_1^{2\alpha_1} \cdot \ldots \cdot p_k^{2\alpha_k}
-	\end{equation}
-	\begin{equation}
+	\begin{gather}
+		n = p_1^{\alpha_1} \cdot \ldots \cdot p_k^{\alpha_k} \\
+		n^2 = p_1^{2\alpha_1} \cdot \ldots \cdot p_k^{2\alpha_k} \\
 		\forall j \in \{1,\ldots,k\}: 2 \neq P_j
-	\end{equation}
-	V rozvoji
+	\end{gather}
+	V rozvoji $n^2$ není $2$, tak v rozvoji $n$ také není (liší se pouze mocninou).
 \end{proof}
+\begin{proof}[Důkaz 2]
+	Chci: $\forall n \in \mathbb{N}: n$ sudé $\Rightarrow n^2$ sudé
+	\begin{gather}
+		n = 2k, k\in\mathbb{N} \\
+		n^2 = 4k^2 = 2(2k^2)
+	\end{gather}
+\end{proof}
+\begin{proof}[Důkaz 3]
+	Předpokládejme: $n^2$ liché a $n$ sudé. Pak:
+	\begin{gather}
+		n^2 + n \text{ liché}  \\
+		n(n + 1) \text{ liché a sudé zároveň (spor)}
+	\end{gather}  
+\end{proof}
+O čem budou výroky? O definovaných pojmech:
+\begin{itemize}
+	\item množina: soubor prvků (př.: množina mužů, žen)
+	\item $x\in A$ \quad $x$ je prvkem
+	\item $x\notin A$ \quad $\lnot (x\in A)$
+	\item $A\subset B$ \quad $A$ je podmnožinou $B$: $\forall x \in A: x \in B$
+	\item $\emptyset$ \quad prázdná množina
+	\item množinové operace:
+	\begin{itemize}
+		\item $A\cup B = \{x; (x\in A)\lor(x\in B)\}$
+		\item $A\cap B = \{x; (x\in A)\land(x\in B)\}$
+		\item $A - B = \{x; (x\in A)\lor(x\notin B)\}$
+	\end{itemize}
+	\item kvantifikátory:
+	\begin{itemize}
+		\item $\forall x$ \quad pro všechna $x$
+		\item $\exists y$ \quad existuje $y$
+		\item př.: $V(x,y)$ je vlastnost, že $y$ je matka $x$. $M$ je množina
+			mužů, $Z$ je množina žen.
+		\begin{itemize}
+			\item $\forall x \in M~\exists y \in Z: V(x,y)$
+			\item $\exists y \in Z: \forall x \in M: V(x,y)$
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\section{Reálná čísla}
+
+\begin{theoremnum}%[Věta A]
+	Existuje množina $\mathbb{R}$ s operacemi $\oplus$ a $\otimes$ a relací $<$ tak,
+	že splňuje vlastnosti \textit{$A_1$} až \textit{$A_4$}.
+\end{theoremnum}
+
 
 % \begin{figure}[ht!]
 % 	\begin{center}
