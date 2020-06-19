@@ -91,67 +91,7 @@
 
 
 \begin{document}
-
-% Different page numbering style, so it doesn't override the following one (1/2).
-\pagenumbering{Alph}
-% Set hyphenation to be a bit looser compared to default.
-\lefthyphenmin=2
-\righthyphenmin=2
-
-%%% Title page
-
-\pagestyle{empty}
-\begin{center}
-
-\large
-
-Univerzita Karlova v Praze
-
-\medskip
-
-Matematicko-fyzikální fakulta
-
-\vfill
-
-{\bf\Large MATEMATIKA}
-
-\vfill
-
-\centerline{\mbox{\includegraphics[width=60mm]{../img/LogoMFF.png}}}
-
-\vfill
-\vspace{5mm}
-
-{\LARGE Martin Brajer}
-
-\vspace{15mm}
-
-% Title.
-{\LARGE\bfseries Matematická analýza}
-
-\vfill
-
-% Where the text comes from.
-bakalářské studium v letech 2009 až 2012
-
-\vfill
-
-\begin{tabular}{rl}
-
-Přednášející: & doc. Mgr. Petr Kaplický, Ph.D. \\
-\noalign{\vspace{2mm}}
-Studijní program: & Fyzika \\
-\noalign{\vspace{2mm}}
-Studijní obor: & FOF \\
-\end{tabular}
-
-\vfill
-
-% Year.
-Praha 2020
-
-\end{center}
-
+\include{mainPage}
 
 \openright
 \tableofcontents
@@ -162,7 +102,6 @@ Praha 2020
 \pagestyle{plain}  % Start numbering again.
 \pagenumbering{arabic}  % Different page numbering style, so it doesn't override the following one (2/2).
 \setcounter{page}{0}
-
 
 \include{introduction}
 \include{chapter1}  % Basic concepts.
