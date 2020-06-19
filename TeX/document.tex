@@ -60,6 +60,29 @@
     \addcontentsline{toc}{chapter}{#1}
 }
 
+\renewcommand{\figurename}{Obr.}  % Picture label change from "Obrázek" to "Obr".
+\onehalfspacing  % Line spacing 1.5.
+%\renewcommand{\baselinestretch}{2}
+
+%%% Individual chapters are placed into their respective files for convenience.
+\setlength{\parindent}{0cm}
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type, using "array" package
+\renewcommand{\deg}{^{\circ}}  % Degree sign for math mode (\deg).
+
+%% Theorem settings.
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{theorem}{Věta}[chapter]
+\newtheorem{theoremnum}{Věta}[chapter]
+\renewcommand*{\thetheoremnum}{\Alph{theoremnum}}
+\renewcommand\qedsymbol{QED}
+% \renewcommand\qedsymbol{$\bot$}
+
+%% Itemize settings.
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{*}
+
+
 \begin{document}
 
 % Different page numbering style, so it doesn't override the following one (1/2).
@@ -125,32 +148,12 @@ Praha 2020
 
 \openright
 \tableofcontents
+
 \thispagestyle{empty}  % Unnumbered content.
 \pagestyle{plain}  % Start numbering again.
 \pagenumbering{arabic}  % Different page numbering style, so it doesn't override the following one (2/2).
 \setcounter{page}{0}
 
-\renewcommand{\figurename}{Obr.}  % Picture label change from "Obrázek" to "Obr".
-\onehalfspacing  % Line spacing 1.5.
-%\renewcommand{\baselinestretch}{2}
-
-%%% Individual chapters are placed into their respective files for convenience.
-\setlength{\parindent}{0cm}
-\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type, using "array" package
-\renewcommand{\deg}{^{\circ}}  % Degree sign for math mode (\deg).
-
-%% Theorem settings.
-\newtheorem{lemma}{Lemma}[chapter]
-% \newtheorem{theorem}{Věta}[chapter]
-\newtheorem{theoremnum}{Věta}[chapter]
-\renewcommand*{\thetheoremnum}{\Alph{theoremnum}}
-\renewcommand\qedsymbol{QED}
-% \renewcommand\qedsymbol{$\bot$}
-
-%% Itemize settings.
-\renewcommand{\labelitemi}{$\bullet$}
-\renewcommand{\labelitemii}{$\circ$}
-\renewcommand{\labelitemiii}{*}
 
 \include{introduction}
 \include{chapter1}  % Basic concepts.
