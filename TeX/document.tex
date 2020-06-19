@@ -19,7 +19,9 @@
 
 %% Other packages
 \usepackage{graphicx}
+\usepackage{enumerate}  % http://ctan.org/pkg/enumerate
 \usepackage{amsthm}
+\usepackage{thmtools}
 \usepackage{tocloft}
 \usepackage{setspace}  % Allows for easy 1.5 spacing
 \usepackage{placeins}  % Adds command \FloatBarrier, which draws all images in the queue.
@@ -70,12 +72,17 @@
 \renewcommand{\deg}{^{\circ}}  % Degree sign for math mode (\deg).
 
 %% Theorem settings.
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{theorem}{Věta}[chapter]
-\newtheorem{theoremnum}{Věta}[chapter]
-\renewcommand*{\thetheoremnum}{\Alph{theoremnum}}
+\declaretheorem[numberwithin=chapter, name=Lemma]{lemma}
+\declaretheorem[numberwithin=chapter, name=Věta]{theorem}
+\declaretheorem[numberwithin=chapter, name=Věta]{theoremAlph}
+\renewcommand*{\thetheoremAlph}{\Alph{theoremAlph}}
+\declaretheorem[numberwithin=chapter, name=Vlastnost]{property}
+\renewcommand*{\theproperty}{A\arabic{property}}
+
+\renewcommand{\listtheoremname}{Obsah vět a definic}
 \renewcommand\qedsymbol{QED}
 % \renewcommand\qedsymbol{$\bot$}
+
 
 %% Itemize settings.
 \renewcommand{\labelitemi}{$\bullet$}
@@ -148,6 +155,8 @@ Praha 2020
 
 \openright
 \tableofcontents
+\newpage
+\listoftheorems%[ignoreall,show={theorem}]
 
 \thispagestyle{empty}  % Unnumbered content.
 \pagestyle{plain}  % Start numbering again.

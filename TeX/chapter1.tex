@@ -25,12 +25,12 @@ Důkaz implikace $A\Rightarrow B$:
 	\item sporem: předpokládáme, že $A = 1 \land B = 0$ a odvodíme spor (např.: $1=2$)
 \end{enumerate}
 
-\begin{lemma}
+\begin{lemma}[Čtverec lichého čísla]
 	(tvrzení) $\forall n\in \mathbb{N} : n^2~\text{liché} \Rightarrow n~\text{liché}$
 \end{lemma}
 
 \begin{proof}[Důkaz 1]
-	Fixuj $n\in \mathbb{N}$. Prvočíselný rozklad:
+	Fixuj $n\in \mathbb{N}$. Prvočíselný rozklad:XXX
 	\begin{gather}
 		n = p_1^{\alpha_1} \cdot \ldots \cdot p_k^{\alpha_k} \\
 		n^2 = p_1^{2\alpha_1} \cdot \ldots \cdot p_k^{2\alpha_k} \\
@@ -80,18 +80,44 @@ O čem budou výroky? O definovaných pojmech:
 
 \section{Reálná čísla}
 
-\begin{theoremnum}%[Věta A]
+\begin{theoremAlph}[Reálná čísla]
 	Existuje množina $\mathbb{R}$ s operacemi $\oplus$ a $\otimes$ a relací $<$ tak,
 	že splňuje vlastnosti \textit{$A_1$} až \textit{$A_4$}.
-\end{theoremnum}
+\end{theoremAlph}
 
-\begin{theorem}%[Věta A]
-	Existuje množina $\mathbb{R}$ s operacemi $\oplus$ a $\otimes$ a relací $<$ tak,
-	že splňuje vlastnosti \textit{$A_1$} až \textit{$A_4$}.
-\end{theorem}
+\begin{property}[Algebraická struktura]
+	Vlastnosti:
 
+	\begin{enumerate}[I]
+		\item Komutativita: $\forall x, y \in \mathbb{R}: x + y = y + x;~x\cdot y = y\cdot x$
+		\item Asociativita: $\forall x, y, z \in \mathbb{R}: x + (y + z) = (x + y) + z;~(x\cdot y)\cdot z = x\cdot (y\cdot z)$
+		\item Nulový prvek $\oplus$, jednotka $\otimes$: $\exists~0 \in \mathbb{R}, \exists~1 \in \mathbb{R}:
+		\forall x \in \mathbb{R}: 0 + x = x; 1 \cdot x = x$ 
+		\item Inverzní prvek: $\forall x \in \mathbb{R}, \forall z \in \mathbb{R}~\exists ! y: x + y = z$ (právě jedno; ozn. $y = z - x$)\newline
+		$\forall x, z \in \mathbb{R}, x\neq0 ~\exists ! y \in \mathbb{R}: x \cdot y = z$ (ozn. $y = z / x$)
+		\item Distributivita: $\forall x, y, z \in \mathbb{R}: x (y + z) = xy + xz$
+		\item Násobení nulou: $\forall x \in \mathbb{R}: 0\cdot x = 0$\newline
+		$\forall x, y \in \mathbb{R}: x\cdot y = 0 \Rightarrow ((x = 0) \lor (y = 0))$
+	\end{enumerate}
+\end{property}
+Další vlastnosti lze odvodit:
+\begin{alignat}{1}
+	-(-x) &= x \\
+	-(x\cdot y) &= (-x)\cdot y
+\end{alignat}
+Další značení:
+\begin{alignat}{1}
+	x^n &= x\cdot x\cdot \text{...} \cdot x \text{($n$-krát)} \\
+	-x &= 0 - x \\
+	\forall x \neq 0: x^{-1} &= \frac{1}{x} \\
+	\forall x \neq 0: x^{-n} &= \left( \frac{1}{x} \right)^n
+\end{alignat}
 
+I. - IV. říká $(\mathbb{R}, +)$ a $(\mathbb{R} - \{0\}, \cdot)$ jsou grupy.
 
+I. - VI. říká $(\mathbb{R}, +, \cdot)$ je těleso.
+
+Ověřte, že \textit{Vlastnost A1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 % \begin{figure}[ht!]
 % 	\begin{center}
