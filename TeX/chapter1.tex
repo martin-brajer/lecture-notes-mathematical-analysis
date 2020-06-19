@@ -85,19 +85,22 @@ O čem budou výroky? O definovaných pojmech:
 	že splňuje vlastnosti \textit{$A_1$} až \textit{$A_4$}.
 \end{theoremAlph}
 
-\begin{property}[Algebraická struktura]
-	Vlastnosti:
+\begin{property}[Algebraická struktura]\label{VA1}
+	Platí:
 
 	\begin{enumerate}[I]
 		\item Komutativita: $\forall x, y \in \mathbb{R}: x + y = y + x;~x\cdot y = y\cdot x$
-		\item Asociativita: $\forall x, y, z \in \mathbb{R}: x + (y + z) = (x + y) + z;~(x\cdot y)\cdot z = x\cdot (y\cdot z)$
-		\item Nulový prvek $\oplus$, jednotka $\otimes$: $\exists~0 \in \mathbb{R}, \exists~1 \in \mathbb{R}:
-		\forall x \in \mathbb{R}: 0 + x = x; 1 \cdot x = x$ 
-		\item Inverzní prvek: $\forall x \in \mathbb{R}, \forall z \in \mathbb{R}~\exists ! y: x + y = z$ (právě jedno; ozn. $y = z - x$)\newline
-		$\forall x, z \in \mathbb{R}, x\neq0 ~\exists ! y \in \mathbb{R}: x \cdot y = z$ (ozn. $y = z / x$)
+		\item Asociativita: $\forall x, y, z \in \mathbb{R}: x + (y + z) = (x + y) + z;
+			~(x\cdot y)\cdot z = x\cdot (y\cdot z)$
+		\item Nulový prvek $\oplus: \exists~0 \in \mathbb{R}: \forall x \in \mathbb{R}: 0 + x = x$ \\
+			Jednotka $\otimes: \exists~1 \in \mathbb{R}: \forall x \in \mathbb{R}: 1 \cdot x = x$
+		\item Inverzní prvek: $\forall x \in \mathbb{R}, \forall z \in \mathbb{R}~\exists ! y:
+			x + y = z$ (právě jedno; ozn. $y = z - x$)\newline
+			$\forall x, z \in \mathbb{R}, x\neq0 ~\exists ! y \in \mathbb{R}:
+			x \cdot y = z$ (ozn. $y = z / x$)
 		\item Distributivita: $\forall x, y, z \in \mathbb{R}: x (y + z) = xy + xz$
-		\item Násobení nulou: $\forall x \in \mathbb{R}: 0\cdot x = 0$\newline
-		$\forall x, y \in \mathbb{R}: x\cdot y = 0 \Rightarrow ((x = 0) \lor (y = 0))$
+		\item Násobení nulou: $\forall x \in \mathbb{R}: 0\cdot x = 0$ \\
+			$\forall x, y \in \mathbb{R}: x\cdot y = 0 \Rightarrow ((x = 0) \lor (y = 0))$
 	\end{enumerate}
 \end{property}
 Další vlastnosti lze odvodit:
@@ -107,7 +110,7 @@ Další vlastnosti lze odvodit:
 \end{alignat}
 Další značení:
 \begin{alignat}{1}
-	x^n &= x\cdot x\cdot \text{...} \cdot x \text{($n$-krát)} \\
+	x^n &= x\cdot x\cdot \text{...} \cdot x \text{~($n$-krát)} \\
 	-x &= 0 - x \\
 	\forall x \neq 0: x^{-1} &= \frac{1}{x} \\
 	\forall x \neq 0: x^{-n} &= \left( \frac{1}{x} \right)^n
@@ -117,7 +120,54 @@ I. - IV. říká $(\mathbb{R}, +)$ a $(\mathbb{R} - \{0\}, \cdot)$ jsou grupy.
 
 I. - VI. říká $(\mathbb{R}, +, \cdot)$ je těleso.
 
-Ověřte, že \textit{Vlastnost A1} platí pro $\mathbb{C}$ (komplexní čísla).
+Ověřte, že Vlastnost \ref{VA1} platí pro $\mathbb{C}$ (komplexní čísla).
+
+\begin{example}
+	Definujme $\mathbb{C} = \{z = (z_1, z_2); z_1, z_2 \in \mathbb{R}\}$ a
+	operace $\oplus, \otimes$. $\forall z, u \in \mathbb{C}:$
+	\begin{alignat}{1}
+		(z_1, z_2) + (u_1, u_2) &= (z_1 + u_1, z_2, u_2) \\
+		(z_1, z_2) \cdot (u_1, u_2) &= (z_1u_1 - z_2u_2, z_1u_2 + z_2u_1)
+	\end{alignat}
+	Nulový prvek: $(0, 0)$
+	
+	Jednotkový prvek: $(1, 0)$
+
+	Lze zapisovat $z\in \mathbb{C}$, $z = (z_1, z_2)$, ozn. $z = z_1 + iz_2$ pro $i^2 = -1$.
+\end{example}
+\begin{property}[Uspořádání]
+	Platí:
+
+	\begin{enumerate}[I]
+		\item Relace: $\forall x, y \in \mathbb{R}$ nastane právě jedna z možností: \\
+		$(x<y)$ nebo $(x>y)$ nebo $(x=y)$
+		\item Tranzitivita: $(x<y) \land (y<z) \Rightarrow (x<z)$
+		\item Vztah uspořádání a sčítání: $(x<y) \Rightarrow x+z < y+z$
+		\item Vztah relace k násobení: $(0<x) \land (0<y) \Rightarrow 0 < xy$
+	\end{enumerate}
+\end{property}
+
+Značení:
+\begin{itemize}
+	\item $x>y \Leftrightarrow y<x$
+	\item $(x\leq y) \Leftrightarrow (x<y) \lor (x=y)$
+	\item $(x\geq y) \Leftrightarrow (x>y) \lor (x=y)$
+\end{itemize}
+
+Lze odvodit další pravidla:
+\begin{equation}
+	x<y \Leftrightarrow -x > -y
+\end{equation}
+\begin{proof}
+	\begin{alignat*}{2}
+		x&<y \\
+		x-x&<y-x &\text{\quad /bod III} \\
+		0&<y-x \\
+		0-y&<y-y-x &\text{\quad /bod III} \\
+		-y&<-x \\
+		-x&>-y &\text{\quad funguje $\Leftrightarrow$} \\
+	\end{alignat*}
+\end{proof}
 
 % \begin{figure}[ht!]
 % 	\begin{center}

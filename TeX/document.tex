@@ -20,9 +20,9 @@
 %% Other packages
 \usepackage{graphicx}
 \usepackage{enumerate}  % http://ctan.org/pkg/enumerate
-\usepackage{amsthm}
-\usepackage{thmtools}
-\usepackage{tocloft}
+\usepackage{amsthm}  % Theorems
+\usepackage{thmtools}  % Theorem list
+\usepackage{tocloft}  % Table of Contents
 \usepackage{setspace}  % Allows for easy 1.5 spacing
 \usepackage{placeins}  % Adds command \FloatBarrier, which draws all images in the queue.
 \usepackage{amsmath}
@@ -78,6 +78,7 @@
 \renewcommand*{\thetheoremAlph}{\Alph{theoremAlph}}
 \declaretheorem[numberwithin=chapter, name=Vlastnost]{property}
 \renewcommand*{\theproperty}{A\arabic{property}}
+\declaretheorem[numberwithin=chapter, name=Příklad]{example}
 
 \renewcommand{\listtheoremname}{Obsah vět a definic}
 \renewcommand\qedsymbol{QED}
