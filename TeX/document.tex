@@ -22,6 +22,7 @@
 \usepackage{enumerate}  % http://ctan.org/pkg/enumerate
 \usepackage{amsthm}  % Theorems
 \usepackage{thmtools}  % Theorem list
+\usepackage{mathtools}  % Norm/Abs definitions & "xRightarrow".
 \usepackage{tocloft}  % Table of Contents
 \usepackage{setspace}  % Allows for easy 1.5 spacing
 \usepackage{placeins}  % Adds command \FloatBarrier, which draws all images in the queue.
@@ -65,14 +66,46 @@
 \renewcommand{\figurename}{Obr.}  % Picture label change from "Obrázek" to "Obr".
 \onehalfspacing  % Line spacing 1.5.
 %\renewcommand{\baselinestretch}{2}
-
-%%% Individual chapters are placed into their respective files for convenience.
-\setlength{\parindent}{0cm}
+\setlength{\parindent}{0cm}  % To look more like handwritten notes.
 \newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type, using "array" package
 \renewcommand{\deg}{^{\circ}}  % Degree sign for math mode (\deg).
 
+
+%% Absolute value (and norm).
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+%% ToC.
+\renewcommand{\listtheoremname}{Věty a definice}
+% Semesters. Add by "\semester".
+\newcommand{\listsemestername}{Semestry}
+\newlistof{semester}{sem}{\listsemestername}
+\newcommand{\semester}{%
+% \newcommand{\semester}[1]{%
+\refstepcounter{semester}
+\par\noindent\textbf{\textit{Semestr \thesemester}}
+%   \par\noindent\textbf{Semestr \thesemester. #1}
+\addcontentsline{sem}{semester}
+{\protect\numberline{{\thesemester}}}\par
+}
+\renewcommand*{\thesemester}{\Alph{semester}}
+
+
 %% Theorem settings.
+\declaretheorem[numberwithin=chapter, name=Definice]{definition}
 \declaretheorem[numberwithin=chapter, name=Lemma]{lemma}
+\declaretheorem[numberwithin=chapter, name=Lemma]{lemmaAlph}
+\renewcommand*{\thelemmaAlph}{\Alph{lemmaAlph}}
 \declaretheorem[numberwithin=chapter, name=Věta]{theorem}
 \declaretheorem[numberwithin=chapter, name=Věta]{theoremAlph}
 \renewcommand*{\thetheoremAlph}{\Alph{theoremAlph}}
@@ -80,7 +113,6 @@
 \renewcommand*{\theproperty}{A\arabic{property}}
 \declaretheorem[numberwithin=chapter, name=Příklad]{example}
 
-\renewcommand{\listtheoremname}{Obsah vět a definic}
 \renewcommand\qedsymbol{QED}
 % \renewcommand\qedsymbol{$\bot$}
 
@@ -91,18 +123,26 @@
 \renewcommand{\labelitemiii}{*}
 
 
+%%% Individual chapters are placed into their respective files for convenience.
 \begin{document}
-\include{mainPage}
+% Different page numbering style, so it doesn't override the following one (1/2).
+\pagenumbering{gobble}
 
+\include{mainPage}
 \openright
+
 \tableofcontents
 \newpage
-\listoftheorems%[ignoreall,show={theorem}]
 
-\thispagestyle{empty}  % Unnumbered content.
+\listoftheorems%[ignoreall,show={theorem}]
+\newpage
+
+\listofsemester
+\newpage
+
 \pagestyle{plain}  % Start numbering again.
 \pagenumbering{arabic}  % Different page numbering style, so it doesn't override the following one (2/2).
-\setcounter{page}{0}
+\setcounter{page}{1}
 
 \include{introduction}
 \include{chapter1}  % Basic concepts.

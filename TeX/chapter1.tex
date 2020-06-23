@@ -25,9 +25,9 @@ Důkaz implikace $A\Rightarrow B$:
 	\item sporem: předpokládáme, že $A = 1 \land B = 0$ a odvodíme spor (např.: $1=2$)
 \end{enumerate}
 
-\begin{lemma}[Čtverec lichého čísla]
+\begin{lemmaAlph}[Čtverec lichého čísla]
 	(tvrzení) $\forall n\in \mathbb{N} : n^2~\text{liché} \Rightarrow n~\text{liché}$
-\end{lemma}
+\end{lemmaAlph}
 
 \begin{proof}[Důkaz 1]
 	Fixuj $n\in \mathbb{N}$. Prvočíselný rozklad:XXX
@@ -82,10 +82,10 @@ O čem budou výroky? O definovaných pojmech:
 
 \begin{theoremAlph}[Reálná čísla]
 	Existuje množina $\mathbb{R}$ s operacemi $\oplus$ a $\otimes$ a relací $<$ tak,
-	že splňuje vlastnosti \textit{$A_1$} až \textit{$A_4$}.
+	že splňuje vlastnosti \ref{P-A1} až \textit{$A_4$}.	% Add reference to VA4
 \end{theoremAlph}
 
-\begin{property}[Algebraická struktura]\label{VA1}
+\begin{property}[Algebraická struktura]\label{P-A1}
 	Platí:
 
 	\begin{enumerate}[I]
@@ -95,7 +95,7 @@ O čem budou výroky? O definovaných pojmech:
 		\item Nulový prvek $\oplus: \exists~0 \in \mathbb{R}: \forall x \in \mathbb{R}: 0 + x = x$ \\
 			Jednotka $\otimes: \exists~1 \in \mathbb{R}: \forall x \in \mathbb{R}: 1 \cdot x = x$
 		\item Inverzní prvek: $\forall x \in \mathbb{R}, \forall z \in \mathbb{R}~\exists ! y:
-			x + y = z$ (právě jedno; ozn. $y = z - x$)\newline
+			x + y = z$ (právě jedno; ozn. $y = z - x$) \\
 			$\forall x, z \in \mathbb{R}, x\neq0 ~\exists ! y \in \mathbb{R}:
 			x \cdot y = z$ (ozn. $y = z / x$)
 		\item Distributivita: $\forall x, y, z \in \mathbb{R}: x (y + z) = xy + xz$
@@ -120,7 +120,7 @@ I. - IV. říká $(\mathbb{R}, +)$ a $(\mathbb{R} - \{0\}, \cdot)$ jsou grupy.
 
 I. - VI. říká $(\mathbb{R}, +, \cdot)$ je těleso.
 
-Ověřte, že Vlastnost \ref{VA1} platí pro $\mathbb{C}$ (komplexní čísla).
+Ověřte, že Vlastnost \ref{P-A1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 \begin{example}
 	Definujme $\mathbb{C} = \{z = (z_1, z_2); z_1, z_2 \in \mathbb{R}\}$ a
@@ -135,15 +135,15 @@ Ověřte, že Vlastnost \ref{VA1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 	Lze zapisovat $z\in \mathbb{C}$, $z = (z_1, z_2)$, ozn. $z = z_1 + iz_2$ pro $i^2 = -1$.
 \end{example}
-\begin{property}[Uspořádání]
+\begin{property}[Uspořádání]\label{P-A2}
 	Platí:
 
 	\begin{enumerate}[I]
 		\item Relace: $\forall x, y \in \mathbb{R}$ nastane právě jedna z možností: \\
 		$(x<y)$ nebo $(x>y)$ nebo $(x=y)$
 		\item Tranzitivita: $(x<y) \land (y<z) \Rightarrow (x<z)$
-		\item Vztah uspořádání a sčítání: $(x<y) \Rightarrow x+z < y+z$
-		\item Vztah relace k násobení: $(0<x) \land (0<y) \Rightarrow 0 < xy$
+		\item\label{P-A2-3} Vztah uspořádání a sčítání: $(x<y) \Rightarrow x+z < y+z$
+		\item\label{P-A2-4} Vztah relace k násobení: $(0<x) \land (0<y) \Rightarrow 0 < xy$
 	\end{enumerate}
 \end{property}
 
@@ -155,19 +155,172 @@ Značení:
 \end{itemize}
 
 Lze odvodit další pravidla:
-\begin{equation}
+\begin{equation}\label{RelationsOfNegatives}
 	x<y \Leftrightarrow -x > -y
 \end{equation}
 \begin{proof}
 	\begin{alignat*}{2}
 		x&<y \\
-		x-x&<y-x &\text{\quad /bod III} \\
+		x-x&<y-x &\text{\quad /bod \ref{P-A2-3}} \\
 		0&<y-x \\
-		0-y&<y-y-x &\text{\quad /bod III} \\
+		0-y&<y-y-x &\text{\quad /bod \ref{P-A2-3}} \\
 		-y&<-x \\
 		-x&>-y &\text{\quad funguje $\Leftrightarrow$} \\
 	\end{alignat*}
 \end{proof}
+
+DÚ:
+\begin{equation}
+	\forall x \in \mathbb{R}: x>0 \Rightarrow \frac{1}{x}>0
+\end{equation}
+\begin{proof}
+	Sporem:
+	\begin{alignat*}{1}
+		x>0 &\text{ a } \frac{1}{x}<0 \\
+		-\frac{1}{x}&>0 \\
+		0&<x\cdot\left(-\frac{1}{x}\right) = -1 \\
+		1 &< 0
+	\end{alignat*}
+	Pokud $0<1$, pak spor! $0<1<0$.
+
+	Máme $0<-1 \xRightarrow{\ref{P-A2-4}} 0<(-1)(-1) = 1$
+\end{proof}
+
+\begin{example}
+	Komplexní čísla nelze uspořádat podle Vlastnosti \ref{P-A2}
+\end{example}
+\begin{proof}
+	Sporem: Předpokládejme, že to lze.
+	\begin{alignat*}{1}
+		i&<0 \\
+		(0,1)&<(0,0) \\
+		-i>0 &\xRightarrow{A_2IV} 0<(-i)(-i) = -1
+	\end{alignat*}
+	Note: $i>0 \xRightarrow{A_2\ref{P-A2-4}} 0<(i)(i) = -1$
+\end{proof}
+
+\section{Význačné podmnožiny \texorpdfstring{$\mathbb{R}$}{R}}
+\begin{itemize}
+	\item $\mathbb{N} = \{1,2,\dots\}$\quad přirozená čísla
+	\item $\mathbb{Z} = \{0,-1,-2,\dots\}\cup\mathbb{N}$\quad celá čísla
+	\item $\mathbb{Q} = \{\frac{p}{q}: p\in\mathbb{Z}, q\in\mathbb{N}\}$\quad racionální čísla
+	\item $\mathbb{R} - \mathbb{Q}$\quad iracionální čísla
+\end{itemize}
+
+Poznámka: $\mathbb{Q}$ má obě vlastnosti \ref{P-A1}, \ref{P-A2}
+
+Intervaly:
+\begin{itemize}
+	\item $(a,b) = \{x\in\mathbb{R}; a<x<b\}$\quad otevřený
+	\item $[a,b] = (a,b)\cup\{a,b\}$\quad uzavřený
+	\item $[a,b), (a,b]$\quad polootevřené
+	\item $(a,+\infty) = \{x\in\mathbb{R}; x>a\}$\quad neomezený otevřený
+	\item $(-\infty, a) = \{x\in\mathbb{R}; x<a\}$\quad neomezený otevřený
+	\item podobně: $[a, +\infty), (-\infty, a]$\quad neomezený uzavřený
+\end{itemize}
+
+\begin{definition}[Absolutní hodnota]
+	Pro $x\in\mathbb{R}$ definuji
+	\[  % Means \begin{equation*} and \end{equation*} with amsmath loaded.
+	\abs{x} =
+	\begin{cases}
+		x &\quad\text{ pokud } x\geq 0 \\
+		-x &\quad\text{ pokud } x<0
+	\end{cases}
+	\]
+\end{definition}
+
+\begin{lemma}[Vlastnosti absolutní hodnoty]\label{L-abs}
+	Nechť $a>0$, \\ pak $\abs{x}<a$ právě když $-a<x<a$
+\end{lemma}
+\begin{proof}
+	 Rozdělme důkaz
+	\begin{enumerate}
+		\item\label{L-abs-P1} Ať $x\geq 0$ pak $\abs{x}=x$ a máme ukázat, že $x<a \Leftrightarrow -a<x<a$ \\
+			"$\Leftarrow$" jasná | "$\Rightarrow$" víme $-a<0\leq x<a$
+		\item Ať $x<0$, pak $\abs{x} = -x$ a máme ukázat, že $-x<a \Leftrightarrow -a<x<a$ \\
+			$x>-a$ pak pokračujeme podobně jako \ref{L-abs-P1}.: $-a<x<0<a$
+	\end{enumerate}
+\end{proof}
+
+\begin{theorem}[Trojúhelníková nerovnost]\label{T-triangleInequality}
+	Platí:
+	\begin{alignat}{1}
+		\abs{x+y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-1} \\
+		\abs{x-y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-2} \\
+		\abs{x+y} &\geq  \abs{\abs{x} - \abs{y}} \label{T-triangleInequality-3} \\
+		\abs{x-y} &\geq  \abs{\abs{x} - \abs{y}} \label{T-triangleInequality-4}
+	\end{alignat}
+\end{theorem}
+\begin{proof}
+	\ref{T-triangleInequality-1} a \ref{T-triangleInequality-2} plyne z Lemma \ref{L-abs}
+	
+	\ref{T-triangleInequality-3} a \ref{T-triangleInequality-4} plyne z předešlého řádku pomocí triku
+	\begin{alignat}{1}
+		x &= x+y-y \\
+		\abs{x} &=\abs{x+y-y}\leq\abs{x+y}+\abs{y} \\
+		\abs{y} &\leq\abs{x+y}+\abs{x} \\
+		\abs{x}-\abs{y} &\leq\abs{x+y} \\
+		\abs{y}-\abs{x} &\leq\abs{x+y}~/\cdot(-1) \label{T-triangleInequality-P126} \\
+		\abs{x}-\abs{y} &\geq-\abs{x+y}~
+			\text{plyne z \ref{T-triangleInequality-P126} a \ref{RelationsOfNegatives}}
+	\end{alignat}
+\end{proof}
+
+\begin{definition}[Maximum]
+	Nechť $M\subset\mathbb{R}$
+	\begin{itemize}
+		\item $x\in M$ nazveme maximum $M$, pokud $\forall y\in M: y\leq x$ \\
+			Ozn. $x=max~M$ \\
+			Př.: $(0,1)$ nemá max
+		\item $K\in\mathbb{R}$ nazveme horní odhad $M$, pokud $\forall x\in M: x\leq K$ \\
+			Př.: $(0,1)$ má horní odhad 4, 1, \dots
+	\end{itemize}
+\end{definition}
+
+\begin{lemma}[Jednoznačnost max]
+	Existuje nejvýše 1 max. $M\subset\mathbb{R}$
+\end{lemma}
+\begin{proof}
+	Ať existují dvě: $x_1, x_2\in M$ maxima
+	\begin{alignat}{1}
+		x_1 \text{je max; }x_2\in M &\Rightarrow x_1\geq x_2 \\
+		x_2 \text{je max; }x_1\in M &\Rightarrow x_2\geq x_1 \\
+		\Rightarrow x_1\leq x_2\leq x_1 \\
+	\end{alignat}
+	Tedy $x_1=x_2$
+\end{proof}
+
+Pozn.: analogicky def. minimum a dolní odhad.
+
+\begin{definition}[Supremum]
+	Číslo $s\in\mathbb{R}$ nazvu supremem množiny $M\subset\mathbb{R}$, pokud
+	\begin{enumerate}[I]
+		\item\label{D-supremum-1} $\forall x\in M: x\leq s$
+		\item\label{D-supremum-2} $\forall s'<s, s'\in\mathbb{R}: \exists x\in M: s'<x$
+	\end{enumerate}
+	Supremum $M$ značíme $s=sup~M$
+\end{definition}
+
+Pozn.: \ref{D-supremum-1} říká, že $s$ je horní odhad, \ref{D-supremum-2} říká,
+že $s$ je nejmenší možný horní odhad
+
+Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
+
+\begin{definition}[Infinum]
+	Nechť $M\subset\mathbb{R}$. řekneme, že $s\in\mathbb{R}$ je infimum množiny $M$
+	(ozn. $inf~M$), pokud
+	\begin{enumerate}[I]
+		\item\label{D-infimum-1} $\forall x\in M: s\leq x$
+		\item\label{D-infimum-2} $\forall s'>s, s'\in\mathbb{R}: \exists x<s': x\in M$
+	\end{enumerate}
+	Supremum $M$ značíme $s=sup~M$
+
+	Př.: $M=(0,1)$, $sup~M=1$
+\end{definition}
+
+
+
 
 % \begin{figure}[ht!]
 % 	\begin{center}
