@@ -102,6 +102,15 @@
 
 
 %% Theorem settings.
+% % Line break after label.
+% % Need to add "\item[]" if theorem starts by enumerate.
+% \newtheoremstyle{break}
+%   {\topsep}{\topsep}%
+%   {\itshape}{}%
+%   {\bfseries}{}%
+%   {\newline}{}%
+% \theoremstyle{break}
+
 \declaretheorem[numberwithin=chapter, name=Definice]{definition}
 \declaretheorem[numberwithin=chapter, name=Lemma]{lemma}
 \declaretheorem[numberwithin=chapter, name=Lemma]{lemmaAlph}

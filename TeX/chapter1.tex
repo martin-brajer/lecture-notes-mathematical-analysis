@@ -86,9 +86,8 @@ O čem budou výroky? O definovaných pojmech:
 \end{theoremAlph}
 
 \begin{property}[Algebraická struktura]\label{P-A1}
-	Platí:
-
 	\begin{enumerate}[I]
+		\item[]
 		\item Komutativita: $\forall x, y \in \mathbb{R}: x + y = y + x;~x\cdot y = y\cdot x$
 		\item Asociativita: $\forall x, y, z \in \mathbb{R}: x + (y + z) = (x + y) + z;
 			~(x\cdot y)\cdot z = x\cdot (y\cdot z)$
@@ -136,9 +135,8 @@ Ověřte, že Vlastnost \ref{P-A1} platí pro $\mathbb{C}$ (komplexní čísla).
 	Lze zapisovat $z\in \mathbb{C}$, $z = (z_1, z_2)$, ozn. $z = z_1 + iz_2$ pro $i^2 = -1$.
 \end{example}
 \begin{property}[Uspořádání]\label{P-A2}
-	Platí:
-
 	\begin{enumerate}[I]
+		\item[]
 		\item Relace: $\forall x, y \in \mathbb{R}$ nastane právě jedna z možností: \\
 		$(x<y)$ nebo $(x>y)$ nebo $(x=y)$
 		\item Tranzitivita: $(x<y) \land (y<z) \Rightarrow (x<z)$
@@ -231,11 +229,11 @@ Intervaly:
 \end{definition}
 
 \begin{lemma}[Vlastnosti absolutní hodnoty]\label{L-abs}
-	Nechť $a>0$, \\ pak $\abs{x}<a$ právě když $-a<x<a$
+	Nechť $a>0$, pak $\abs{x}<a$ právě \\ když $-a<x<a$
 \end{lemma}
 \begin{proof}
-	 Rozdělme důkaz
 	\begin{enumerate}
+		\item[]
 		\item\label{L-abs-P1} Ať $x\geq 0$ pak $\abs{x}=x$ a máme ukázat, že $x<a \Leftrightarrow -a<x<a$ \\
 			"$\Leftarrow$" jasná | "$\Rightarrow$" víme $-a<0\leq x<a$
 		\item Ať $x<0$, pak $\abs{x} = -x$ a máme ukázat, že $-x<a \Leftrightarrow -a<x<a$ \\
@@ -244,7 +242,6 @@ Intervaly:
 \end{proof}
 
 \begin{theorem}[Trojúhelníková nerovnost]\label{T-triangleInequality}
-	Platí:
 	\begin{alignat}{1}
 		\abs{x+y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-1} \\
 		\abs{x-y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-2} \\
@@ -307,18 +304,29 @@ Pozn.: \ref{D-supremum-1} říká, že $s$ je horní odhad, \ref{D-supremum-2} �
 
 Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 
-\begin{definition}[Infinum]
+\begin{definition}[Infimum]
 	Nechť $M\subset\mathbb{R}$. řekneme, že $s\in\mathbb{R}$ je infimum množiny $M$
 	(ozn. $inf~M$), pokud
 	\begin{enumerate}[I]
 		\item\label{D-infimum-1} $\forall x\in M: s\leq x$
 		\item\label{D-infimum-2} $\forall s'>s, s'\in\mathbb{R}: \exists x<s': x\in M$
 	\end{enumerate}
-	Supremum $M$ značíme $s=sup~M$
-
-	Př.: $M=(0,1)$, $sup~M=1$
+	Infimum $M$ značíme $s=inf~M$
 \end{definition}
 
+\begin{property}[Supremum a infimum]
+	Každá neprázdná shora omezená $M\subset\mathbb{R}$ má supremum v $\mathbb{R}$.
+	Každá neprázdná zdola omezená $M\subset\mathbb{R}$ má infimum v $\mathbb{R}$.
+\end{property}
+
+\begin{definition}[Věta B Odmocnina]
+	\begin{enumerate}
+		\item[]
+		\item Nechť $a>0$ a $n$ sudé, $n\in\mathbb{N}$, pak existuje právě jedno číslo $b>0: b^n=a$
+		\item Nechť $a>0$ a $n$ liché, $n\in\mathbb{N}$, pak existuje právě jedno číslo $b\in\mathbb{R}: b^n=a$
+	\end{enumerate}
+	Značení: $b=\sqrt[n]{a}$
+\end{definition}
 
 
 
