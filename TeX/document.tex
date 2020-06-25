@@ -1,3 +1,4 @@
+% !TeX root = ./document.tex
 %%% Main file. General parameters are defined here as well as other parts are referenced.
 
 %% One-sided print version:
@@ -20,21 +21,21 @@
 %% Other packages
 \usepackage{graphicx}
 \usepackage{enumerate}  % http://ctan.org/pkg/enumerate
+\usepackage{amsmath}
+\usepackage{amsfonts}  % Number sets (naturals etc.).
 \usepackage{amsthm}  % Theorems
 \usepackage{thmtools}  % Theorem list
 \usepackage{mathtools}  % Norm/Abs definitions & "xRightarrow".
-\usepackage{tocloft}  % Table of Contents
 \usepackage{setspace}  % Allows for easy 1.5 spacing
 \usepackage{placeins}  % Adds command \FloatBarrier, which draws all images in the queue.
-\usepackage{amsmath}
-\usepackage{amsfonts}  % Number sets (naturals etc.).
 \usepackage{array}   % for \newcolumntype macro
 \usepackage{verbatim}  % \begin{comment}
+\usepackage{tocloft}  % Table of Contents
 
 %% Package hyperref creates clickable pdf hyperlinks, but mainly we are
 %% going to use it to save metadata to pdf (including table of contents).
 %% WARNING, do not forget to fill in title and author.
-\usepackage[pdfpagelabels,unicode]{hyperref}   % Must be after all other packages [ps2pdf,unicode].
+\usepackage[pdfpagelabels,unicode,colorlinks]{hyperref}   % Must be after all other packages [ps2pdf,unicode].
 \hypersetup{pdftitle=Matematická analýza}
 \hypersetup{pdfauthor=Martin Brajer}
 
@@ -85,7 +86,8 @@
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
 
-%% ToC.
+
+%% ToC settings.
 \renewcommand{\listtheoremname}{Věty a definice}
 % Semesters. Add by "\semester".
 \newcommand{\listsemestername}{Semestry}
@@ -102,24 +104,22 @@
 
 
 %% Theorem settings.
-% % Line break after label.
-% % Need to add "\item[]" if theorem starts by enumerate.
-% \newtheoremstyle{break}
-%   {\topsep}{\topsep}%
-%   {\itshape}{}%
-%   {\bfseries}{}%
-%   {\newline}{}%
-% \theoremstyle{break}
+% Use when labeling theorems, mainly when enumerate follows!
+% For details, see  https://tex.stackexchange.com/a/193105/113813
+\newcommand{\labelTheo}[1]{\noindent\label{#1}}
 
 \declaretheorem[numberwithin=chapter, name=Definice]{definition}
+\declaretheorem[numberwithin=chapter, name=Definice]{definitionAi}
+\renewcommand*{\thedefinitionAi}{A\arabic{definitionAi}}
+
 \declaretheorem[numberwithin=chapter, name=Lemma]{lemma}
 \declaretheorem[numberwithin=chapter, name=Lemma]{lemmaAlph}
 \renewcommand*{\thelemmaAlph}{\Alph{lemmaAlph}}
+
 \declaretheorem[numberwithin=chapter, name=Věta]{theorem}
 \declaretheorem[numberwithin=chapter, name=Věta]{theoremAlph}
 \renewcommand*{\thetheoremAlph}{\Alph{theoremAlph}}
-\declaretheorem[numberwithin=chapter, name=Vlastnost]{property}
-\renewcommand*{\theproperty}{A\arabic{property}}
+
 \declaretheorem[numberwithin=chapter, name=Příklad]{example}
 
 \renewcommand\qedsymbol{QED}
@@ -130,6 +130,7 @@
 \renewcommand{\labelitemi}{$\bullet$}
 \renewcommand{\labelitemii}{$\circ$}
 \renewcommand{\labelitemiii}{*}
+
 
 
 %%% Individual chapters are placed into their respective files for convenience.
@@ -155,6 +156,7 @@
 
 \include{introduction}
 \include{chapter1}  % Basic concepts.
+\include{chapter2}  % Limits.
 %\chapwithtoc{Seznam použitých zkratek}	% Abbreviations.
 
 \openright

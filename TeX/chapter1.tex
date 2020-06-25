@@ -1,3 +1,4 @@
+% !TeX root = ./document.tex
 \chapter{Úvod, základní pojmy}
 Výrok - má pravdivostní hodnotu 0 nebo 1. Mějme A, B výroky:
 
@@ -30,7 +31,7 @@ Důkaz implikace $A\Rightarrow B$:
 \end{lemmaAlph}
 
 \begin{proof}[Důkaz 1]
-	Fixuj $n\in \mathbb{N}$. Prvočíselný rozklad:XXX
+	Fixuj $n\in \mathbb{N}$. Prvočíselný rozklad:
 	\begin{gather}
 		n = p_1^{\alpha_1} \cdot \ldots \cdot p_k^{\alpha_k} \\
 		n^2 = p_1^{2\alpha_1} \cdot \ldots \cdot p_k^{2\alpha_k} \\
@@ -58,7 +59,7 @@ O čem budou výroky? O definovaných pojmech:
 	\item $x\in A$ \quad $x$ je prvkem
 	\item $x\notin A$ \quad $\lnot (x\in A)$
 	\item $A\subset B$ \quad $A$ je podmnožinou $B$: $\forall x \in A: x \in B$
-	\item $\emptyset$ \quad prázdná množina
+	\item \O \quad prázdná množina
 	\item množinové operace:
 	\begin{itemize}
 		\item $A\cup B = \{x; (x\in A)\lor(x\in B)\}$
@@ -82,12 +83,11 @@ O čem budou výroky? O definovaných pojmech:
 
 \begin{theoremAlph}[Reálná čísla]
 	Existuje množina $\mathbb{R}$ s operacemi $\oplus$ a $\otimes$ a relací $<$ tak,
-	že splňuje vlastnosti \ref{P-A1} až \textit{$A_4$}.	% Add reference to VA4
+	že splňuje vlastnosti \ref{D-A1} až \ref{D-A4}.
 \end{theoremAlph}
 
-\begin{property}[Algebraická struktura]\label{P-A1}
+\begin{definitionAi}[Algebraická struktura]\labelTheo{D-A1}
 	\begin{enumerate}[I]
-		\item[]
 		\item Komutativita: $\forall x, y \in \mathbb{R}: x + y = y + x;~x\cdot y = y\cdot x$
 		\item Asociativita: $\forall x, y, z \in \mathbb{R}: x + (y + z) = (x + y) + z;
 			~(x\cdot y)\cdot z = x\cdot (y\cdot z)$
@@ -101,7 +101,7 @@ O čem budou výroky? O definovaných pojmech:
 		\item Násobení nulou: $\forall x \in \mathbb{R}: 0\cdot x = 0$ \\
 			$\forall x, y \in \mathbb{R}: x\cdot y = 0 \Rightarrow ((x = 0) \lor (y = 0))$
 	\end{enumerate}
-\end{property}
+\end{definitionAi}
 Další vlastnosti lze odvodit:
 \begin{alignat}{1}
 	-(-x) &= x \\
@@ -119,7 +119,7 @@ I. - IV. říká $(\mathbb{R}, +)$ a $(\mathbb{R} - \{0\}, \cdot)$ jsou grupy.
 
 I. - VI. říká $(\mathbb{R}, +, \cdot)$ je těleso.
 
-Ověřte, že Vlastnost \ref{P-A1} platí pro $\mathbb{C}$ (komplexní čísla).
+Ověřte, že Vlastnost \ref{D-A1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 \begin{example}
 	Definujme $\mathbb{C} = \{z = (z_1, z_2); z_1, z_2 \in \mathbb{R}\}$ a
@@ -134,16 +134,15 @@ Ověřte, že Vlastnost \ref{P-A1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 	Lze zapisovat $z\in \mathbb{C}$, $z = (z_1, z_2)$, ozn. $z = z_1 + iz_2$ pro $i^2 = -1$.
 \end{example}
-\begin{property}[Uspořádání]\label{P-A2}
+\begin{definitionAi}[Uspořádání]\labelTheo{D-A2}
 	\begin{enumerate}[I]
-		\item[]
 		\item Relace: $\forall x, y \in \mathbb{R}$ nastane právě jedna z možností: \\
 		$(x<y)$ nebo $(x>y)$ nebo $(x=y)$
 		\item Tranzitivita: $(x<y) \land (y<z) \Rightarrow (x<z)$
-		\item\label{P-A2-3} Vztah uspořádání a sčítání: $(x<y) \Rightarrow x+z < y+z$
-		\item\label{P-A2-4} Vztah relace k násobení: $(0<x) \land (0<y) \Rightarrow 0 < xy$
+		\item\label{D-A2-3} Vztah uspořádání a sčítání: $(x<y) \Rightarrow x+z < y+z$
+		\item\label{D-A2-4} Vztah relace k násobení: $(0<x) \land (0<y) \Rightarrow 0 < xy$
 	\end{enumerate}
-\end{property}
+\end{definitionAi}
 
 Značení:
 \begin{itemize}
@@ -159,11 +158,11 @@ Lze odvodit další pravidla:
 \begin{proof}
 	\begin{alignat*}{2}
 		x&<y \\
-		x-x&<y-x &\text{\quad /bod \ref{P-A2-3}} \\
+		x-x&<y-x &&\text{\quad /bod \ref{D-A2-3}} \\
 		0&<y-x \\
-		0-y&<y-y-x &\text{\quad /bod \ref{P-A2-3}} \\
+		0-y&<y-y-x &&\text{\quad /bod \ref{D-A2-3}} \\
 		-y&<-x \\
-		-x&>-y &\text{\quad funguje $\Leftrightarrow$} \\
+		-x&>-y &&\text{\quad funguje $\Leftrightarrow$} \\
 	\end{alignat*}
 \end{proof}
 
@@ -181,11 +180,11 @@ DÚ:
 	\end{alignat*}
 	Pokud $0<1$, pak spor! $0<1<0$.
 
-	Máme $0<-1 \xRightarrow{\ref{P-A2-4}} 0<(-1)(-1) = 1$
+	Máme $0<-1 \xRightarrow{\ref{D-A2-4}} 0<(-1)(-1) = 1$
 \end{proof}
 
 \begin{example}
-	Komplexní čísla nelze uspořádat podle Vlastnosti \ref{P-A2}
+	Komplexní čísla nelze uspořádat podle Vlastnosti \ref{D-A2}
 \end{example}
 \begin{proof}
 	Sporem: Předpokládejme, že to lze.
@@ -194,7 +193,7 @@ DÚ:
 		(0,1)&<(0,0) \\
 		-i>0 &\xRightarrow{A_2IV} 0<(-i)(-i) = -1
 	\end{alignat*}
-	Note: $i>0 \xRightarrow{A_2\ref{P-A2-4}} 0<(i)(i) = -1$
+	Note: $i>0 \xRightarrow{A_2\ref{D-A2-4}} 0<(i)(i) = -1$
 \end{proof}
 
 \section{Význačné podmnožiny \texorpdfstring{$\mathbb{R}$}{R}}
@@ -205,7 +204,7 @@ DÚ:
 	\item $\mathbb{R} - \mathbb{Q}$\quad iracionální čísla
 \end{itemize}
 
-Poznámka: $\mathbb{Q}$ má obě vlastnosti \ref{P-A1}, \ref{P-A2}
+Poznámka: $\mathbb{Q}$ má obě vlastnosti \ref{D-A1}, \ref{D-A2}
 
 Intervaly:
 \begin{itemize}
@@ -228,12 +227,11 @@ Intervaly:
 	\]
 \end{definition}
 
-\begin{lemma}[Vlastnosti absolutní hodnoty]\label{L-abs}
+\begin{lemma}[Vlastnosti absolutní hodnoty]\labelTheo{L-abs}
 	Nechť $a>0$, pak $\abs{x}<a$ právě \\ když $-a<x<a$
 \end{lemma}
 \begin{proof}
 	\begin{enumerate}
-		\item[]
 		\item\label{L-abs-P1} Ať $x\geq 0$ pak $\abs{x}=x$ a máme ukázat, že $x<a \Leftrightarrow -a<x<a$ \\
 			"$\Leftarrow$" jasná | "$\Rightarrow$" víme $-a<0\leq x<a$
 		\item Ať $x<0$, pak $\abs{x} = -x$ a máme ukázat, že $-x<a \Leftrightarrow -a<x<a$ \\
@@ -241,7 +239,7 @@ Intervaly:
 	\end{enumerate}
 \end{proof}
 
-\begin{theorem}[Trojúhelníková nerovnost]\label{T-triangleInequality}
+\begin{theorem}[Trojúhelníková nerovnost]\labelTheo{T-triangleInequality}
 	\begin{alignat}{1}
 		\abs{x+y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-1} \\
 		\abs{x-y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-2} \\
@@ -283,7 +281,7 @@ Intervaly:
 	\begin{alignat}{1}
 		x_1 \text{je max; }x_2\in M &\Rightarrow x_1\geq x_2 \\
 		x_2 \text{je max; }x_1\in M &\Rightarrow x_2\geq x_1 \\
-		\Rightarrow x_1\leq x_2\leq x_1 \\
+		\Rightarrow x_1\leq x_2\leq x_1
 	\end{alignat}
 	Tedy $x_1=x_2$
 \end{proof}
@@ -314,26 +312,119 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 	Infimum $M$ značíme $s=inf~M$
 \end{definition}
 
-\begin{property}[Supremum a infimum]
+\begin{definitionAi}[Supremum a infimum]\labelTheo{D-A3}
 	Každá neprázdná shora omezená $M\subset\mathbb{R}$ má supremum v $\mathbb{R}$.
 	Každá neprázdná zdola omezená $M\subset\mathbb{R}$ má infimum v $\mathbb{R}$.
-\end{property}
+\end{definitionAi}
 
-\begin{definition}[Věta B Odmocnina]
+\begin{definition}[Odmocnina]\labelTheo{D-sqrt}
 	\begin{enumerate}
-		\item[]
 		\item Nechť $a>0$ a $n$ sudé, $n\in\mathbb{N}$, pak existuje právě jedno číslo $b>0: b^n=a$
 		\item Nechť $a>0$ a $n$ liché, $n\in\mathbb{N}$, pak existuje právě jedno číslo $b\in\mathbb{R}: b^n=a$
 	\end{enumerate}
 	Značení: $b=\sqrt[n]{a}$
 \end{definition}
 
+\begin{lemmaAlph}[Čtverec dělitelný třema]\labelTheo{L-divisibilityByThree}
+	% \[$k^2$ je dělitelné $3 \Rightarrow k$ je děl. $3$\]
+	$k^2 \text{ je dělitelné }3\Rightarrow k \text{ je děl. }3$
+\end{lemmaAlph}
+\begin{proof}
+	Jak zapsat $k$? $\exists m\in\mathbb{Z}:$
+	\begin{alignat}{2}
+		k &= 3m+0 &&k^2\text{ je děl. $3$}\\
+		k &= 3m+1 \Rightarrow k^2=9m^2+6m+1 \quad&&\text{není děl. $3$} \\
+		k &= 3m+2 \Rightarrow k^2=9m^2+12m+4 \quad&&\text{není děl. $3$}
+	\end{alignat}
+\end{proof}
 
+\begin{theorem}[Iracionální čísla]
+	Existují iracionální čísla
+\end{theorem}
+\begin{proof}
+	Tvrdíme, že $\sqrt{3}$ není racionální. Sporem:
+	\begin{alignat}{1}
+		\text{Ať $\sqrt{3}$ je rac.} &\Rightarrow\exists k\in\mathbb{Z}, l\in\mathbb{N}
+		\text{ nesoudělná: }\sqrt{3}=\frac{k}{l} \\
+		3=\frac{k^2}{l^2} &\Rightarrow k^2=3l^2 \\
+		k^2 \text{ je dělitelné }3 &\xRightarrow{\ref{L-divisibilityByThree}} k\text{ je děl. }3 \\
+		n\in\mathbb{Z}: \left(k=3n\Rightarrow k^2=9n^2\right) &\Rightarrow k^2 \text{ je děl }9 \\
+		k^2=9n^2=3l^2 &\Rightarrow l^2=3n^2 \\
+		l^2 \text{ je děl. }3 &\xRightarrow{\ref{L-divisibilityByThree}} l\text{ je děl. }3
+	\end{alignat}
+	Což je spor, protože $k$, $l$ jsou nesoudělná.
+\end{proof}
 
-% \begin{figure}[ht!]
-% 	\begin{center}
-% 		\includegraphics[width=0.49\textwidth,keepaspectratio]{img/spintronika/SFET3.png}
-% 		\includegraphics[width=0.49\textwidth,keepaspectratio]{img/spintronika/GMR.png}
-% 		\caption{(a,b) Realizace \textit{field effect tranzistor} (spin-FET)[3]. (c)  na jevu GMR [4].}
-% 	\end{center}
-% \end{figure}\FloatBarrier
+\begin{definitionAi}[Vlastnosti \texorpdfstring{$\mathbb{N}$}{N}]\labelTheo{D-A4}
+	\begin{enumerate}[I]
+		\item\label{D-A4-1} $\forall x\in\mathbb{R}\exists n\in\mathbb{N}: x<n$
+		\item Princip indukce: nechť $M\subset\mathbb{N}$ a
+			\begin{enumerate}
+				\item $1\in M$
+				\item $n\in M \Rightarrow n+1\in M$
+			\end{enumerate}
+			Pak $m=\mathbb{N}$
+	\end{enumerate}
+\end{definitionAi}
+
+Pozn.:Vlastnost \ref{D-A4-1} plyne z vlastnosti \ref{D-A3}
+
+Pozn.: Archimédova vlastnost:
+\begin{equation}
+	\forall m\in\mathbb{N}, \forall \epsilon>0 \text{ (tedy reálné) }\exists n\in\mathbb{N}:n\epsilon>m
+\end{equation}
+\begin{proof}
+	Polož $x=m/\epsilon$ v \ref{D-A4-1}
+\end{proof}
+
+\begin{theorem}[Velikost intervalu]
+Každý otevřený interval obsahuje nekonečně \\ racionálních i nekonečně iracionálních čísel.
+\end{theorem}
+\begin{proof}
+	Ve zkratce:
+	\begin{alignat}{2}
+		\frac{k}{l}&+\frac{n}{n+1}\frac{1}{l} &&\quad\text{ je racionální }\forall n\in\mathbb{N} \\
+		\frac{k}{l}&+\frac{\sqrt{3}}{3}\frac{n}{n+1}\frac{1}{l} &&\quad\text{ je iracionální }\forall n\in\mathbb{N}
+	\end{alignat}
+	\begin{figure}[ht!]
+		\begin{center}
+			\includegraphics[width=0.4\textwidth,keepaspectratio]{../img/chapter1/interval.png}
+			\includegraphics[width=0.4\textwidth,keepaspectratio]{../img/chapter1/interval2.png}
+			% \caption{}
+		\end{center}
+	\end{figure}\FloatBarrier
+	
+	Mějme otevřený interval $(a,b)$. Stačí mít rac. č. $k/l$ tak, aby \\$k/l,~(k+1)/l\in(a,b)$.
+	\begin{alignat*}{2}
+		\text{Jak hledám $l$? }&\quad\frac{1}{l}<\frac{b-a}{2}
+			&&\quad\text{plyne z \ref{D-A4-1} pomocí }l>\frac{2}{b-a}\\
+		\text{Jak hledám $k$? }&\quad\text{def. }M=\left\{n\in\mathbb{Z};\frac{n}{l}<a\right\}
+			&&\quad\text{podle \ref{D-A3} }\exists s\in\mathbb{R}:s=sup~M
+	\end{alignat*}
+	Tvrdíme: $s\in M$:
+
+	Podle \hyperref[D-supremum-2]{druhé vlastnosti suprema}: $\forall s'<s~\exists n\in M:s'<n$ \\
+	Volím $s'\in\left(s-\frac{1}{2},s\right)$, pak $\exists n'\in M: s'<n'$. Zafixuji $n'$ a tvrdím:
+	\begin{equation}\label{T-intervalSize-P-144}
+		\forall s'\in (s-\frac{1}{2},s): s'<n'\leq s
+	\end{equation}
+	A tedy $s\leq n'\leq s$. Definujme
+	\begin{alignat}{1}
+		k&:=s+1 \Rightarrow \frac{k}{l}\in (a,b) \\
+		k+1&:=s+2 \Rightarrow \frac{k+1}{l}\in (a,b) \\
+		&\text{Potom:} \nonumber\\
+		a<\frac{k}{l}<\frac{k+s}{l}&=\frac{s+2}{l}<a+\frac{2}{l}<a+b-1=b  % ???
+	\end{alignat}
+\end{proof}
+
+\begin{proof}
+	\ref{T-intervalSize-P-144} Vol. $s''\in (s-\frac{1}{2},s)$ pak $\exists n''\in M: s''<n''$
+	\begin{alignat}{3}
+		s-\frac{1}{2}&<s'&<n'&\leq s \\
+		s-\frac{1}{2}&<s''&<n''&\leq s
+	\end{alignat}
+	Tedy:
+	\begin{alignat}{1}
+		n',n'' \in (s-\frac{1}{2},s]\cap\mathbb{Z}\Rightarrow n'=n''
+	\end{alignat}
+\end{proof}

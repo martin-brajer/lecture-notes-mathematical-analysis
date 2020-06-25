@@ -7,4 +7,5 @@
         "soucek"
     ],
     "latex-workshop.latex.outDir": "../build",
+    "latex-workshop.message.error.show": false,
 }
