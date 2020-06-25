@@ -191,9 +191,9 @@ DÚ:
 	\begin{alignat*}{1}
 		i&<0 \\
 		(0,1)&<(0,0) \\
-		-i>0 &\xRightarrow{A_2IV} 0<(-i)(-i) = -1
+		-i>0 &\xRightarrow{\ref*{D-A2}-\ref{D-A2-4}} 0<(-i)(-i) = -1
 	\end{alignat*}
-	Note: $i>0 \xRightarrow{A_2\ref{D-A2-4}} 0<(i)(i) = -1$
+	Pozn.: $i>0 \xRightarrow{\ref*{D-A2}-\ref{D-A2-4}} 0<(i)(i) = -1$
 \end{proof}
 
 \section{Význačné podmnožiny \texorpdfstring{$\mathbb{R}$}{R}}
@@ -347,10 +347,10 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 		\text{Ať $\sqrt{3}$ je rac.} &\Rightarrow\exists k\in\mathbb{Z}, l\in\mathbb{N}
 		\text{ nesoudělná: }\sqrt{3}=\frac{k}{l} \\
 		3=\frac{k^2}{l^2} &\Rightarrow k^2=3l^2 \\
-		k^2 \text{ je dělitelné }3 &\xRightarrow{\ref{L-divisibilityByThree}} k\text{ je děl. }3 \\
+		k^2 \text{ je dělitelné }3 &\xRightarrow{L\ref{L-divisibilityByThree}} k\text{ je děl. }3 \\
 		n\in\mathbb{Z}: \left(k=3n\Rightarrow k^2=9n^2\right) &\Rightarrow k^2 \text{ je děl }9 \\
 		k^2=9n^2=3l^2 &\Rightarrow l^2=3n^2 \\
-		l^2 \text{ je děl. }3 &\xRightarrow{\ref{L-divisibilityByThree}} l\text{ je děl. }3
+		l^2 \text{ je děl. }3 &\xRightarrow{L\ref{L-divisibilityByThree}} l\text{ je děl. }3
 	\end{alignat}
 	Což je spor, protože $k$, $l$ jsou nesoudělná.
 \end{proof}
@@ -397,7 +397,7 @@ Každý otevřený interval obsahuje nekonečně \\ racionálních i nekonečně
 	Mějme otevřený interval $(a,b)$. Stačí mít rac. č. $k/l$ tak, aby \\$k/l,~(k+1)/l\in(a,b)$.
 	\begin{alignat*}{2}
 		\text{Jak hledám $l$? }&\quad\frac{1}{l}<\frac{b-a}{2}
-			&&\quad\text{plyne z \ref{D-A4-1} pomocí }l>\frac{2}{b-a}\\
+			&&\quad\text{plyne z \ref*{D-A4}-\ref{D-A4-1} pomocí }l>\frac{2}{b-a}\\
 		\text{Jak hledám $k$? }&\quad\text{def. }M=\left\{n\in\mathbb{Z};\frac{n}{l}<a\right\}
 			&&\quad\text{podle \ref{D-A3} }\exists s\in\mathbb{R}:s=sup~M
 	\end{alignat*}
