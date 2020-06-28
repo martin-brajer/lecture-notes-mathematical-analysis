@@ -35,7 +35,7 @@ Důkaz implikace $A\Rightarrow B$:
 	\begin{gather}
 		n = p_1^{\alpha_1} \cdot \ldots \cdot p_k^{\alpha_k} \\
 		n^2 = p_1^{2\alpha_1} \cdot \ldots \cdot p_k^{2\alpha_k} \\
-		\forall j \in \{1,\ldots,k\}: 2 \neq P_j
+		\forall j \in \left\{1,\ldots,k\right\}: 2 \neq P_j
 	\end{gather}
 	V rozvoji $n^2$ není $2$, tak v rozvoji $n$ také není (liší se pouze mocninou).
 \end{proof}
@@ -62,9 +62,9 @@ O čem budou výroky? O definovaných pojmech:
 	\item \O \quad prázdná množina
 	\item množinové operace:
 	\begin{itemize}
-		\item $A\cup B = \{x; (x\in A)\lor(x\in B)\}$
-		\item $A\cap B = \{x; (x\in A)\land(x\in B)\}$
-		\item $A - B = \{x; (x\in A)\lor(x\notin B)\}$
+		\item $A\cup B = \left\{x; (x\in A)\lor(x\in B)\right\}$
+		\item $A\cap B = \left\{x; (x\in A)\land(x\in B)\right\}$
+		\item $A - B = \left\{x; (x\in A)\lor(x\notin B)\right\}$
 	\end{itemize}
 	\item kvantifikátory:
 	\begin{itemize}
@@ -115,14 +115,14 @@ Další značení:
 	\forall x \neq 0: x^{-n} &= \left( \frac{1}{x} \right)^n
 \end{alignat}
 
-I. - IV. říká $(\mathbb{R}, +)$ a $(\mathbb{R} - \{0\}, \cdot)$ jsou grupy.
+I. - IV. říká $(\mathbb{R}, +)$ a $(\mathbb{R} - \left\{0\right\}, \cdot)$ jsou grupy.
 
 I. - VI. říká $(\mathbb{R}, +, \cdot)$ je těleso.
 
 Ověřte, že Vlastnost \ref{D-A1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 \begin{example}
-	Definujme $\mathbb{C} = \{z = (z_1, z_2); z_1, z_2 \in \mathbb{R}\}$ a
+	Definujme $\mathbb{C} = \left\{z = (z_1, z_2); z_1, z_2 \in \mathbb{R}\right\}$ a
 	operace $\oplus, \otimes$. $\forall z, u \in \mathbb{C}:$
 	\begin{alignat}{1}
 		(z_1, z_2) + (u_1, u_2) &= (z_1 + u_1, z_2, u_2) \\
@@ -198,9 +198,9 @@ DÚ:
 
 \section{Význačné podmnožiny \texorpdfstring{$\mathbb{R}$}{R}}
 \begin{itemize}
-	\item $\mathbb{N} = \{1,2,\dots\}$\quad přirozená čísla
-	\item $\mathbb{Z} = \{0,-1,-2,\dots\}\cup\mathbb{N}$\quad celá čísla
-	\item $\mathbb{Q} = \{\frac{p}{q}: p\in\mathbb{Z}, q\in\mathbb{N}\}$\quad racionální čísla
+	\item $\mathbb{N} = \left\{1,2,\dots\right\}$\quad přirozená čísla
+	\item $\mathbb{Z} = \left\{0,-1,-2,\dots\right\}\cup\mathbb{N}$\quad celá čísla
+	\item $\mathbb{Q} = \left\{\frac{p}{q}: p\in\mathbb{Z}, q\in\mathbb{N}\right\}$\quad racionální čísla
 	\item $\mathbb{R} - \mathbb{Q}$\quad iracionální čísla
 \end{itemize}
 
@@ -208,11 +208,11 @@ Poznámka: $\mathbb{Q}$ má obě vlastnosti \ref{D-A1}, \ref{D-A2}
 
 Intervaly:
 \begin{itemize}
-	\item $(a,b) = \{x\in\mathbb{R}; a<x<b\}$\quad otevřený
-	\item $[a,b] = (a,b)\cup\{a,b\}$\quad uzavřený
+	\item $(a,b) = \left\{x\in\mathbb{R}; a<x<b\right\}$\quad otevřený
+	\item $[a,b] = (a,b)\cup\left\{a,b\right\}$\quad uzavřený
 	\item $[a,b), (a,b]$\quad polootevřené
-	\item $(a,+\infty) = \{x\in\mathbb{R}; x>a\}$\quad neomezený otevřený
-	\item $(-\infty, a) = \{x\in\mathbb{R}; x<a\}$\quad neomezený otevřený
+	\item $(a,+\infty) = \left\{x\in\mathbb{R}; x>a\right\}$\quad neomezený otevřený
+	\item $(-\infty, a) = \left\{x\in\mathbb{R}; x<a\right\}$\quad neomezený otevřený
 	\item podobně: $[a, +\infty), (-\infty, a]$\quad neomezený uzavřený
 \end{itemize}
 
