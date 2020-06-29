@@ -104,20 +104,20 @@
 
 
 %% Theorem settings.
-% Use when labeling theorems, mainly when enumerate follows!
+% Use when labeling theorems when enumerate closely follows!
 % For details, see  https://tex.stackexchange.com/a/193105/113813
 \newcommand{\labelTheo}[1]{\noindent\label{#1}}
 
 \declaretheorem[numberwithin=chapter, name=Definice]{definition}
-\declaretheorem[numberwithin=chapter, name=Definice]{definitionAi}
+\declaretheorem[name=Definice]{definitionAi}
 \renewcommand*{\thedefinitionAi}{A\arabic{definitionAi}}
 
 \declaretheorem[numberwithin=chapter, name=Lemma]{lemma}
-\declaretheorem[numberwithin=chapter, name=Lemma]{lemmaAlph}
+\declaretheorem[name=Lemma]{lemmaAlph}
 \renewcommand*{\thelemmaAlph}{\Alph{lemmaAlph}}
 
 \declaretheorem[numberwithin=chapter, name=Věta]{theorem}
-\declaretheorem[numberwithin=chapter, name=Věta]{theoremAlph}
+\declaretheorem[name=Věta]{theoremAlph}
 \renewcommand*{\thetheoremAlph}{\Alph{theoremAlph}}
 
 \declaretheorem[numberwithin=chapter, name=Příklad]{example}

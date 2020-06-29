@@ -6,14 +6,14 @@ Funkce z $M$ do $N$ je předpis, který každému prvku $M$ přiřadí nejvýše
     \item $B\subset M:f^{-1}(B)=\left\{x\in M: f(x)\in B\right\}\subset M$
 \end{itemize}
 
-\begin{definition}[Prostá funkce, injekce, monomorfismus]\labelTheo{D-injection}
+\begin{definition}[Prostá funkce, injekce, monomorfismus]\label{D-injection}
     Funkce je \textbf{prostá}, pokud
     \begin{equation}
         x\neq y \Rightarrow f(x)\neq f(y)
     \end{equation}
 \end{definition}
 
-\begin{definition}[Na funkce, surjekce, epimorfismus]\labelTheo{D-surjection}
+\begin{definition}[Na funkce, surjekce, epimorfismus]\label{D-surjection}
     Funkce $f:M\rightarrow N$ je \textbf{na} (zobrazuje $M$ na $N$), pokud
     \begin{equation}
         \forall n\in\mathbb{N}~\exists m\in M: f(m)=n
@@ -34,7 +34,7 @@ Funkce z $M$ do $N$ je předpis, který každému prvku $M$ přiřadí nejvýše
     \end{alignat}
 \end{definition}
 
-\begin{definition}[Vzájemně jednoznačné zobrazení, bijekce , isomorfismus]\labelTheo{D-bijection}
+\begin{definition}[Vzájemně jednoznačné zobrazení, bijekce , isomorfismus]\label{D-bijection}
     Je-li $f:M\rightarrow N$ \hyperref[D-injection]{prostá} a \hyperref[D-surjection]{na} říkáme, že je vzájemně jednoznačná
 \end{definition}
 
@@ -81,7 +81,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \end{equation*}
 \end{example}
 
-\begin{definition}[Monotónost funkce]\labelTheo{D-monotonic}
+\begin{definition}[Monotónost funkce]\label{D-monotonic}
     Nechť $f:\mathbb{R}\rightarrow\mathbb{R}$; $M\subset D(f)$. Řeknu, že $f$
     \[
         \text{je}\left.%\{
@@ -111,7 +111,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \end{figure}\FloatBarrier
 \end{definition}
 
-\begin{definition}[Omezenost funkce]\labelTheo{D-bounded}
+\begin{definition}[Omezenost funkce]\label{D-bounded}
     Řekněme, že $f$
     \[
         \text{je}\left.%\{
@@ -130,7 +130,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \]
 \end{definition}
 
-\begin{definition}[Symetrie funkce]\labelTheo{D-symetry}
+\begin{definition}[Symetrie funkce]\label{D-symetry}
     Řekněme, že $f$
     \begin{alignat}{1}
         \text{je}\left.%\{
@@ -162,7 +162,7 @@ Druhou variantu chápeme jako:
     f=f_1+if_2;~f_1,f_2:\mathbb{R}\rightarrow\mathbb{R}
 \end{equation}
 
-\begin{definition}[Okolí]\labelTheo{D-neighbourhood}
+\begin{definition}[Okolí]\label{D-neighbourhood}
     Nechť $x_0\mathbb{R}, \delta\in(0,\infty)$
     \begin{itemize}
         \item kruhové okolí\quad $U(x_0,\delta):=(x_0-\delta, x_0+\delta)=
@@ -181,6 +181,79 @@ Poznámky:
     \item Budeme psát: „na jistém $U(x_0)$ platí\dots“, což znamená \\
         $\exists\delta>0:\forall x\in U(x_0,\delta)$ platí\dots
 \end{itemize}
+
+\begin{theorem}[Hausedorfův princip oddělení]\label{T-hausedorf}
+    Nechť $x_1,x_2\in\mathbb{R};~ x_1\neq x_2$, pak \\
+    $\exists\delta>0$ tak, že $U(x_1,\delta)\cap U(x_2,\delta)=\text{\O}$
+
+    Speciálně: $x_1\notin U(x_2,\delta);~x_2\notin U(x_1,\delta)$
+\end{theorem}
+\begin{proof}
+    Volím $\delta=\frac{\abs{x_1-x_2}}{2}$. Tvrdím, že $U(x_1,\delta)\cap U(x_2,\delta)=\text{\O}$
+
+    Sporem: ať $\exists y\in U(x_1,\delta)\cap U(x_2,\delta)$, pak
+    \begin{alignat}{1}
+        \abs{x_1-x_2} &= \abs{x_1-y+y-x_2}
+            \overset{\hyperref[T-triangleInequality]{\triangle nerovnost}}{\leq} \nonumber \\
+        &\abs{x_1-y}+\abs{y-x_2} < 2\delta = \abs{x_1-x_2}
+    \end{alignat}
+    Tedy $\abs{x_1-x_2} < \abs{x_1-x_2}$, což je spor.
+\end{proof}
+
+\begin{definition}[Limita]\label{D-limit}
+    Nechť $x_0\in\mathbb{R}$ a $f$ je fce def na jistém $P(x_0)$
+
+    Číslo $A\in\mathbb{R}$ nazvu limitou $f$ v $x_0$, pokud
+    \begin{equation}\label{D-limit-215}
+        \forall\epsilon>0~\exists\delta>0: x\in P(x_0,\delta) \Rightarrow
+            f(x)\in U(A,\epsilon)
+    \end{equation}
+\end{definition}
+
+Terminologie: pokud existuje $\lim_{x \to x_0}f(x)\in\mathbb{R}$ říkáme, že $f$
+    má vlastní limitu ve vlastním bodě
+
+Značení:
+\begin{itemize}
+    \item $\lim_{x\to x_0}f(x)=A$
+    \item $f(x)\rightarrow A$ pro $x\rightarrow x_0$
+\end{itemize}
+
+Poznámky:
+\begin{itemize}
+    \item Limita závisí na $f$ v okolí $x_0$
+    \item Jiné zápisy \ref{D-limit-215}
+    \begin{alignat}{1}
+        \forall\epsilon>0~\exists\delta>0&:f(P(x_0,\delta))\subset U(A,\epsilon) \\
+        \forall\epsilon>0~\exists\delta>0&:\forall x\in\mathbb{R}:
+            \left[0<\abs{x-x_0}<\delta \Rightarrow\abs{f(x)-A}<\epsilon\right]
+    \end{alignat}
+\end{itemize}
+
+\begin{theoremAlph}[Jednoznačnost limity]
+    Buď $\lim_{x \to x_0}f(x)=A$ a $\lim_{x \to x_0}f(x)=B$
+    
+    Pak $A=B$
+\end{theoremAlph}
+\begin{proof}
+    Sporem: ať $A\neq B$
+    \begin{alignat}{1}
+        \text{Věta \ref{T-hausedorf}}&\quad \exists\epsilon>0:
+            U(A,\epsilon)\cap U(B,\epsilon)=\text{\O} \\
+        \text{\ref{D-limit-215} pro $A$}&\quad \exists\delta_1>0:x\in P(x_0,\delta_1)
+            \Rightarrow f(x)\in U(A,\epsilon) \\
+        \text{\ref{D-limit-215} pro $B$}&\quad \exists\delta_2>0:x\in P(x_0,\delta_2)
+            \Rightarrow f(x)\in U(B,\epsilon) \\
+        \text{Definujme }&\quad \delta=min(\delta_1,\delta_1) \\
+        \text{Odvodíme spor }&\quad \forall x\in U(x_0,\delta):f(x)\in
+            U(A,\epsilon)\cap U(B,\epsilon)=\text{\O}
+    \end{alignat}
+\end{proof}
+
+
+
+
+
 
 
 
