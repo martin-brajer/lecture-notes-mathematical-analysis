@@ -29,7 +29,7 @@
 \usepackage{mathtools}  % Norm/Abs definitions & "xRightarrow".
 \usepackage{setspace}  % Allows for easy 1.5 spacing
 \usepackage{placeins}  % Adds command \FloatBarrier, which draws all images in the queue.
-\usepackage{array}   % for \newcolumntype macro
+\usepackage{array}   % for \newcolumntype macro !!!
 \usepackage{verbatim}  % \begin{comment}
 \usepackage{tocloft}  % Table of Contents
 
@@ -43,7 +43,7 @@
 %%% Little changes to the style.
 
 % Those macros use nasty trick to force LaTeX to typeset chapter headers more
-% decently without leaving so much space above them. Feel free to ignore.
+% decently without leaving so much space above them.
 \makeatletter
 \def\@makechapterhead#1{
     {\parindent \z@ \raggedright \normalfont
@@ -69,7 +69,7 @@
 \onehalfspacing  % Line spacing 1.5.
 %\renewcommand{\baselinestretch}{2}
 \setlength{\parindent}{0cm}  % To look more like handwritten notes.
-\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type, using "array" package
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type, using "array" package !!!
 \renewcommand{\deg}{^{\circ}}  % Degree sign for math mode (\deg).
 
 
@@ -156,7 +156,7 @@
 \setcounter{page}{1}
 
 \include{introduction}
-\include{chapter1}  % Basic concepts.
+\include{chapter1}  % Basic concepts. CHECK E1.46
 \include{chapter2}  % Limits.
 %\chapwithtoc{Seznam použitých zkratek}	% Abbreviations.
 

@@ -1,6 +1,6 @@
 % !TeX root = ./document.tex
 \chapter{Úvod, základní pojmy}
-Výrok - má pravdivostní hodnotu 0 nebo 1. Mějme A, B výroky:
+Výrok - má pravdivostní hodnotu 0 nebo 1. Mějme $A$, $B$ výroky:
 
 \begin{figure}[ht!]
 	\begin{center}
@@ -83,7 +83,7 @@ O čem budou výroky? O definovaných pojmech:
 
 \begin{theoremAlph}[Reálná čísla]
 	Existuje množina $\mathbb{R}$ s operacemi $\oplus$ a $\otimes$ a relací $<$ tak,
-	že splňuje vlastnosti \ref{D-A1} až \ref{D-A4}.
+		že splňuje vlastnosti \ref{D-A1} až \ref{D-A4}.
 \end{theoremAlph}
 
 \begin{definitionAi}[Algebraická struktura]\labelTheo{D-A1}
@@ -92,14 +92,14 @@ O čem budou výroky? O definovaných pojmech:
 		\item Asociativita: $\forall x, y, z \in \mathbb{R}: x + (y + z) = (x + y) + z;
 			~(x\cdot y)\cdot z = x\cdot (y\cdot z)$
 		\item Nulový prvek $\oplus: \exists~0 \in \mathbb{R}: \forall x \in \mathbb{R}: 0 + x = x$ \\
-			Jednotka $\otimes: \exists~1 \in \mathbb{R}: \forall x \in \mathbb{R}: 1 \cdot x = x$
+		Jednotka $\otimes: \exists~1 \in \mathbb{R}: \forall x \in \mathbb{R}: 1 \cdot x = x$
 		\item Inverzní prvek: $\forall x \in \mathbb{R}, \forall z \in \mathbb{R}~\exists ! y:
 			x + y = z$ (právě jedno; ozn. $y = z - x$) \\
-			$\forall x, z \in \mathbb{R}, x\neq0 ~\exists ! y \in \mathbb{R}:
+		$\forall x, z \in \mathbb{R}, x\neq0 ~\exists ! y \in \mathbb{R}:
 			x \cdot y = z$ (ozn. $y = z / x$)
 		\item Distributivita: $\forall x, y, z \in \mathbb{R}: x (y + z) = xy + xz$
 		\item Násobení nulou: $\forall x \in \mathbb{R}: 0\cdot x = 0$ \\
-			$\forall x, y \in \mathbb{R}: x\cdot y = 0 \Rightarrow ((x = 0) \lor (y = 0))$
+		$\forall x, y \in \mathbb{R}: x\cdot y = 0 \Rightarrow ((x = 0) \lor (y = 0))$
 	\end{enumerate}
 \end{definitionAi}
 Další vlastnosti lze odvodit:
@@ -123,7 +123,7 @@ Ověřte, že Vlastnost \ref{D-A1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 \begin{example}
 	Definujme $\mathbb{C} = \left\{z = (z_1, z_2); z_1, z_2 \in \mathbb{R}\right\}$ a
-	operace $\oplus, \otimes$. $\forall z, u \in \mathbb{C}:$
+		operace $\oplus, \otimes$. $\forall z, u \in \mathbb{C}:$
 	\begin{alignat}{1}
 		(z_1, z_2) + (u_1, u_2) &= (z_1 + u_1, z_2, u_2) \\
 		(z_1, z_2) \cdot (u_1, u_2) &= (z_1u_1 - z_2u_2, z_1u_2 + z_2u_1)
@@ -162,7 +162,7 @@ Lze odvodit další pravidla:
 		0&<y-x \\
 		0-y&<y-y-x &&\text{\quad /bod \ref{D-A2-3}} \\
 		-y&<-x \\
-		-x&>-y &&\text{\quad funguje $\Leftrightarrow$} \\
+		-x&>-y &&\text{\quad funguje $\Leftrightarrow$}
 	\end{alignat*}
 \end{proof}
 
@@ -187,7 +187,7 @@ DÚ:
 	Komplexní čísla nelze uspořádat podle Vlastnosti \ref{D-A2}
 \end{example}
 \begin{proof}
-	Sporem: Předpokládejme, že to lze.
+	Sporem: předpokládejme, že to lze.
 	\begin{alignat*}{1}
 		i&<0 \\
 		(0,1)&<(0,0) \\
@@ -228,14 +228,15 @@ Intervaly:
 \end{definition}
 
 \begin{lemma}[Vlastnosti absolutní hodnoty]\label{L-abs}
-	Nechť $a>0$, pak $\abs{x}<a$ právě \\ když $-a<x<a$
+	Nechť $a>0$, pak $\abs{x}<a$ právě \\
+	když $-a<x<a$
 \end{lemma}
-\begin{proof}
+\begin{proof}Podle znaménka $x$:
 	\begin{enumerate}
 		\item\label{L-abs-P1} Ať $x\geq 0$ pak $\abs{x}=x$ a máme ukázat, že $x<a \Leftrightarrow -a<x<a$ \\
-			"$\Leftarrow$" jasná | "$\Rightarrow$" víme $-a<0\leq x<a$
+		"$\Leftarrow$" jasná | "$\Rightarrow$" víme $-a<0\leq x<a$
 		\item Ať $x<0$, pak $\abs{x} = -x$ a máme ukázat, že $-x<a \Leftrightarrow -a<x<a$ \\
-			$x>-a$ pak pokračujeme podobně jako \ref{L-abs-P1}.: $-a<x<0<a$
+		$x>-a$ pak pokračujeme podobně jako \ref{L-abs-P1}.: $-a<x<0<a$
 	\end{enumerate}
 \end{proof}
 
@@ -266,10 +267,10 @@ Intervaly:
 	Nechť $M\subset\mathbb{R}$
 	\begin{itemize}
 		\item $x\in M$ nazveme maximum $M$, pokud $\forall y\in M: y\leq x$ \\
-			Ozn. $x=max~M$ \\
-			Př.: $(0,1)$ nemá max
+		Ozn. $x=max~M$ \\
+		Př.: $(0,1)$ nemá max
 		\item $K\in\mathbb{R}$ nazveme horní odhad $M$, pokud $\forall x\in M: x\leq K$ \\
-			Př.: $(0,1)$ má horní odhad 4, 1, \dots
+		Př.: $(0,1)$ má horní odhad 4, 1, \dots
 	\end{itemize}
 \end{definition}
 
@@ -344,7 +345,7 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 	Tvrdíme, že $\sqrt{3}$ není racionální. Sporem:
 	\begin{alignat}{1}
 		\text{Ať $\sqrt{3}$ je rac.} &\Rightarrow\exists k\in\mathbb{Z}, l\in\mathbb{N}
-		\text{ nesoudělná: }\sqrt{3}=\frac{k}{l} \\
+			\text{ nesoudělná: }\sqrt{3}=\frac{k}{l} \\
 		3=\frac{k^2}{l^2} &\Rightarrow k^2=3l^2 \\
 		k^2 \text{ je dělitelné }3 &\xRightarrow{L\ref{L-divisibilityByThree}} k\text{ je děl. }3 \\
 		n\in\mathbb{Z}: \left(k=3n\Rightarrow k^2=9n^2\right) &\Rightarrow k^2 \text{ je děl }9 \\
@@ -358,11 +359,11 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 	\begin{enumerate}[I]
 		\item\label{D-A4-1} $\forall x\in\mathbb{R}\exists n\in\mathbb{N}: x<n$
 		\item Princip indukce: nechť $M\subset\mathbb{N}$ a
-			\begin{enumerate}
-				\item $1\in M$
-				\item $n\in M \Rightarrow n+1\in M$
-			\end{enumerate}
-			Pak $m=\mathbb{N}$
+		\begin{enumerate}
+			\item $1\in M$
+			\item $n\in M \Rightarrow n+1\in M$
+		\end{enumerate}
+		Pak $m=\mathbb{N}$
 	\end{enumerate}
 \end{definitionAi}
 
