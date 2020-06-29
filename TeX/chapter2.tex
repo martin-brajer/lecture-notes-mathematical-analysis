@@ -184,12 +184,12 @@ Poznámky:
 
 \begin{theorem}[Hausedorfův princip oddělení]\label{T-hausedorf}
     Nechť $x_1,x_2\in\mathbb{R};~ x_1\neq x_2$, pak \\
-    $\exists\delta>0$ tak, že $U(x_1,\delta)\cap U(x_2,\delta)=\text{\O}$
+    $\exists\delta>0$ tak, že $U(x_1,\delta)\cap U(x_2,\delta)=\varnothing$
 
     Speciálně: $x_1\notin U(x_2,\delta);~x_2\notin U(x_1,\delta)$
 \end{theorem}
 \begin{proof}
-    Volím $\delta=\frac{\abs{x_1-x_2}}{2}$. Tvrdím, že $U(x_1,\delta)\cap U(x_2,\delta)=\text{\O}$
+    Volím $\delta=\frac{\abs{x_1-x_2}}{2}$. Tvrdím, že $U(x_1,\delta)\cap U(x_2,\delta)=\varnothing$
 
     Sporem: ať $\exists y\in U(x_1,\delta)\cap U(x_2,\delta)$, pak
     \begin{alignat}{1}
@@ -239,14 +239,14 @@ Poznámky:
     Sporem: ať $A\neq B$
     \begin{alignat}{1}
         \text{Věta \ref{T-hausedorf}}&\quad \exists\epsilon>0:
-            U(A,\epsilon)\cap U(B,\epsilon)=\text{\O} \\
+            U(A,\epsilon)\cap U(B,\epsilon)=\varnothing \\
         \text{\ref{D-limit-215} pro $A$}&\quad \exists\delta_1>0:x\in P(x_0,\delta_1)
             \Rightarrow f(x)\in U(A,\epsilon) \\
         \text{\ref{D-limit-215} pro $B$}&\quad \exists\delta_2>0:x\in P(x_0,\delta_2)
             \Rightarrow f(x)\in U(B,\epsilon) \\
         \text{Definujme }&\quad \delta=min(\delta_1,\delta_1) \\
         \text{Odvodíme spor }&\quad \forall x\in U(x_0,\delta):f(x)\in
-            U(A,\epsilon)\cap U(B,\epsilon)=\text{\O}
+            U(A,\epsilon)\cap U(B,\epsilon)=\varnothing
     \end{alignat}
 \end{proof}
 
