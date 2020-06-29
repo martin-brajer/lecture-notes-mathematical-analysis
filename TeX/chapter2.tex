@@ -208,16 +208,17 @@ Poznámky:
         \forall\epsilon>0~\exists\delta>0: x\in P(x_0,\delta) \Rightarrow
             f(x)\in U(A,\epsilon)
     \end{equation}
+    
+    Značení:
+    \begin{itemize}
+        \item $\lim_{x\to x_0}f(x)=A$
+        \item $f(x)\rightarrow A$ pro $x\rightarrow x_0$
+    \end{itemize}
 \end{definition}
 
 Terminologie: pokud existuje $\lim_{x \to x_0}f(x)\in\mathbb{R}$ říkáme, že $f$
     má vlastní limitu ve vlastním bodě
 
-Značení:
-\begin{itemize}
-    \item $\lim_{x\to x_0}f(x)=A$
-    \item $f(x)\rightarrow A$ pro $x\rightarrow x_0$
-\end{itemize}
 
 Poznámky:
 \begin{itemize}
@@ -251,11 +252,74 @@ Poznámky:
 \end{proof}
 
 \begin{example}
-    
+    \begin{alignat}{1}
+        &\lim_{x\to 2}x^2=4 \\
+        \text{cíl:}\quad& \forall\epsilon>0~\exists\delta>0:x\in P(2,\delta)
+            \Rightarrow f(x)\in U(4,\epsilon) \\
+        \text{fix $\epsilon>0$}\quad& \text{hledám $\delta>0$} \\
+        \text{chci:}\quad& 4-\epsilon<x^2<4+\epsilon \\
+        \text{lze předpokládat, }& \text{že $\epsilon<1$, protože pokud $\epsilon\geq 1$,
+            pak $U(4,\frac{1}{2})\subset U(4,\epsilon)$} \\
+        \text{vidíme:}\quad& \sqrt{4-\epsilon}<x<\sqrt{4+\epsilon} \\
+        \text{volme:}\quad& \delta=min(2-\sqrt{4-\epsilon}, \sqrt{4+\epsilon}-2) \\
+        \text{volme:}\quad& x\in P(2,\delta) \\
+        \text{chci dokázat,}\quad& \\
+        \text{že platí cíl:}\quad& f(x)\in U(4,\epsilon) \\
+        \text{odhad shora:}\quad& x^2-4\leq(2+\delta)^2-4=4+4\delta+\delta^2-4=(4+\delta)\delta \\
+        & \leq(4+\sqrt{4+\epsilon}-2)(\sqrt{4+\epsilon}-2) \\
+        & =(\sqrt{4+\epsilon}+2)(\sqrt{4+\epsilon}-2)=4+\epsilon-4=\epsilon \\
+        \text{odhad odspodu:}\quad& x^2-4\geq(2-\delta)^2-4=4-4\delta+\delta^2-4=\delta(\delta-4) \\
+        & \dots\text{zbytek obdobně}
+    \end{alignat}
 \end{example}
 
+\begin{definition}[Jednostranné limity]
+    Nechť $x_0\in\mathbb{R}$, $f$ definovaná na jistém $P_+(x_0)$ (resp. $P_-(x_0)$). Pak
+        číslo $A$ nazvu limitou $f$ v bodě $x_0$ zprava (zleva), pokud:
+    \begin{equation}
+        \forall\epsilon>0~\exists\delta>0:\forall x\in P_{+(-)}(x_0,\delta):f(x)\in U(A,\epsilon)
+    \end{equation}
 
+    Značení (zleva obdobně):
+    \begin{itemize}
+        \item $\lim_{x\to x_0+}f(x)=A$
+        \item $f(x)\rightarrow A$ pro $x\rightarrow x_0+$
+    \end{itemize}
+\end{definition}
 
+\begin{example}
+    \begin{alignat}{1}
+        \lim_{x\to 0+}sgn(x)&=1 \\
+        \lim_{x\to 0-}sgn(x)&=-1
+    \end{alignat}
+\end{example}
+
+\begin{theorem}[Jednostranné vs oboustranná limita]
+    Buď $x_0\in\mathbb{R}$, $f$ definovaná na jistém $P(x_0,\delta)$, pak následující
+        tvrzení jsou ekvivalentní
+    \begin{alignat}{1}
+        \lim_{x\to x_0}&=A \label{T-1v2limit-241}\\
+        \lim_{x\to x_0+}&=A \land \lim_{x\to x_0-}=A \label{T-1v2limit-242}
+    \end{alignat}
+\end{theorem}
+
+\begin{example}[Důsledek]
+    Neexistuje $\lim_{x\to 0}sgn(x)$
+\end{example}
+\begin{proof}
+    \ref{T-1v2limit-241} $\Rightarrow$ \ref{T-1v2limit-242} triviální
+    
+    \ref{T-1v2limit-242} $\Rightarrow$ \ref{T-1v2limit-241} volím $\epsilon>0$,
+        podle \ref{T-1v2limit-242}
+    \begin{alignat}{1}
+        \exists\delta_1>0&:\forall x\in P_+(x_0,\delta_1):f(x)\in U(A,\epsilon) \\
+        \exists\delta_2>0&:\forall x\in P_-(x_0,\delta_1):f(x)\in U(A,\epsilon)
+    \end{alignat}
+    volím $\delta=min(\delta_1, \delta_2)$ (protože
+        $P(x_0,\delta)\subset P(x_0,\delta_1)\cup P(x_0,\delta_2)$)
+    
+    Potom $P(x_0,\delta):f(x)\in U(A,\epsilon)$
+\end{proof}
 
 
 
