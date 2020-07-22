@@ -61,8 +61,8 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
 \begin{definition}[Složená funkce, superpozice]
     Pro $M,N,K$ množiny a \\$f:M\rightarrow N; g:N\rightarrow K$ funkce definujeme složenou funkci
     \begin{alignat}{2}
-        g\circ f: M&\rightarrow K &&\quad M\xrightarrow{f}N\xrightarrow{g}K \\
-        x\in M &\rightarrow \left(g(f(x))\right) &&\quad x\rightarrow f(x)\rightarrow\left(g(f(x))\right)
+        &g\circ f: M\rightarrow K &&\quad M\xrightarrow{f}N\xrightarrow{g}K \\
+        &x\in M \rightarrow \left(g(f(x))\right) &&\quad x\rightarrow f(x)\rightarrow\left(g(f(x))\right)
     \end{alignat}
     Budeme psát: $\varphi :M\rightarrow N$ i když $\varphi(x)$ není definované $\forall x\in M$
 \end{definition}
@@ -192,11 +192,11 @@ Poznámky:
     Volím $\delta=\frac{\abs{x_1-x_2}}{2}$. Tvrdím, že $U(x_1,\delta)\cap U(x_2,\delta)=\varnothing$
 
     Sporem: ať $\exists y\in U(x_1,\delta)\cap U(x_2,\delta)$, pak
-    \begin{alignat}{1}
-        \abs{x_1-x_2} &= \abs{x_1-y+y-x_2}
+    \begin{gather}
+        \abs{x_1-x_2} = \abs{x_1-y+y-x_2}
             \overset{\hyperref[T-triangleInequality]{\triangle nerovnost}}{\leq} \nonumber \\
-        &\abs{x_1-y}+\abs{y-x_2} < 2\delta = \abs{x_1-x_2}
-    \end{alignat}
+        \abs{x_1-y}+\abs{y-x_2} < 2\delta = \abs{x_1-x_2}
+    \end{gather}
     Tedy $\abs{x_1-x_2} < \abs{x_1-x_2}$, což je spor.
 \end{proof}
 
@@ -306,10 +306,10 @@ Poznámky:
     
     \ref{T-1v2limit-242} $\Rightarrow$ \ref{T-1v2limit-241} volím $\epsilon>0$,
         podle \ref{T-1v2limit-242}
-    \begin{alignat}{1}
-        \exists\delta_1>0&:\forall x\in P_+(x_0,\delta_1):f(x)\in U(A,\epsilon) \\
-        \exists\delta_2>0&:\forall x\in P_-(x_0,\delta_1):f(x)\in U(A,\epsilon)
-    \end{alignat}
+    \begin{gather}
+        \exists\delta_1>0:\forall x\in P_+(x_0,\delta_1):f(x)\in U(A,\epsilon) \\
+        \exists\delta_2>0:\forall x\in P_-(x_0,\delta_1):f(x)\in U(A,\epsilon)
+    \end{gather}
     volím $\delta=min(\delta_1, \delta_2)$ (protože
         $P(x_0,\delta)\subset P(x_0,\delta_1)\cup P(x_0,\delta_2)$)
     
@@ -319,3 +319,16 @@ Poznámky:
     Neexistuje $\lim_{x\to 0}sgn(x)$
 \end{example}
 
+\begin{theoremAlph}[Ekvivalentní limity]
+    Buď $x_0\in\mathbb{R}$, $f$ definovaná na jistém $P(x_0)$. Pak
+    \begin{equation}
+        \lim_{x\to x_0}f(x)=A \Leftrightarrow \lim_{x\to x_0}f(x)-A=0
+            \Leftrightarrow \lim_{x\to x_0}\abs{f(x)-A}=0
+    \end{equation}
+\end{theoremAlph}
+\begin{proof}
+    \begin{gather}
+        \forall\epsilon>0~\exists\delta>0:\forall x\in P(x_0,\delta):\abs{f(x)-A}<\epsilon \\
+        \abs{f(x)-A}<\epsilon \Leftrightarrow f(x)\in U(A,\epsilon)
+    \end{gather}
+\end{proof}
