@@ -194,7 +194,7 @@ Poznámky:
     Sporem: ať $\exists y\in U(x_1,\delta)\cap U(x_2,\delta)$, pak
     \begin{gather}
         \abs{x_1-x_2} = \abs{x_1-y+y-x_2}
-            \overset{\hyperref[T-triangleInequality]{\triangle nerovnost}}{\leq} \nonumber \\
+            \overset{\autoref{T-triangleInequality}}{\leq} \nonumber \\
         \abs{x_1-y}+\abs{y-x_2} < 2\delta = \abs{x_1-x_2}
     \end{gather}
     Tedy $\abs{x_1-x_2} < \abs{x_1-x_2}$, což je spor.
@@ -223,7 +223,7 @@ Terminologie: pokud existuje $\lim_{x \to x_0}f(x)\in\mathbb{R}$ říkáme, že 
 Poznámky:
 \begin{itemize}
     \item Limita závisí na $f$ v okolí $x_0$
-    \item Jiné zápisy \ref{D-limit-215}
+    \item Jiné zápisy \autoref{D-limit-215}
     \begin{alignat}{1}
         \forall\epsilon>0~\exists\delta>0&:f(P(x_0,\delta))\subset U(A,\epsilon) \\
         \forall\epsilon>0~\exists\delta>0&:\forall x\in\mathbb{R}:
@@ -239,11 +239,11 @@ Poznámky:
 \begin{proof}
     Sporem: ať $A\neq B$
     \begin{alignat}{1}
-        \text{Věta \ref{T-hausedorf}}&\quad \exists\epsilon>0:
+        \text{\autoref{T-hausedorf}}&\quad \exists\epsilon>0:
             U(A,\epsilon)\cap U(B,\epsilon)=\varnothing \\
-        \text{\ref{D-limit-215} pro $A$}&\quad \exists\delta_1>0:x\in P(x_0,\delta_1)
+        \text{\autoref{D-limit-215} pro $A$}&\quad \exists\delta_1>0:x\in P(x_0,\delta_1)
             \Rightarrow f(x)\in U(A,\epsilon) \\
-        \text{\ref{D-limit-215} pro $B$}&\quad \exists\delta_2>0:x\in P(x_0,\delta_2)
+        \text{\autoref{D-limit-215} pro $B$}&\quad \exists\delta_2>0:x\in P(x_0,\delta_2)
             \Rightarrow f(x)\in U(B,\epsilon) \\
         \text{Definujme }&\quad \delta=min(\delta_1,\delta_1) \\
         \text{Odvodíme spor }&\quad \forall x\in U(x_0,\delta):f(x)\in
@@ -302,10 +302,10 @@ Poznámky:
     \end{alignat}
 \end{theorem}
 \begin{proof}
-    \ref{T-1v2limit-241} $\Rightarrow$ \ref{T-1v2limit-242} triviální
+    \autoref{T-1v2limit-241} $\Rightarrow$ \autoref{T-1v2limit-242} triviální
     
-    \ref{T-1v2limit-242} $\Rightarrow$ \ref{T-1v2limit-241} volím $\epsilon>0$,
-        podle \ref{T-1v2limit-242}
+    \autoref{T-1v2limit-242} $\Rightarrow$ \autoref{T-1v2limit-241} volím $\epsilon>0$,
+        podle \autoref{T-1v2limit-242}
     \begin{gather}
         \exists\delta_1>0:\forall x\in P_+(x_0,\delta_1):f(x)\in U(A,\epsilon) \\
         \exists\delta_2>0:\forall x\in P_-(x_0,\delta_1):f(x)\in U(A,\epsilon)
@@ -331,4 +331,42 @@ Poznámky:
         \forall\epsilon>0~\exists\delta>0:\forall x\in P(x_0,\delta):\abs{f(x)-A}<\epsilon \\
         \abs{f(x)-A}<\epsilon \Leftrightarrow f(x)\in U(A,\epsilon)
     \end{gather}
+\end{proof}
+
+\begin{lemma}[name=Chování funkce v okolí limity, label=L-limitNeighbourhood]\noindent
+% \begin{lemma}[Chování funkce v okolí limity]\noindent\label{L-limitNeighbourhood}
+    \begin{enumerate}
+        \item Nechť $f$ má v $x_0\in\mathbb{R}$ limitu $A\in\mathbb{R}$. Pak existuje
+            $P(x_0)$ takové, že $f$ je na $P(x_0)$ omezená. Tj.
+            \begin{equation}\label{L-limitNeighbourhood-247}
+                \exists\delta>0\exists K>0:\forall x\in P(x_O,\delta): \abs{f(x)}<K
+            \end{equation}
+        \item Nechť $f$ má v $x_0\in\mathbb{R}$ limitu $A\neq 0$, pak
+            \begin{equation}\label{L-limitNeighbourhood-248}
+                \exists\Delta>0\exists\delta>0:\forall x\in P(x_O,\delta): \abs{f(x)}>\Delta
+            \end{equation}
+    \end{enumerate}
+\end{lemma}
+\begin{proof}\noindent
+    \begin{enumerate}
+        \item Volím $\epsilon=1$ v definici limity. Pak
+            \begin{equation}
+                \exists\delta>0:\forall x\in P(x_0,\delta): A-1<f(x)<A+1
+            \end{equation}
+            tj. $f(x)\in U(x_0,\delta)$. Stačí volit $K=max(\abs{A-1},\abs{A+1})$. pak
+            \begin{equation}
+                \forall x\in P(x_0,\delta):-K<leq A-1<f(x)<A+1\leq K
+            \end{equation}
+        \item $A\neq 0$, předpokládejme $A>0$ ($A<0$ podobně)
+        \begin{gather}
+            \begin{alignat}{1}
+                \text{dle \autoref{T-hausedorf}} &\quad\exists\epsilon>0:
+                    U(A,\epsilon)\cap U(0,\epsilon)=\varnothing \\
+                \text{z \autoref{D-limit}} &\quad\exists\delta>0:
+                    \forall x\in P(x_0,\delta):f(x)\in U(A,\epsilon) \\
+                \text{mám $\delta>0$ a volím } &\quad\Delta=\epsilon/2 
+            \end{alignat}\\
+            \forall x\in P(0,\delta):f(x)\in U(A,\epsilon)
+        \end{gather}    
+    \end{enumerate}
 \end{proof}

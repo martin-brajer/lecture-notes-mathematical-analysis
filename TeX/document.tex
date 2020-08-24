@@ -17,7 +17,6 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[czech]{babel}
-
 %% Other packages
 \usepackage{graphicx}
 \usepackage{enumerate}  % http://ctan.org/pkg/enumerate
@@ -105,10 +104,7 @@
 
 
 %% Theorem settings.
-% Use when labeling theorems when enumerate closely follows!
-% For details, see  https://tex.stackexchange.com/a/193105/113813
-\newcommand{\labelTheo}[1]{\noindent\label{#1}}
-
+% Theorems numbered by letters are unnumbered in my lecture notes.
 \declaretheorem[numberwithin=chapter, name=Definice]{definition}
 \declaretheorem[name=Definice]{definitionAi}
 \renewcommand*{\thedefinitionAi}{A\arabic{definitionAi}}
@@ -125,6 +121,23 @@
 
 \renewcommand\qedsymbol{QED}
 % \renewcommand\qedsymbol{$\bot$}
+
+%% Change how \autoref prints the references.
+\addto\extrasczech{  % Same as babel package language.
+\def\definitionautorefname{D}
+\def\definitionAiautorefname{D}
+%
+\def\lemmaautorefname{L}
+\def\lemmaAlphautorefname{L}
+%
+\def\theoremautorefname{V}
+\def\theoremAlphautorefname{V}
+%
+\def\exampleautorefname{P}
+%
+\def\itemautorefname{bod}
+\def\equationautorefname{Eq}
+}
 
 
 %% Itemize settings.
