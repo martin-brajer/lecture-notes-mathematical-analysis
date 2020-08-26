@@ -83,10 +83,10 @@ O čem budou výroky? O definovaných pojmech:
 
 \begin{theoremAlph}[Reálná čísla]
 	Existuje množina $\mathbb{R}$ s operacemi $\oplus$ a $\otimes$ a relací $<$ tak,
-		že splňuje vlastnosti \autoref{D-A1} až \autoref{D-A4}.
+	že splňuje vlastnosti \autoref{D-A1} až \autoref{D-A4}.
 \end{theoremAlph}
 
-\begin{definitionAi}[Algebraická struktura]\noindent\label{D-A1}
+\begin{definitionAi}[name=Algebraická struktura, label=D-A1]\noindent
 	\begin{enumerate}[I]
 		\item Komutativita: $\forall x, y \in \mathbb{R}: x + y = y + x;~x\cdot y = y\cdot x$
 		\item Asociativita: $\forall x, y, z \in \mathbb{R}: x + (y + z) = (x + y) + z;
@@ -134,7 +134,7 @@ Ověřte, že \autoref{D-A1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 	Lze zapisovat $z\in \mathbb{C}$, $z = (z_1, z_2)$, ozn. $z = z_1 + iz_2$ pro $i^2 = -1$.
 \end{example}
-\begin{definitionAi}[Uspořádání]\noindent\label{D-A2}
+\begin{definitionAi}[name=Uspořádání, label=D-A2]\noindent
 	\begin{enumerate}[I]
 		\item Relace: $\forall x, y \in \mathbb{R}$ nastane právě jedna z možností: \\
 		$(x<y)$ nebo $(x>y)$ nebo $(x=y)$
@@ -227,20 +227,19 @@ Intervaly:
 	\]
 \end{definition}
 
-\begin{lemma}[Vlastnosti absolutní hodnoty]\label{L-abs}
-	Nechť $a>0$, pak $\abs{x}<a$ právě \\
-	když $-a<x<a$
+\begin{lemma}[name=Vlastnosti absolutní hodnoty, label=L-abs]
+	Nechť $a>0$, pak $\abs{x}<a$ právě \\ když $-a<x<a$
 \end{lemma}
 \begin{proof}Podle znaménka $x$:
 	\begin{enumerate}
 		\item\label{L-abs-P1} Ať $x\geq 0$ pak $\abs{x}=x$ a máme ukázat, že $x<a \Leftrightarrow -a<x<a$ \\
-		"$\Leftarrow$" jasná | "$\Rightarrow$" víme $-a<0\leq x<a$
+			"$\Leftarrow$" jasná | "$\Rightarrow$" víme $-a<0\leq x<a$
 		\item Ať $x<0$, pak $\abs{x} = -x$ a máme ukázat, že $-x<a \Leftrightarrow -a<x<a$ \\
-		$x>-a$ pak pokračujeme podobně jako v \hyperref[L-abs-P1]{bodě 1}.: $-a<x<0<a$
+			$x>-a$ pak pokračujeme podobně jako v \hyperref[L-abs-P1]{bodě 1}.: $-a<x<0<a$
 	\end{enumerate}
 \end{proof}
 
-\begin{theorem}[Trojúhelníková nerovnost]\label{T-triangleInequality}
+\begin{theorem}[name=Trojúhelníková nerovnost, label=T-triangleInequality]
 	\begin{alignat}{1}
 		\abs{x+y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-1} \\
 		\abs{x-y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-2} \\
@@ -267,10 +266,10 @@ Intervaly:
 	Nechť $M\subset\mathbb{R}$
 	\begin{itemize}
 		\item $x\in M$ nazveme maximum $M$, pokud $\forall y\in M: y\leq x$ \\
-		Ozn. $x=max~M$ \\
-		Př.: $(0,1)$ nemá max
+			Ozn. $x=max~M$ \\
+			Př.: $(0,1)$ nemá max
 		\item $K\in\mathbb{R}$ nazveme horní odhad $M$, pokud $\forall x\in M: x\leq K$ \\
-		Př.: $(0,1)$ má horní odhad 4, 1, \dots
+			Př.: $(0,1)$ má horní odhad 4, 1, \dots
 	\end{itemize}
 \end{definition}
 
@@ -289,7 +288,7 @@ Intervaly:
 
 Pozn.: analogicky def. minimum a dolní odhad.
 
-\begin{definition}[Supremum]\label{D-supremum}
+\begin{definition}[name=Supremum, label=D-supremum]
 	Číslo $s\in\mathbb{R}$ nazvu supremem množiny $M\subset\mathbb{R}$, pokud
 	\begin{enumerate}[I]
 		\item\label{D-supremum-1} $\forall x\in M: x\leq s$
@@ -313,12 +312,12 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 	Infimum $M$ značíme $s=inf~M$
 \end{definition}
 
-\begin{definitionAi}[Supremum a infimum]\label{D-A3}
+\begin{definitionAi}[name=Supremum a infimum, label=D-A3]
 	Každá neprázdná shora omezená $M\subset\mathbb{R}$ má supremum v $\mathbb{R}$.
 	Každá neprázdná zdola omezená $M\subset\mathbb{R}$ má infimum v $\mathbb{R}$.
 \end{definitionAi}
 
-\begin{definition}[Odmocnina]\noindent\label{D-sqrt}
+\begin{definition}[name=Odmocnina, label=D-sqrt]\noindent
 	\begin{enumerate}
 		\item Nechť $a>0$ a $n$ sudé, $n\in\mathbb{N}$, pak existuje právě jedno číslo $b>0: b^n=a$
 		\item Nechť $a>0$ a $n$ liché, $n\in\mathbb{N}$, pak existuje právě jedno číslo $b\in\mathbb{R}: b^n=a$
@@ -326,7 +325,7 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 	Značení: $b=\sqrt[n]{a}$
 \end{definition}
 
-\begin{lemmaAlph}[Čtverec dělitelný třema]\label{L-divisibilityByThree}
+\begin{lemmaAlph}[name=Čtverec dělitelný třema, label=L-divisibilityByThree]
 	$k^2 \text{ je dělitelné }3\Rightarrow k \text{ je děl. }3$
 \end{lemmaAlph}
 \begin{proof}
@@ -355,15 +354,15 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 	Což je spor, protože $k$, $l$ jsou nesoudělná.
 \end{proof}
 
-\begin{definitionAi}[Vlastnosti \texorpdfstring{$\mathbb{N}$}{N}]\noindent\label{D-A4}
+\begin{definitionAi}[name=Vlastnosti \texorpdfstring{$\mathbb{N}$}{N}, label=D-A4]\noindent
 	\begin{enumerate}[I]
 		\item\label{D-A4-1} $\forall x\in\mathbb{R}\exists n\in\mathbb{N}: x<n$
 		\item Princip indukce: nechť $M\subset\mathbb{N}$ a
-		\begin{enumerate}
-			\item $1\in M$
-			\item $n\in M \Rightarrow n+1\in M$
-		\end{enumerate}
-		Pak $m=\mathbb{N}$
+			\begin{enumerate}
+				\item $1\in M$
+				\item $n\in M \Rightarrow n+1\in M$
+			\end{enumerate}
+			Pak $m=\mathbb{N}$
 	\end{enumerate}
 \end{definitionAi}
 
@@ -378,7 +377,7 @@ Pozn.: Archimédova vlastnost:
 \end{proof}
 
 \begin{theorem}[Velikost intervalu]
-Každý otevřený interval obsahuje nekonečně \\ racionálních i nekonečně iracionálních čísel.
+Každý otevřený interval obsahuje nekonečně racionálních i nekonečně iracionálních čísel.
 \end{theorem}
 \begin{proof}
 	Ve zkratce:
@@ -409,8 +408,7 @@ Každý otevřený interval obsahuje nekonečně \\ racionálních i nekonečně
 
 	Tvrdíme: $s\in M$:
 
-	Podle \hyperref[D-supremum-2]{druhé vlastnosti suprema}: $\forall s'<s~\exists n\in M:s'<n$ \\
-	% Podle \autoref*{D-supremum}-\autoref{D-supremum-2}: $\forall s'<s~\exists n\in M:s'<n$ \\
+	Podle \autoref*{D-supremum}-\autoref{D-supremum-2}: $\forall s'<s~\exists n\in M:s'<n$ \\
 	Volím $s'\in\left(s-\frac{1}{2},s\right)$, pak $\exists n'\in M: s'<n'$. Zafixuji $n'$ a tvrdím:
 	\begin{equation}\label{T-intervalSize-P-144}
 		\forall s'\in (s-\frac{1}{2},s): s'<n'\leq s
@@ -432,6 +430,6 @@ Každý otevřený interval obsahuje nekonečně \\ racionálních i nekonečně
 	\end{alignat}
 	Tedy:
 	\begin{alignat}{1}
-		n',n'' \in (s-\frac{1}{2},s]\cap\mathbb{Z}\Rightarrow n'=n''
+		n',n'' \in \left(s-\frac{1}{2},s\right]\cap\mathbb{Z}\Rightarrow n'=n''
 	\end{alignat}
 \end{proof}

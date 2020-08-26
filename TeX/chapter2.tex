@@ -6,14 +6,14 @@ Funkce z $M$ do $N$ je předpis, který každému prvku $M$ přiřadí nejvýše
     \item $B\subset M:f^{-1}(B)=\left\{x\in M: f(x)\in B\right\}\subset M$
 \end{itemize}
 
-\begin{definition}[Prostá funkce, injekce, monomorfismus]\label{D-injection}
+\begin{definition}[name={Prostá funkce, injekce, monomorfismus}, label=D-injection]
     Funkce je \textbf{prostá}, pokud
     \begin{equation}
         x\neq y \Rightarrow f(x)\neq f(y)
     \end{equation}
 \end{definition}
 
-\begin{definition}[Na funkce, surjekce, epimorfismus]\label{D-surjection}
+\begin{definition}[name={Na funkce, surjekce, epimorfismus}, label=D-surjection]
     Funkce $f:M\rightarrow N$ je \textbf{na} (zobrazuje $M$ na $N$), pokud
     \begin{equation}
         \forall n\in\mathbb{N}~\exists m\in M: f(m)=n
@@ -34,8 +34,9 @@ Funkce z $M$ do $N$ je předpis, který každému prvku $M$ přiřadí nejvýše
     \end{alignat}
 \end{definition}
 
-\begin{definition}[Vzájemně jednoznačné zobrazení, bijekce , isomorfismus]\label{D-bijection}
-    Je-li $f:M\rightarrow N$ \hyperref[D-injection]{prostá} a \hyperref[D-surjection]{na} říkáme, že je vzájemně jednoznačná
+\begin{definition}[name={Vzájemně jednoznačné zobrazení, bijekce , isomorfismus}, label=D-bijection]
+    Je-li $f:M\rightarrow N$ \hyperref[D-injection]{prostá} a \hyperref[D-surjection]{na}
+    říkáme, že je vzájemně jednoznačná
 \end{definition}
 
 Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverzní funkci:
@@ -43,11 +44,11 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     f_{-1}:N\rightarrow M; y\in N\rightarrow \text{jediné }x\in M: f(x)=y
 \end{equation}
 \[
-\textbf{Pozor!}
-\begin{cases}
-    f^{-1} \quad\text{pro každou hodnotu zvlášť, je to množina} \\
-    f_{-1} \quad\text{inverzní funkce}
-\end{cases}
+    \textbf{Pozor!}
+    \begin{cases}
+        f^{-1} \quad\text{pro každou hodnotu zvlášť, je to množina} \\
+        f_{-1} \quad\text{inverzní funkce}
+    \end{cases}
 \]
 
 \begin{definition}[Restrikce, zúžení]
@@ -55,11 +56,11 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
 \end{definition}
 \begin{example}
     $\varphi(x)=x^2: \varphi|_{[0,+\infty)}$ zobrazuje $[0,+\infty)$ na $[0,+\infty)$ vzájemně
-        jednoznačně. Lze tedy definovat $\varphi_{-1}=(\varphi|_{[0,+\infty)})_{-1}(x)=\sqrt{x}$
+    jednoznačně. Lze tedy definovat $\varphi_{-1}=(\varphi|_{[0,+\infty)})_{-1}(x)=\sqrt{x}$
 \end{example}    
         
 \begin{definition}[Složená funkce, superpozice]
-    Pro $M,N,K$ množiny a \\$f:M\rightarrow N; g:N\rightarrow K$ funkce definujeme složenou funkci
+    Pro $M,N,K$ množiny a \\ $f:M\rightarrow N; g:N\rightarrow K$ funkce definujeme složenou funkci
     \begin{alignat}{2}
         &g\circ f: M\rightarrow K &&\quad M\xrightarrow{f}N\xrightarrow{g}K \\
         &x\in M \rightarrow \left(g(f(x))\right) &&\quad x\rightarrow f(x)\rightarrow\left(g(f(x))\right)
@@ -81,7 +82,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \end{equation*}
 \end{example}
 
-\begin{definition}[Monotónost funkce]\label{D-monotonic}
+\begin{definition}[name=Monotónost funkce, label=D-monotonic]
     Nechť $f:\mathbb{R}\rightarrow\mathbb{R}$; $M\subset D(f)$. Řeknu, že $f$
     \[
         \text{je}\left.
@@ -111,7 +112,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \end{figure}\FloatBarrier
 \end{definition}
 
-\begin{definition}[Omezenost funkce]\label{D-bounded}
+\begin{definition}[name=Omezenost funkce, label=D-bounded]
     Řekněme, že $f$
     \[
         \text{je}\left.
@@ -130,7 +131,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \]
 \end{definition}
 
-\begin{definition}[Symetrie funkce]\label{D-symetry}
+\begin{definition}[name=Symetrie funkce, label=D-symetry]
     Řekněme, že $f$
     \begin{alignat}{1}
         \text{je}\left.
@@ -157,12 +158,12 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
 \end{definition}
 
 Budeme zkoumat: $f:\mathbb{R}\rightarrow\mathbb{R}$ nebo $f:\mathbb{R}\rightarrow\mathbb{C}$.
-    Druhou variantu chápeme jako:
+Druhou variantu chápeme jako:
 \begin{equation}
     f=f_1+if_2;~f_1,f_2:\mathbb{R}\rightarrow\mathbb{R}
 \end{equation}
 
-\begin{definition}[Okolí]\label{D-neighbourhood}
+\begin{definition}[name=Okolí, label=D-neighbourhood]
     Nechť $x_0\mathbb{R}, \delta\in(0,\infty)$
     \begin{itemize}
         \item kruhové okolí\quad $U(x_0,\delta):=(x_0-\delta, x_0+\delta)=
@@ -171,7 +172,7 @@ Budeme zkoumat: $f:\mathbb{R}\rightarrow\mathbb{R}$ nebo $f:\mathbb{R}\rightarro
         \item prstencové okolí\quad $P(x_0,\delta):=U(x_0,\delta)-\left\{x_0\right\}$
         \item pravé kruhové okolí\quad $U_+(x_0,\delta):=\left[x_0,x_0+\delta\right)$
         \item obdobně definujeme \textbf{levé kruhové okolí}, \textbf{pravé prstencové okolí} \\
-        a \textbf{levé prstencové okolí}
+            a \textbf{levé prstencové okolí}
     \end{itemize}
 \end{definition}
 
@@ -179,10 +180,10 @@ Poznámky:
 \begin{itemize}
     \item Pro $0<\delta_1<\delta_2\Rightarrow U(x_0,\delta_1)\subset U(x_0,\delta_2)$
     \item Budeme psát: „na jistém $U(x_0)$ platí\dots“, což znamená \\
-    $\exists\delta>0:\forall x\in U(x_0,\delta)$ platí\dots
+        $\exists\delta>0:\forall x\in U(x_0,\delta)$ platí\dots
 \end{itemize}
 
-\begin{theorem}[Hausedorfův princip oddělení]\label{T-hausedorf}
+\begin{theorem}[name=Hausedorfův princip oddělení, label=T-hausedorf]
     Nechť $x_1,x_2\in\mathbb{R};~ x_1\neq x_2$, pak \\
     $\exists\delta>0$ tak, že $U(x_1,\delta)\cap U(x_2,\delta)=\varnothing$
 
@@ -200,13 +201,12 @@ Poznámky:
     Tedy $\abs{x_1-x_2} < \abs{x_1-x_2}$, což je spor.
 \end{proof}
 
-\begin{definition}[Limita]\label{D-limit}
+\begin{definition}[name=Limita, label=D-limit]
     Nechť $x_0\in\mathbb{R}$ a $f$ je fce def na jistém $P(x_0)$
 
     Číslo $A\in\mathbb{R}$ nazvu limitou $f$ v $x_0$, pokud
     \begin{equation}\label{D-limit-215}
-        \forall\epsilon>0~\exists\delta>0: x\in P(x_0,\delta) \Rightarrow
-            f(x)\in U(A,\epsilon)
+        \forall\epsilon>0~\exists\delta>0: x\in P(x_0,\delta) \Rightarrow f(x)\in U(A,\epsilon)
     \end{equation}
     
     Značení:
@@ -217,18 +217,17 @@ Poznámky:
 \end{definition}
 
 Terminologie: pokud existuje $\lim_{x \to x_0}f(x)\in\mathbb{R}$ říkáme, že $f$
-    má vlastní limitu ve vlastním bodě
-
+má vlastní limitu ve vlastním bodě
 
 Poznámky:
 \begin{itemize}
     \item Limita závisí na $f$ v okolí $x_0$
     \item Jiné zápisy \autoref{D-limit-215}
-    \begin{alignat}{1}
-        \forall\epsilon>0~\exists\delta>0&:f(P(x_0,\delta))\subset U(A,\epsilon) \\
-        \forall\epsilon>0~\exists\delta>0&:\forall x\in\mathbb{R}:
-            \left[0<\abs{x-x_0}<\delta \Rightarrow\abs{f(x)-A}<\epsilon\right]
-    \end{alignat}
+        \begin{alignat}{1}
+            \forall\epsilon>0~\exists\delta>0&:f(P(x_0,\delta))\subset U(A,\epsilon) \\
+            \forall\epsilon>0~\exists\delta>0&:\forall x\in\mathbb{R}:
+                \left[0<\abs{x-x_0}<\delta \Rightarrow\abs{f(x)-A}<\epsilon\right]
+        \end{alignat}
 \end{itemize}
 
 \begin{theoremAlph}[Jednoznačnost limity]
@@ -274,7 +273,7 @@ Poznámky:
 
 \begin{definition}[Jednostranné limity]
     Nechť $x_0\in\mathbb{R}$, $f$ definovaná na jistém $P_+(x_0)$ (resp. $P_-(x_0)$). Pak
-        číslo $A$ nazvu limitou $f$ v bodě $x_0$ zprava (zleva), pokud:
+    číslo $A$ nazvu limitou $f$ v bodě $x_0$ zprava (zleva), pokud:
     \begin{equation}
         \forall\epsilon>0~\exists\delta>0:\forall x\in P_{+(-)}(x_0,\delta):f(x)\in U(A,\epsilon)
     \end{equation}
@@ -295,7 +294,7 @@ Poznámky:
 
 \begin{theorem}[Jednostranné vs oboustranná limita]
     Buď $x_0\in\mathbb{R}$, $f$ definovaná na jistém $P(x_0,\delta)$, pak následující
-        tvrzení jsou ekvivalentní
+    tvrzení jsou ekvivalentní
     \begin{alignat}{1}
         \lim_{x\to x_0}&=A \label{T-1v2limit-241}\\
         \lim_{x\to x_0+}&=A \land \lim_{x\to x_0-}=A \label{T-1v2limit-242}
@@ -305,13 +304,13 @@ Poznámky:
     \autoref{T-1v2limit-241} $\Rightarrow$ \autoref{T-1v2limit-242} triviální
     
     \autoref{T-1v2limit-242} $\Rightarrow$ \autoref{T-1v2limit-241} volím $\epsilon>0$,
-        podle \autoref{T-1v2limit-242}
+    podle \autoref{T-1v2limit-242}
     \begin{gather}
         \exists\delta_1>0:\forall x\in P_+(x_0,\delta_1):f(x)\in U(A,\epsilon) \\
         \exists\delta_2>0:\forall x\in P_-(x_0,\delta_1):f(x)\in U(A,\epsilon)
     \end{gather}
     volím $\delta=min(\delta_1, \delta_2)$ (protože
-        $P(x_0,\delta)\subset P(x_0,\delta_1)\cup P(x_0,\delta_2)$)
+    $P(x_0,\delta)\subset P(x_0,\delta_1)\cup P(x_0,\delta_2)$)
     
     Potom $P(x_0,\delta):f(x)\in U(A,\epsilon)$
 \end{proof}
@@ -334,7 +333,6 @@ Poznámky:
 \end{proof}
 
 \begin{lemma}[name=Chování funkce v okolí limity, label=L-limitNeighbourhood]\noindent
-% \begin{lemma}[Chování funkce v okolí limity]\noindent\label{L-limitNeighbourhood}
     \begin{enumerate}
         \item Nechť $f$ má v $x_0\in\mathbb{R}$ limitu $A\in\mathbb{R}$. Pak existuje
             $P(x_0)$ takové, že $f$ je na $P(x_0)$ omezená. Tj.
@@ -366,7 +364,14 @@ Poznámky:
                     \forall x\in P(x_0,\delta):f(x)\in U(A,\epsilon) \\
                 \text{mám $\delta>0$ a volím } &\quad\Delta=\epsilon/2 
             \end{alignat}\\
-            \forall x\in P(0,\delta):f(x)\in U(A,\epsilon)
+            \forall x\in P(x_0,\delta):f(x)\in U(A,\epsilon) \\
+            U(A,\epsilon)\cap U(0,\epsilon)=\varnothing \\
+            \abs{f(x)-0}\geq\epsilon>\Delta
         \end{gather}    
     \end{enumerate}
 \end{proof}
+
+\begin{lemma}[Limita součinu]
+    Buďte $f$, $g$ definované na jistém $P(x_0)$, $f$ omezená na $P(x_0)$ a
+
+\end{lemma}
