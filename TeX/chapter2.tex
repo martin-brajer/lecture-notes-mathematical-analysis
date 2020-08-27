@@ -190,7 +190,7 @@ Poznámky:
     Speciálně: $x_1\notin U(x_2,\delta);~x_2\notin U(x_1,\delta)$
 \end{theorem}
 \begin{proof}
-    Volím $\delta=\frac{\abs{x_1-x_2}}{2}$. Tvrdím, že $U(x_1,\delta)\cap U(x_2,\delta)=\varnothing$
+    Volme $\delta=\frac{\abs{x_1-x_2}}{2}$. Tvrdím, že $U(x_1,\delta)\cap U(x_2,\delta)=\varnothing$
 
     Sporem: ať $\exists y\in U(x_1,\delta)\cap U(x_2,\delta)$, pak
     \begin{gather}
@@ -303,13 +303,13 @@ Poznámky:
 \begin{proof}
     \autoref{T-1v2limit-241} $\Rightarrow$ \autoref{T-1v2limit-242} triviální
     
-    \autoref{T-1v2limit-242} $\Rightarrow$ \autoref{T-1v2limit-241} volím $\epsilon>0$,
+    \autoref{T-1v2limit-242} $\Rightarrow$ \autoref{T-1v2limit-241} volme $\epsilon>0$,
     podle \autoref{T-1v2limit-242}
     \begin{gather}
         \exists\delta_1>0:\forall x\in P_+(x_0,\delta_1):f(x)\in U(A,\epsilon) \\
         \exists\delta_2>0:\forall x\in P_-(x_0,\delta_1):f(x)\in U(A,\epsilon)
     \end{gather}
-    volím $\delta=min(\delta_1, \delta_2)$ (protože
+    volme $\delta=min(\delta_1, \delta_2)$ (protože
     $P(x_0,\delta)\subset P(x_0,\delta_1)\cup P(x_0,\delta_2)$)
     
     Potom $P(x_0,\delta):f(x)\in U(A,\epsilon)$
@@ -318,7 +318,7 @@ Poznámky:
     Neexistuje $\lim_{x\to 0}sgn(x)$
 \end{example}
 
-\begin{theoremAlph}[Ekvivalentní limity]
+\begin{theoremAlph}[name=Ekvivalentní limity, label=T-equivalentLimits]
     Buď $x_0\in\mathbb{R}$, $f$ definovaná na jistém $P(x_0)$. Pak
     \begin{equation}
         \lim_{x\to x_0}f(x)=A \Leftrightarrow \lim_{x\to x_0}f(x)-A=0
@@ -347,7 +347,7 @@ Poznámky:
 \end{lemma}
 \begin{proof}\noindent
     \begin{enumerate}
-        \item Volím $\epsilon=1$ v definici limity. Pak
+        \item Volme $\epsilon=1$ v definici limity. Pak
             \begin{equation}
                 \exists\delta>0:\forall x\in P(x_0,\delta): A-1<f(x)<A+1
             \end{equation}
@@ -362,7 +362,7 @@ Poznámky:
                     U(A,\epsilon)\cap U(0,\epsilon)=\varnothing \\
                 \text{z \autoref{D-limit}} &\quad\exists\delta>0:
                     \forall x\in P(x_0,\delta):f(x)\in U(A,\epsilon) \\
-                \text{mám $\delta>0$ a volím } &\quad\Delta=\epsilon/2 
+                \text{máme $\delta>0$ a volíme } &\quad\Delta=\epsilon/2 
             \end{alignat}\\
             \forall x\in P(x_0,\delta):f(x)\in U(A,\epsilon) \\
             U(A,\epsilon)\cap U(0,\epsilon)=\varnothing \\
@@ -371,7 +371,106 @@ Poznámky:
     \end{enumerate}
 \end{proof}
 
-\begin{lemma}[Limita součinu]
+\begin{lemma}[name=Limita součinu, label=T-limitMultiplication]
     Buďte $f$, $g$ definované na jistém $P(x_0)$, $f$ omezená na $P(x_0)$ a
-
+    $\lim_{x\to x_0}g(x)=0$. Pak
+    \begin{equation}
+        \lim_{x\to x_0}f(x)g(x)=0
+    \end{equation}
 \end{lemma}
+\begin{proof}
+    Volme $\epsilon>0$ libovolné. Vím
+    \begin{alignat}{1}
+        \exists\delta_1>0,K>0: &\forall x\in P(x_0,\delta_1): \abs{f(X)}<K 
+            \label{T-limitMultiplication-P-258} \\
+        \exists\delta_2>0: &\forall x\in P(x_0,\delta_2): \abs{g(X)}<\epsilon/K
+            \label{T-limitMultiplication-P-259}
+    \end{alignat}
+    Chci součin odhadnout epsilonem
+    \begin{equation}
+        \abs{f(x)g(x)}<K\abs{g(x)}<\epsilon
+    \end{equation}
+    Volme $\delta=min(\delta_1,\delta_2)$. Potom platí
+    \begin{equation}
+        \forall x\in P(x_0,\delta):
+            \abs{f(x)g(x)}\overset{\autoref{T-limitMultiplication-P-258}}{<}
+            K\abs{g(x)}\overset{\autoref{T-limitMultiplication-P-259}}{<}K\frac{\epsilon}{K}
+            =\epsilon
+    \end{equation}
+    Tzn. $f(x)g(x)\in U(0,\epsilon)$
+\end{proof}
+\begin{example}\noindent
+    \begin{enumerate}
+        \item $\lim_{x\to 0}sgn(x)x^2=0$, protože $\lim_{x\to 0}x^2=0$ (z definice)
+            a $\abs{sgn(x)}\leq 1$.
+            
+            Pozor: $\lim_{x\to 0}sgn(x)$ neexistuje!
+        \item $\lim_{x\to 0}x~sin(1/x)=0$ 
+    \end{enumerate}
+    \begin{figure}[ht!]
+        \begin{center}
+            \includegraphics[width=0.4\textwidth,keepaspectratio]{../img/chapter2/limitMultiplication.png}
+            \caption{Graph of the function $x~sin(1/x)$.}
+        \end{center}
+    \end{figure}\FloatBarrier
+\end{example}
+
+\begin{theorem}[name=Aritmetika limit, label=T-limitArithmetic]
+    Nechť $x_0\in\mathbb{R}$, $A,B\in\mathbb{R}:$ $\lim_{x\to x_0}f(x)=A$,
+    $\lim_{x\to x_0}g(x)=B$. Pak platí
+    \begin{alignat}{1}
+        \lim_{x\to x_0}\left(f(x)\pm g(x)\right) &= A\pm B \label{T-limitArithmetic-addition} \\
+        \lim_{x\to x_0}\left(f(x)g(x)\right) &= AB \label{T-limitArithmetic-multiplication} \\
+        \text{je-li navíc $B\neq 0$ }\quad \lim_{x\to x_0}\left(\frac{f(x)}{g(x)}\right)
+            &= \frac{A}{B} \label{T-limitArithmetic-division}
+    \end{alignat}
+\end{theorem}
+\begin{proof}\noindent
+    \begin{enumerate}
+        \item \autoref{T-limitArithmetic-addition} pro $\oplus$ ($\ominus$ obdobně).
+        
+            Chceme
+            \begin{equation}
+                \forall\epsilon>0\exists\delta>0: \forall x\in P(x_0,\delta):
+                    f(x)+g(x)\in U(A+B,\epsilon)
+            \end{equation}
+            Víme
+            \begin{alignat}{4}
+                &\forall\epsilon'>0&\exists\delta'>0: &\forall x\in P(x_0,\delta'):
+                    ~&f(x)\in U(A,\epsilon') \label{T-limitArithmetic-P-266} \\
+                &\forall\epsilon''>0&\exists\delta''>0: &\forall x\in P(x_0,\delta''):
+                    ~&g(x)\in U(B,\epsilon'') \label{T-limitArithmetic-P-267}
+            \end{alignat}
+            Předběžně
+            \begin{equation}
+                \abs{f(x)+g(x)-A-B} \overset{\autoref{T-triangleInequality}}{\leq}
+                    \abs{f(x)-A} + \abs{g(x)-B}
+            \end{equation}
+            Fix $\epsilon>0$ libovolné.
+            
+            Z \autoref{T-limitArithmetic-P-266} s $\epsilon'=\epsilon/2$ dostanu $\delta'>0$
+            (takové, že platí zbytek \autoref{T-limitArithmetic-P-266})
+            
+            Z \autoref{T-limitArithmetic-P-267} s $\epsilon''=\epsilon/2$ dostanu $\delta''>0$
+            
+            Definujme $\delta=min(\delta',\delta'')$ (aby pro $\delta$ platily obe rovnice). Pak
+            \begin{equation}
+                \forall x\in P(x_0,\delta)\subset P(x_0,\delta')\cap P(x_0,\delta''):
+                    f(x)+g(x)\in U(A+B,\epsilon)
+            \end{equation}
+        \item Chci $f(x)g(x)-AB\rightarrow 0$ pro $x\rightarrow x_0$
+            \begin{equation}
+                f(x)g(x)\pm f(x)B-AB = f(x)(g(x)-B) + (f(x)-A)B
+            \end{equation}
+            \begin{itemize}
+                \item $f(x)$ je omezená na jistém $P(x_0)$ podle \autoref{L-limitNeighbourhood}
+                \item $(g(x)-B)\rightarrow 0$ podle \autoref{T-equivalentLimits}
+                \item $f(x)(g(x)-B)\rightarrow 0$ podle \autoref{T-limitMultiplication}
+                    a prvních dvou bodů
+                \item obdobně $(f(x)-A)B\rightarrow 0$ (konstanta $B$ je omezená funkce)
+                \item a tedy celá pravá strana $\rightarrow 0$ podle
+                    \autoref*{T-limitArithmetic}-\autoref{T-limitArithmetic-addition}
+            \end{itemize}
+        \item Ukážu
+    \end{enumerate}
+\end{proof}
