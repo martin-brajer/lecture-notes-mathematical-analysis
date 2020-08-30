@@ -336,11 +336,13 @@ Poznámky:
     \begin{enumerate}
         \item Nechť $f$ má v $x_0\in\mathbb{R}$ limitu $A\in\mathbb{R}$. Pak existuje
             $P(x_0)$ takové, že $f$ je na $P(x_0)$ omezená. Tj.
-            \begin{equation}\label{L-limitNeighbourhood-247}
+            \label{L-limitNeighbourhood-bounded}
+            \begin{equation}
                 \exists\delta>0\exists K>0:\forall x\in P(x_O,\delta): \abs{f(x)}<K
             \end{equation}
         \item Nechť $f$ má v $x_0\in\mathbb{R}$ limitu $A\neq 0$, pak
-            \begin{equation}\label{L-limitNeighbourhood-248}
+            \label{L-limitNeighbourhood-nonzero}
+            \begin{equation}
                 \exists\Delta>0\exists\delta>0:\forall x\in P(x_O,\delta): \abs{f(x)}>\Delta
             \end{equation}
     \end{enumerate}
@@ -371,7 +373,7 @@ Poznámky:
     \end{enumerate}
 \end{proof}
 
-\begin{lemma}[name=Limita součinu, label=T-limitMultiplication]
+\begin{lemma}[name=Limita součinu, label=L-limitMultiplication]
     Buďte $f$, $g$ definované na jistém $P(x_0)$, $f$ omezená na $P(x_0)$ a
     $\lim_{x\to x_0}g(x)=0$. Pak
     \begin{equation}
@@ -382,9 +384,9 @@ Poznámky:
     Volme $\epsilon>0$ libovolné. Vím
     \begin{alignat}{1}
         \exists\delta_1>0,K>0: &\forall x\in P(x_0,\delta_1): \abs{f(X)}<K 
-            \label{T-limitMultiplication-P-258} \\
+            \label{L-limitMultiplication-P-258} \\
         \exists\delta_2>0: &\forall x\in P(x_0,\delta_2): \abs{g(X)}<\epsilon/K
-            \label{T-limitMultiplication-P-259}
+            \label{L-limitMultiplication-P-259}
     \end{alignat}
     Chci součin odhadnout epsilonem
     \begin{equation}
@@ -393,8 +395,8 @@ Poznámky:
     Volme $\delta=min(\delta_1,\delta_2)$. Potom platí
     \begin{equation}
         \forall x\in P(x_0,\delta):
-            \abs{f(x)g(x)}\overset{\autoref{T-limitMultiplication-P-258}}{<}
-            K\abs{g(x)}\overset{\autoref{T-limitMultiplication-P-259}}{<}K\frac{\epsilon}{K}
+            \abs{f(x)g(x)}\overset{\autoref{L-limitMultiplication-P-258}}{<}
+            K\abs{g(x)}\overset{\autoref{L-limitMultiplication-P-259}}{<}K\frac{\epsilon}{K}
             =\epsilon
     \end{equation}
     Tzn. $f(x)g(x)\in U(0,\epsilon)$
@@ -410,7 +412,7 @@ Poznámky:
     \begin{figure}[ht!]
         \begin{center}
             \includegraphics[width=0.4\textwidth,keepaspectratio]{../img/chapter2/limitMultiplication.png}
-            \caption{Graph of the function $x~sin(1/x)$.}
+            \caption{Graf funkce $x~sin(1/x)$.}
         \end{center}
     \end{figure}\FloatBarrier
 \end{example}
@@ -465,12 +467,137 @@ Poznámky:
             \begin{itemize}
                 \item $f(x)$ je omezená na jistém $P(x_0)$ podle \autoref{L-limitNeighbourhood}
                 \item $(g(x)-B)\rightarrow 0$ podle \autoref{T-equivalentLimits}
-                \item $f(x)(g(x)-B)\rightarrow 0$ podle \autoref{T-limitMultiplication}
+                \item $f(x)(g(x)-B)\rightarrow 0$ podle \autoref{L-limitMultiplication}
                     a prvních dvou bodů
                 \item obdobně $(f(x)-A)B\rightarrow 0$ (konstanta $B$ je omezená funkce)
                 \item a tedy celá pravá strana $\rightarrow 0$ podle
-                    \autoref*{T-limitArithmetic}-\autoref{T-limitArithmetic-addition}
+                    \autoref*{T-limitArithmetic}:\autoref{T-limitArithmetic-addition}
             \end{itemize}
-        \item Ukážu $1/g(x)\rightarrow 1/B$ pro $x\rightarrow x_0$
+        \item Ukážu $1/g(x)\rightarrow 1/B$ pro $x\rightarrow x_0$, respektive
+            \begin{gather}
+                \frac{1}{g(x)}-\frac{1}{B}\rightarrow 0\text{ pro } x\rightarrow x_0 \\
+                \frac{1}{g(x)}-\frac{1}{B} = (B-g(x))\frac{1}{Bg(x)}
+            \end{gather}
+            \begin{itemize}
+                \item $(B-g(x))\rightarrow 0$ podle \autoref{T-equivalentLimits}
+                \item $\exists\Delta>0:\abs{g(x)}>\Delta$ na jistém $P(x_0)$ podle
+                    \autoref{L-limitNeighbourhood}:\autoref{L-limitNeighbourhood-nonzero},
+                    protože $B\neq 0$
+                \item tedy $1/Bg(x)$ je omezená na jistém $P(x_0)$, protože
+                    $\abs{1/Bg(x)}<1/B\Delta$ (dá se odhadnout)
+                \item tedy celý výraz na pravé straně $\rightarrow 0$ podle
+                    \autoref{L-limitMultiplication}
+            \end{itemize}
     \end{enumerate}
 \end{proof}
+Pozn.: platí jednostranné verze \autoref{T-limitArithmetic}
+
+\begin{theorem}[O strážnících]
+    Buď $x_0, A\in\mathbb{R}$, (tiše předpokládám, že $f$, $g$, $h$ jsou definované na jistém $P(x_0)$)
+    \begin{gather}
+        \lim_{x\to x_0}f(x)=A \\
+        \lim_{x\to x_0}g(x)=A \\
+        \exists\delta>0:\forall x\in P(x_0,\delta):f(x)\leq h(x)\leq g(x)
+    \end{gather}
+    \begin{figure}[ht!]
+        \begin{center}
+            \includegraphics[width=\textwidth,keepaspectratio]{../img/chapter2/patrolmen.png}
+            \caption{Graf strážníků (černá a červená křivka) a sevřené funkce (modrá).}
+        \end{center}
+    \end{figure}\FloatBarrier
+\end{theorem}
+\begin{proof}
+    Z definice (zkusit také podle \autoref{L-limitMultiplication}). Chci
+    \begin{equation}
+        \forall\epsilon>0\exists\delta_1>0:\forall x\in P(x_0,\delta_1):h(x)\in U(A,\epsilon)
+    \end{equation}
+    Fixujme $\epsilon>0$
+    \begin{alignat}{1}
+        &\exists\delta_2>0:\forall x\in P(x_0,\delta_2):f(x)\in U(A,\epsilon)
+            \quad\text{speciálně }f(x)>A-\epsilon \\
+        &\exists\delta_3>0:\forall x\in P(x_0,\delta_3):g(x)\in U(A,\epsilon)
+            \quad\text{speciálně }g(x)<A+\epsilon \\
+        &\text{navíc }\exists\delta>0\forall x\in P(x_0,\delta):f(x)\leq h(x)\leq g(x)
+    \end{alignat}
+    Volím $\delta_1=min(\delta,\delta_2,\delta_3)$. Potom
+    \begin{equation}
+        \forall x\in P(x_0,\delta_1):A-\epsilon<f(x)\leq h(x)\leq g(x)<A+\epsilon
+    \end{equation}
+    neboli $h(x)\in U(A,\epsilon)$
+\end{proof}
+\begin{example}
+    Pro $h(x)=x^2sin(1/x)$, $g(x)=x^2$, $f(x)=-x^2$ spočtěte \\ $\lim_{x\to 0}h(x)$.
+    Tato limita se rovná nule, protože $f$ i $g$ se v nule blíží nule a zároveň $f\leq h\leq g$.
+\end{example}
+
+\begin{theorem}[Limita nerovností]
+    Nechť $x_0, A, B\in\mathbb{R}$, \\
+    $\lim_{x\to x_0}f(x)=A$, $\lim_{x\to x_0}g(x)=B$ Nechť
+    \begin{equation}
+        \exists\delta>0:\forall x\in P(x_0,\delta):f\leq g
+    \end{equation}
+    Pak $A\leq B$
+
+    \textbf{Varování!} Neplatí $f<g\implies A<B$. Například pro $x^2<x^4 \text{ pro }x\in P(0,1)$
+\end{theorem}
+\begin{proof}
+    Obměnou. Buď $A>B$. Dle \autoref{T-hausedorf}
+    \begin{gather}
+        \exists\epsilon>0:U(A,\epsilon)\cap U(B,\epsilon)=\varnothing \\
+        \text{speciálně }B<B+\epsilon<A-\epsilon<A
+    \end{gather}
+    Z definice limity \autoref{D-limit}
+    \begin{alignat}{1}
+        &\exists\delta_1>0:\forall x\in P(x_0,\delta_1):f(x)\in U(A,\epsilon)
+            \quad\text{speciálně }f(x)>A-\epsilon \\
+        &\exists\delta_2>0:\forall x\in P(x_0,\delta_2):g(x)\in U(B,\epsilon)
+            \quad\text{speciálně }g(x)<B+\epsilon \\
+    \end{alignat}
+    Definujme $\delta_3=min(\delta_1,\delta_2)$. Pak
+    \begin{equation}
+        \forall x\in P(x_0,\delta_3):g(x)<B+\epsilon\leq A-\epsilon<f(x)
+    \end{equation}
+\end{proof}
+
+\begin{theorem}[Monotonie a limita]
+    Je-li $f$ monotónní a omezená v intervalu $(a,b)$, $a,b\in\mathbb{R}$, $a<b$,
+    potom existují $\lim_{x\to a^+}f(x)$ a $\lim_{x\to b^-}f(x)$
+\end{theorem}
+\begin{proof}
+    Pouze pro neklesající $f$, $\lim_{x\to b^-}f(x)$. Ostatní d.ú.
+
+    Hlavní idea důkazu
+    \begin{equation}
+        \lim_{x\to b^-}f(x) = \sup_{x\in(a,b)}f(x)=s
+    \end{equation}
+    Toto supremum existuje, podle \autoref{D-A3} ($\left\{f(x),x\in(a,b)\right\}$
+    je omezená). Chceme
+    \begin{equation}
+        \forall\epsilon>0\exists\delta>0:\forall x\in P_-(b,\delta):s-\epsilon<f(x)<s+\epsilon
+    \end{equation}
+    Fixujme $\epsilon$. Pozorování (podle \autoref*{D-supremum}:\autoref{D-supremum-1})
+    \begin{equation}
+        \forall x\in(a,b):f(x)\leq s<s+\epsilon
+    \end{equation}
+    Podle \autoref*{D-supremum}:\autoref{D-supremum-2} $\exists x_1\in(a,b):f(x_1)\geq s-\epsilon$
+
+    Definujme $\delta=\abs{x_1-b}=b-x_1$. Pak díky monotónnosti ($f$ je neklesající)
+    \begin{equation}
+        \forall x\in P_-(b,\delta):f(x)\geq f(x_1)>s-\epsilon
+    \end{equation}
+    protože $x>b-\delta=x_1$
+    \begin{figure}[ht!]
+        \begin{center}
+            \includegraphics[width=0.49\textwidth,keepaspectratio]{../img/chapter2/monotonieALimita.png}
+            \caption{Grafické znázornění důkazu.}
+        \end{center}
+    \end{figure}\FloatBarrier
+\end{proof}
+Poznámka: monotónní je i každý podinterval $(a,b)$, tedy každý bod z (a,b) má $\lim_+$ a $\lim_-$.
+Neříká nic o obecné limitě.
+
+
+
+
+
+
