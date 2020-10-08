@@ -179,8 +179,8 @@ Druhou variantu chápeme jako:
 Poznámky:
 \begin{itemize}
     \item Pro $0<\delta_1<\delta_2\Rightarrow U(x_0,\delta_1)\subset U(x_0,\delta_2)$
-    \item Budeme psát: „na jistém $U(x_0)$ platí\dots“, což znamená \\
-        $\exists\delta>0:\forall x\in U(x_0,\delta)$ platí\dots
+    \item Budeme psát: „na jistém $U(x_0)$ platí \ldots“, což znamená \\
+        $\exists\delta>0:\forall x\in U(x_0,\delta)$ platí \ldots
 \end{itemize}
 
 \begin{theorem}[name=Hausedorfův princip oddělení, label=T-hausedorf]
@@ -267,7 +267,7 @@ Poznámky:
         & \leq(4+\sqrt{4+\epsilon}-2)(\sqrt{4+\epsilon}-2) \\
         & =(\sqrt{4+\epsilon}+2)(\sqrt{4+\epsilon}-2)=4+\epsilon-4=\epsilon \\
         \text{odhad odspodu:}\quad& x^2-4\geq(2-\delta)^2-4=4-4\delta+\delta^2-4=\delta(\delta-4) \\
-        & \dots\text{zbytek obdobně}
+        & \ldots\text{zbytek obdobně}
     \end{alignat}
 \end{example}
 
@@ -411,7 +411,7 @@ Poznámky:
     \end{enumerate}
     \begin{figure}[ht!]
         \begin{center}
-            \includegraphics[width=0.4\textwidth,keepaspectratio]{../img/chapter2/limitMultiplication.png}
+            \includegraphics[width=0.49\textwidth,keepaspectratio]{../img/chapter2/limitMultiplication.png}
             \caption{Graf funkce $x~sin(1/x)$.}
         \end{center}
     \end{figure}\FloatBarrier
@@ -492,7 +492,7 @@ Poznámky:
 \end{proof}
 Pozn.: platí jednostranné verze \autoref{T-limitArithmetic}
 
-\begin{theorem}[O strážnících]
+\begin{theorem}[name=O strážnících, label=T-patrolmen]
     Buď $x_0, A\in\mathbb{R}$, (tiše předpokládám, že $f$, $g$, $h$ jsou definované na jistém $P(x_0)$)
     \begin{gather}
         \lim_{x\to x_0}f(x)=A \\
@@ -596,8 +596,148 @@ Pozn.: platí jednostranné verze \autoref{T-limitArithmetic}
 Poznámka: monotónní je i každý podinterval $(a,b)$, tedy každý bod z (a,b) má $\lim_+$ a $\lim_-$.
 Neříká nic o obecné limitě.
 
+\begin{definition}[name=Spojitost, label=D-continuity]
+    Nechť $x_0\in\mathbb{R}$, $f$ je definovaná na jistém $U(x_0)$. Řekneme, že $f$ je v $x_0$
+    spojitá, pokud
+    \begin{equation}
+        \forall\epsilon>0\exists\delta>0:f\left(U(x_0,\delta)\right)\subset
+            U\left(f(x_0),\epsilon\right)
+    \end{equation}
+\end{definition}
 
+\begin{theorem}[name=Limita a spojitost, label=T-limitAndContinuity]
+    Funkce je v $x_0$ spojitá, právě když
+    \begin{equation}
+        \lim_{x\to x_0}f(x)=f(x_0)
+    \end{equation}
+\end{theorem}
+\textbf{Varování!} Existuje více typů nespojitosti: 1. druhu (jen limity zprava a zleva),
+2. druhu(limita neexistuje)
+\begin{figure}[ht!]
+    \begin{center}
+        \includegraphics[width=0.49\textwidth,keepaspectratio]{../img/chapter2/typesOfDiscontinuity_1.png}
+        \includegraphics[width=0.49\textwidth,keepaspectratio]{../img/chapter2/typesOfDiscontinuity_2.png}
+        \caption{Limita 1. druhu (vlevo, znaménková funkce) a 2. druhu (vpravo, $sin(1/x)$).}
+    \end{center}
+\end{figure}\FloatBarrier
+\begin{proof}
+    Pozorování: $U(x_0,\delta)=P(x_0,\delta)\cup\left\{x_0\right\}$
+    \label{T-limitAndContinuity-P-neighbourhood}
 
+    „$\Rightarrow$“ je triviální: $U()\supset P()$
+    
+    „$\Leftarrow$“ víme:
+    \begin{equation}
+        \forall\epsilon>0\exists\delta>0:\forall x\in P(x_0,\delta):f(x)\in U\left(f(x_0),\epsilon\right)
+    \end{equation}
+    Stačí přidat $x_0$ podle \hyperref[T-limitAndContinuity-P-neighbourhood]{pozorování}.
+    Navíc $f(x_0)\in U\left(f(x_0),\epsilon\right)$. Tedy
+    \begin{equation}
+        \forall\epsilon>0\exists\delta>0:\forall x\in U(x_0,\delta):f(x)\in U\left(f(x_0),\epsilon\right)
+    \end{equation}
+\end{proof}
+\textbf{Heslo!} Limitu spojité funkce lze počítat dosazením.
 
+\begin{theorem}[name=Aritmetika spojitosti, label=T-continuityArithmetic]
+    Buď $f$, $g$ spojité v $x_0\in\mathbb{R}$ (Nevysloveně $f$, $g$ jsou definované na jistém
+    $P(x_0)$). Pak $f+g$, $f-g$, $fg$ jsou spojité v $x_0$. Pokud $g(x_0)\neq 0$, pak $f/g$ je
+    spojitá v $x_0$.
+\end{theorem}
+\begin{proof}
+    Důsledek \autoref{T-limitArithmetic} a \autoref{T-continuityArithmetic}.
+\end{proof}
+\begin{example}\noindent
+    \begin{enumerate}
+        \item $f(x)=x$ je spojitá $\forall x\in\mathbb{R}$ Fix $\epsilon>0$,
+            volím $\delta=\epsilon$. Pak \label{T-continuityArithmetic-E-1}
+            \begin{equation}
+                \forall x\in U(x_0,\delta):\abs{f(x)-f(x_0)}=\abs{x-x_0}<\delta=\epsilon
+            \end{equation}
+        \item Polynom $p(x)=a_0x^n+a_1x^{n-1}+\ldots+a_n$, kde $n\in\mathbb{R}$,
+            $a_0,\ldots,a_n\in\mathbb{R}$ (ukaž, že konstanty jsou spojité funkce). Potom polynomy
+            jsou spojité $\forall x\in\mathbb{R}$. Plyne z \autoref{T-continuityArithmetic-E-1}
+            a \autoref{T-continuityArithmetic}.
+        \item Racionální funkce $R(x)=\frac{P(x)}{Q(x)}$, kde $P$, $Q$ jsou polynomy. Potom
+            $R(x)$ je spojitá v $x_0\in\mathbb{R}$, pokud $Q(x_0)\neq 0$.
+        \item $sin(x)$, $cos(x)$, $e^x$, $ln(x)$, $\sqrt[n]{x}$ jsou spojité ve svých definičních
+            oborech.
+            \begin{proof}
+                Později! % Add reference !!!
+            \end{proof}
+    \end{enumerate}
+\end{example}
 
+\begin{definition}[name=Složená funkce, label=compoundFunction]
+    Složenou funkci $h$ definujeme
+    \begin{equation*}
+         h = g\circ f:\quad \mathbb{R}\xrightarrow{f}\mathbb{R}\xrightarrow{g}\mathbb{R}
+    \end{equation*}
+\end{definition}
 
+\begin{theorem}[name=Limita superpozice, label=T-limitSuperposition]
+    Buď
+    \begin{align}
+        \lim_{x\to x_0}f(x)=y_0 \\
+        \lim_{y\to y_0}g(x)=A
+    \end{align}
+    navíc ať platí alespoň jedno z následujícího
+    \begin{enumerate}
+        \item $\exists\tilde{\delta}>0:\forall x\in P(x_0,\tilde{\delta}):f(x)\neq y_0$
+            \label{T-limitSuperposition-1}
+        \item $g$ je spojitá v $y_0$ \label{T-limitSuperposition-2}
+    \end{enumerate}
+    Pak
+    \begin{equation}
+        \lim_{x\to x_0}(g\circ f)(x)=A
+    \end{equation}
+    \begin{alignat}{3}
+        &\quad &P(&x_0,\delta) \longrightarrow &U&(A,\epsilon) \nonumber\\
+        &\mathbb{R}\mylongrightarrow{f}{5} &&\mathbb{R}\mylongrightarrow{g}{5} &&\mathbb{R} \\
+        P&(x_0) &U&(y_0) &U&(A) \nonumber
+    \end{alignat}
+\end{theorem}
+\begin{proof}
+    Chceme
+    \begin{equation}
+        \forall\epsilon>0\exists\delta>0:\forall x\in P(x_0,\delta):
+            g\left(f(x)\right)\in U(A,\epsilon)
+    \end{equation}
+    Fixuji $\epsilon>0$, hledám $\delta$. Vím
+    \begin{enumerate}[I]
+        \item z limity $g$: $\exists\delta_1>0:\forall y\in P(y_0,\delta_1):
+            g(y)\in U(A,\epsilon)$ \label{T-limitSuperposition-P-I}
+        \item z limity $f$: $\exists\delta_2>0:\forall x\in P(x_0,\delta_2):
+            f(x)\in U(y_0,\delta_1)$ \label{T-limitSuperposition-P-II}
+    \end{enumerate}
+    Problém! Chci volit $\delta=\delta_2$, ale co s $g(y_0)$? Podle \autoref{T-limitSuperposition-P-II}
+    je možné, že všechny hodnoty $f(x)=y_0$ a tedy $P(f(x))=\varnothing$. Řešíme podle extra
+    podmínek:
+    \begin{enumerate}
+        \item[\autoref{T-limitSuperposition-1}] Volíme $\delta=min(\delta_2,\tilde{\delta})$. Pak
+            \begin{equation}
+                \forall x\in P(x_0,\delta):f(x)\in U(y_0,\delta_1)-\left\{y_0\right\}=P(x_0,\delta_1)
+            \end{equation}
+            a tedy podle \autoref{T-limitSuperposition-P-II} $g\left(f(x)\right)\in U(A,\epsilon)$
+        \item[\autoref{T-limitSuperposition-2}] $g(y_0)=A\in U(A,\epsilon)$ Stačí volit
+            $\delta=\delta_2$. Potom
+            \begin{enumerate}
+                \item buď $f(x)=y_0 \rightarrow$ \autoref{T-limitSuperposition-P-II}
+                \item nebo $f(x)\neq y_0 \rightarrow$ \autoref{T-limitSuperposition-P-I}
+            \end{enumerate}
+    \end{enumerate}
+\end{proof}
+\begin{example}\noindent
+    \begin{enumerate}
+        \item $lim_{x\to 2}\sqrt{x^3-3x+1}=\sqrt{3}$
+            \begin{itemize}
+                \item vnitřní funkce $=x^3-3x+1$ konverguje ke své hodnotě (polynom) $=3$
+                \item vnější $\sqrt{y}\rightarrow\sqrt{3}\text{ pro }y\rightarrow 3$ odmocnina je spojitá
+            \end{itemize}
+        \item $lim_{x\to 0}\sqrt{2+x~sin(1/x)}=\sqrt{2}$
+            \begin{itemize}
+                \item vnitřní $\rightarrow 2$
+                \item vnější je spojitá
+                \item platí podmínka \autoref{T-limitSuperposition-2}, ale ne \autoref{T-limitSuperposition-1}
+            \end{itemize}
+    \end{enumerate}
+\end{example}

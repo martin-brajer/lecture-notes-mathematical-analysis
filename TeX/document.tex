@@ -64,13 +64,13 @@
     \addcontentsline{toc}{chapter}{#1}
 }
 
-\renewcommand{\figurename}{Obr.}  % Picture label change from "Obrázek" to "Obr".
+\renewcommand{\figurename}{Obr.}  % Picture label change from "Obrázek" to "Obr". !!!
 \onehalfspacing  % Line spacing 1.5.
 %\renewcommand{\baselinestretch}{2}
 \setlength{\parindent}{0cm}  % To look more like handwritten notes.
 \newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type, using "array" package !!!
 \renewcommand{\deg}{^{\circ}}  % Degree sign for math mode (\deg).
-
+\newcommand{\mylongrightarrow}[2]{\xrightarrow{\hspace*{#2mm} #1 \hspace*{#2mm}}}
 
 %% Absolute value (and norm).
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
