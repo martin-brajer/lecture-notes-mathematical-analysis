@@ -1,24 +1,48 @@
-# -*- coding: utf-8 -*-
 """
 Scripts to generate pictures in lecture-notes-mathematical-analysis LaTeX project.
 """
 
-# --IMPORTS---
-import matplotlib
+
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
-# import pandas as pd
-# from MyScripts import sth
-
-# --CONSTANTS---
-
-# ---FUNCTIONS---
 
 
 def main():
-    limitMultiplication()
+    mpl.rcParams["savefig.directory"] = __file__
+
+    monotonic()
+    # limitMultiplication()
     # patrolmen()
     # typesOfDiscontinuity()
+
+    plt.show()
+
+
+def monotonic():
+    """ Example 2.2. """
+    size = mpl.rcParams['figure.figsize']
+    size[0] *= 2
+    size[1] *= 0.5
+    fig, axs = plt.subplots(1, 4, figsize=size)
+
+    x = np.linspace(-1, 1, 1000)
+    ys = []
+    ys.append(x * 0.7 + 0.3)
+    ys.append(1/2/(x + 2) - 0.3)
+    _y = - x - 0.5
+    _y[x > 0] = -0.5
+    ys.append(_y)
+    _y = (x**2 - 0.16)*x
+    _y[(-0.4 < x) & (x < 0.4)] = 0
+    ys.append(_y)
+
+    for ax, y in zip(axs, ys):
+        ax.spines['left'].set_position('zero')
+        ax.spines['bottom'].set_position('zero')
+        ax.spines['right'].set_color('none')
+        ax.spines['top'].set_color('none')
+        ax.plot(x, y, 'r')
 
 
 def limitMultiplication():
@@ -27,7 +51,6 @@ def limitMultiplication():
     y = x * np.sin(1/x)
 
     plt.plot(x, y, 'r')
-    plt.show()
 
 
 def patrolmen():
@@ -37,13 +60,12 @@ def patrolmen():
     g = -f
     h = f * np.sin(20*1/x)
 
-    size = matplotlib.rcParams['figure.figsize']
+    size = mpl.rcParams['figure.figsize']
     size[0] *= 2
     plt.figure(figsize=size)
     plt.plot(x, f, 'k')
     plt.plot(x, g, 'r')
     plt.plot(x, h, 'b')
-    plt.show()
 
 
 def typesOfDiscontinuity():
@@ -56,13 +78,8 @@ def typesOfDiscontinuity():
     plt.show()
 
     y = np.sin(1/x)
-
     plt.plot(x, y, 'r')
-    plt.show()
-
-# ---CLASSES---
 
 
-# ---MAIN---
 if __name__ == '__main__':
     main()
