@@ -83,10 +83,10 @@ O čem budou výroky? O definovaných pojmech:
 
 \begin{theoremAlph}[Reálná čísla]
 	Existuje množina $\mathbb{R}$ s operacemi $\oplus$ a $\otimes$ a relací $<$ tak,
-	že splňuje vlastnosti \autoref{D-A1} až \autoref{D-A4}.
+	že splňuje vlastnosti \autoref{def:A1} až \autoref{def:A4}.
 \end{theoremAlph}
 
-\begin{definitionAi}[name=Algebraická struktura, label=D-A1]\noindent
+\begin{definitionAi}[name=Algebraická struktura, label=def:A1]\noindent
 	\begin{enumerate}[I]
 		\item Komutativita: $\forall x, y \in \mathbb{R}: x + y = y + x;~x\cdot y = y\cdot x$
 		\item Asociativita: $\forall x, y, z \in \mathbb{R}: x + (y + z) = (x + y) + z;
@@ -119,7 +119,7 @@ I. - IV. říká $(\mathbb{R}, +)$ a $(\mathbb{R} - \left\{0\right\}, \cdot)$ js
 
 I. - VI. říká $(\mathbb{R}, +, \cdot)$ je těleso.
 
-Ověřte, že \autoref{D-A1} platí pro $\mathbb{C}$ (komplexní čísla).
+Ověřte, že \autoref{def:A1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 \begin{example}
 	Definujme $\mathbb{C} = \left\{z = (z_1, z_2); z_1, z_2 \in \mathbb{R}\right\}$ a
@@ -134,13 +134,13 @@ Ověřte, že \autoref{D-A1} platí pro $\mathbb{C}$ (komplexní čísla).
 
 	Lze zapisovat $z\in \mathbb{C}$, $z = (z_1, z_2)$, ozn. $z = z_1 + iz_2$ pro $i^2 = -1$.
 \end{example}
-\begin{definitionAi}[name=Uspořádání, label=D-A2]\noindent
+\begin{definitionAi}[name=Uspořádání, label=def:A2]\noindent
 	\begin{enumerate}[I]
 		\item Relace: $\forall x, y \in \mathbb{R}$ nastane právě jedna z možností: \\
 		$(x<y)$ nebo $(x>y)$ nebo $(x=y)$
 		\item Tranzitivita: $(x<y) \land (y<z) \Rightarrow (x<z)$
-		\item\label{D-A2-3} Vztah uspořádání a sčítání: $(x<y) \Rightarrow x+z < y+z$
-		\item\label{D-A2-4} Vztah relace k násobení: $(0<x) \land (0<y) \Rightarrow 0 < xy$
+		\item\label{def:A2:3} Vztah uspořádání a sčítání: $(x<y) \Rightarrow x+z < y+z$
+		\item\label{def:A2:4} Vztah relace k násobení: $(0<x) \land (0<y) \Rightarrow 0 < xy$
 	\end{enumerate}
 \end{definitionAi}
 
@@ -152,15 +152,15 @@ Značení:
 \end{itemize}
 
 Lze odvodit další pravidla:
-\begin{equation}\label{RelationsOfNegatives}
+\begin{equation}\label{eq:relationsOfNegatives}
 	x<y \Leftrightarrow -x > -y
 \end{equation}
 \begin{proof}
 	\begin{alignat*}{2}
 		x&<y \\
-		x-x&<y-x &&\text{\quad /\autoref{D-A2-3}} \\
+		x-x&<y-x &&\text{\quad /\autoref{def:A2:3}} \\
 		0&<y-x \\
-		0-y&<y-y-x &&\text{\quad /\autoref{D-A2-3}} \\
+		0-y&<y-y-x &&\text{\quad /\autoref{def:A2:3}} \\
 		-y&<-x \\
 		-x&>-y &&\text{\quad funguje $\Leftrightarrow$}
 	\end{alignat*}
@@ -180,20 +180,20 @@ DÚ:
 	\end{alignat*}
 	Pokud $0<1$, pak spor! $0<1<0$.
 
-	Máme $0<-1 \xRightarrow{\autoref{D-A2-4}} 0<(-1)(-1) = 1$
+	Máme $0<-1 \xRightarrow{\autoref{def:A2:4}} 0<(-1)(-1) = 1$
 \end{proof}
 
 \begin{example}
-	Komplexní čísla nelze uspořádat podle \autoref{D-A2}
+	Komplexní čísla nelze uspořádat podle \autoref{def:A2}
 \end{example}
 \begin{proof}
 	Sporem: předpokládejme, že to lze.
 	\begin{alignat*}{1}
 		i&<0 \\
 		(0,1)&<(0,0) \\
-		-i>0 &\xRightarrow{\autoref*{D-A2}:\autoref{D-A2-4}} 0<(-i)(-i) = -1
+		-i>0 &\xRightarrow{\autoref*{def:A2}:\autoref{def:A2:4}} 0<(-i)(-i) = -1
 	\end{alignat*}
-	Pozn.: $i>0 \xRightarrow{\autoref*{D-A2}:\autoref{D-A2-4}} 0<(i)(i) = -1$
+	Pozn.: $i>0 \xRightarrow{\autoref*{def:A2}:\autoref{def:A2:4}} 0<(i)(i) = -1$
 \end{proof}
 
 \section{Význačné podmnožiny \texorpdfstring{$\mathbb{R}$}{R}}
@@ -204,7 +204,7 @@ DÚ:
 	\item $\mathbb{R} - \mathbb{Q}$\quad iracionální čísla
 \end{itemize}
 
-Poznámka: $\mathbb{Q}$ má obě vlastnosti \autoref{D-A1}, \autoref{D-A2}
+Poznámka: $\mathbb{Q}$ má obě vlastnosti \autoref{def:A1}, \autoref{def:A2}
 
 Intervaly:
 \begin{itemize}
@@ -227,38 +227,38 @@ Intervaly:
 	\]
 \end{definition}
 
-\begin{lemma}[name=Vlastnosti absolutní hodnoty, label=L-abs]
+\begin{lemma}[name=Vlastnosti absolutní hodnoty, label=lmm:abs]
 	Nechť $a>0$, pak $\abs{x}<a$ právě \\ když $-a<x<a$
 \end{lemma}
 \begin{proof}Podle znaménka $x$:
 	\begin{enumerate}
-		\item\label{L-abs-P1} Ať $x\geq 0$ pak $\abs{x}=x$ a máme ukázat, že $x<a \Leftrightarrow -a<x<a$ \\
+		\item\label{lem:abs:prf:1} Ať $x\geq 0$ pak $\abs{x}=x$ a máme ukázat, že $x<a \Leftrightarrow -a<x<a$ \\
 			"$\Leftarrow$" jasná | "$\Rightarrow$" víme $-a<0\leq x<a$
 		\item Ať $x<0$, pak $\abs{x} = -x$ a máme ukázat, že $-x<a \Leftrightarrow -a<x<a$ \\
-			$x>-a$ pak pokračujeme podobně jako v \hyperref[L-abs-P1]{bodě 1}: $-a<x<0<a$
+			$x>-a$ pak pokračujeme podobně jako v \hyperref[lem:abs:prf:1]{bodě 1}: $-a<x<0<a$
 	\end{enumerate}
 \end{proof}
 
-\begin{theorem}[name=Trojúhelníková nerovnost, label=T-triangleInequality]
+\begin{theorem}[name=Trojúhelníková nerovnost, label=thm:triangleInequality]
 	\begin{alignat}{1}
-		\abs{x+y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-1} \\
-		\abs{x-y} &\leq  \abs{x} + \abs{y} \label{T-triangleInequality-2} \\
-		\abs{x+y} &\geq  \abs{\abs{x} - \abs{y}} \label{T-triangleInequality-3} \\
-		\abs{x-y} &\geq  \abs{\abs{x} - \abs{y}} \label{T-triangleInequality-4}
+		\abs{x+y} &\leq  \abs{x} + \abs{y} \label{thm:triangleInequality:1} \\
+		\abs{x-y} &\leq  \abs{x} + \abs{y} \label{thm:triangleInequality:2} \\
+		\abs{x+y} &\geq  \abs{\abs{x} - \abs{y}} \label{thm:triangleInequality:3} \\
+		\abs{x-y} &\geq  \abs{\abs{x} - \abs{y}} \label{thm:triangleInequality:4}
 	\end{alignat}
 \end{theorem}
 \begin{proof}
-	\autoref{T-triangleInequality-1} a \autoref{T-triangleInequality-2} plyne z \autoref{L-abs}
+	\autoref{thm:triangleInequality:1} a \autoref{thm:triangleInequality:2} plyne z \autoref{lmm:abs}
 	
-	\autoref{T-triangleInequality-3} a \autoref{T-triangleInequality-4} plyne z předešlého řádku pomocí triku
+	\autoref{thm:triangleInequality:3} a \autoref{thm:triangleInequality:4} plyne z předešlého řádku pomocí triku
 	\begin{alignat}{1}
 		x &= x+y-y \\
 		\abs{x} &=\abs{x+y-y}\leq\abs{x+y}+\abs{y} \\
 		\abs{y} &\leq\abs{x+y}+\abs{x} \\
 		\abs{x}-\abs{y} &\leq\abs{x+y} \\
-		\abs{y}-\abs{x} &\leq\abs{x+y}~/\cdot(-1) \label{T-triangleInequality-P126} \\
+		\abs{y}-\abs{x} &\leq\abs{x+y}~/\cdot(-1) \label{thm:triangleInequality:prf:126} \\
 		\abs{x}-\abs{y} &\geq-\abs{x+y}~
-			\text{plyne z \autoref{T-triangleInequality-P126} a \autoref{RelationsOfNegatives}}
+			\text{plyne z \autoref{thm:triangleInequality:prf:126} a \autoref{eq:relationsOfNegatives}}
 	\end{alignat}
 \end{proof}
 
@@ -288,16 +288,16 @@ Intervaly:
 
 Pozn.: analogicky def. minimum a dolní odhad.
 
-\begin{definition}[name=Supremum, label=D-supremum]
+\begin{definition}[name=Supremum, label=def:supremum]
 	Číslo $s\in\mathbb{R}$ nazvu supremem množiny $M\subset\mathbb{R}$, pokud
 	\begin{enumerate}[I]
-		\item\label{D-supremum-1} $\forall x\in M: x\leq s$
-		\item\label{D-supremum-2} $\forall s'<s, s'\in\mathbb{R}: \exists x\in M: s'<x$
+		\item\label{def:supremum:1} $\forall x\in M: x\leq s$
+		\item\label{def:supremum:2} $\forall s'<s, s'\in\mathbb{R}: \exists x\in M: s'<x$
 	\end{enumerate}
 	Supremum $M$ značíme $s=sup~M$
 \end{definition}
 
-Pozn.: \autoref{D-supremum-1} říká, že $s$ je horní odhad, \autoref{D-supremum-2} říká,
+Pozn.: \autoref{def:supremum:1} říká, že $s$ je horní odhad, \autoref{def:supremum:2} říká,
 že $s$ je nejmenší možný horní odhad
 
 Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
@@ -306,18 +306,18 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 	Nechť $M\subset\mathbb{R}$. řekneme, že $s\in\mathbb{R}$ je infimum množiny $M$
 	(ozn. $inf~M$), pokud
 	\begin{enumerate}[I]
-		\item\label{D-infimum-1} $\forall x\in M: s\leq x$
-		\item\label{D-infimum-2} $\forall s'>s, s'\in\mathbb{R}: \exists x<s': x\in M$
+		\item\label{def:infimum:1} $\forall x\in M: s\leq x$
+		\item\label{def:infimum:2} $\forall s'>s, s'\in\mathbb{R}: \exists x<s': x\in M$
 	\end{enumerate}
 	Infimum $M$ značíme $s=inf~M$
 \end{definition}
 
-\begin{definitionAi}[name=Supremum a infimum, label=D-A3]
+\begin{definitionAi}[name=Supremum a infimum, label=def:A3]
 	Každá neprázdná shora omezená $M\subset\mathbb{R}$ má supremum v $\mathbb{R}$.
 	Každá neprázdná zdola omezená $M\subset\mathbb{R}$ má infimum v $\mathbb{R}$.
 \end{definitionAi}
 
-\begin{definition}[name=Odmocnina, label=D-sqrt]\noindent
+\begin{definition}[name=Odmocnina, label=def:sqrt]\noindent
 	\begin{enumerate}
 		\item Nechť $a>0$ a $n$ sudé, $n\in\mathbb{N}$, pak existuje právě jedno číslo $b>0: b^n=a$
 		\item Nechť $a>0$ a $n$ liché, $n\in\mathbb{N}$, pak existuje právě jedno číslo $b\in\mathbb{R}: b^n=a$
@@ -325,7 +325,7 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 	Značení: $b=\sqrt[n]{a}$
 \end{definition}
 
-\begin{lemmaAlph}[name=Čtverec dělitelný třema, label=L-divisibilityByThree]
+\begin{lemmaAlph}[name=Čtverec dělitelný třema, label=lmm:divisibilityByThree]
 	$k^2 \text{ je dělitelné }3\Rightarrow k \text{ je děl. }3$
 \end{lemmaAlph}
 \begin{proof}
@@ -346,17 +346,17 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 		\text{Ať $\sqrt{3}$ je rac.} &\Rightarrow\exists k\in\mathbb{Z}, l\in\mathbb{N}
 			\text{ nesoudělná: }\sqrt{3}=\frac{k}{l} \\
 		3=\frac{k^2}{l^2} &\Rightarrow k^2=3l^2 \\
-		k^2 \text{ je dělitelné }3 &\xRightarrow{\autoref{L-divisibilityByThree}} k\text{ je děl. }3 \\
+		k^2 \text{ je dělitelné }3 &\xRightarrow{\autoref{lmm:divisibilityByThree}} k\text{ je děl. }3 \\
 		n\in\mathbb{Z}: \left(k=3n\Rightarrow k^2=9n^2\right) &\Rightarrow k^2 \text{ je děl }9 \\
 		k^2=9n^2=3l^2 &\Rightarrow l^2=3n^2 \\
-		l^2 \text{ je děl. }3 &\xRightarrow{\autoref{L-divisibilityByThree}} l\text{ je děl. }3
+		l^2 \text{ je děl. }3 &\xRightarrow{\autoref{lmm:divisibilityByThree}} l\text{ je děl. }3
 	\end{alignat}
 	Což je spor, protože $k$, $l$ jsou nesoudělná.
 \end{proof}
 
-\begin{definitionAi}[name=Vlastnosti \texorpdfstring{$\mathbb{N}$}{N}, label=D-A4]\noindent
+\begin{definitionAi}[name=Vlastnosti \texorpdfstring{$\mathbb{N}$}{N}, label=def:A4]\noindent
 	\begin{enumerate}[I]
-		\item\label{D-A4-1} $\forall x\in\mathbb{R}\exists n\in\mathbb{N}: x<n$
+		\item\label{def:A4:1} $\forall x\in\mathbb{R}\exists n\in\mathbb{N}: x<n$
 		\item Princip indukce: nechť $M\subset\mathbb{N}$ a
 			\begin{enumerate}
 				\item $1\in M$
@@ -366,14 +366,14 @@ Pozn.: pokud supremum náleží do intervalu, je to jeho maximum
 	\end{enumerate}
 \end{definitionAi}
 
-Pozn.: \autoref{D-A4-1} plyne z vlastnosti \autoref{D-A3}
+Pozn.: \autoref{def:A4:1} plyne z vlastnosti \autoref{def:A3}
 
 Pozn.: Archimédova vlastnost:
 \begin{equation}
 	\forall m\in\mathbb{N}, \forall \epsilon>0 \text{ (tedy reálné) }\exists n\in\mathbb{N}:n\epsilon>m
 \end{equation}
 \begin{proof}
-	Polož $x=m/\epsilon$ v \hyperref[D-A4-1]{bodě I}
+	Polož $x=m/\epsilon$ v \hyperref[def:A4:1]{bodě I}
 \end{proof}
 
 \begin{theorem}[Velikost intervalu]
@@ -395,7 +395,7 @@ Každý otevřený interval obsahuje nekonečně racionálních i nekonečně ir
 	
 	Mějme otevřený interval $(a,b)$. Stačí mít rac. č. $k/l$ tak, aby \\$k/l,~(k+1)/l\in(a,b)$.
 	
-	Jak hledám $l$? Z \autoref*{D-A4}:\autoref{D-A4-1} pomocí $l>2/(b-a)$ plyne
+	Jak hledám $l$? Z \autoref*{def:A4}:\autoref{def:A4:1} pomocí $l>2/(b-a)$ plyne
 	\begin{equation}
 		\frac{1}{l}<\frac{b-a}{2}
 	\end{equation}
@@ -404,14 +404,14 @@ Každý otevřený interval obsahuje nekonečně racionálních i nekonečně ir
 	\begin{equation}
 		M=\left\{n\in\mathbb{Z};\frac{n}{l}<a\right\}
 	\end{equation}
-	Potom podle \autoref{D-A3} $\exists s\in\mathbb{R}:s=sup~M$
+	Potom podle \autoref{def:A3} $\exists s\in\mathbb{R}:s=sup~M$
 
 	Tvrdíme: $s\in M$:
 
-	Podle \autoref*{D-supremum}:\autoref{D-supremum-2}: $\forall s'<s~\exists n\in M:s'<n$ \\
+	Podle \autoref*{def:supremum}:\autoref{def:supremum:2}: $\forall s'<s~\exists n\in M:s'<n$ \\
 	Volme $s'\in\left(s-\frac{1}{2},s\right)$, pak $\exists n'\in M: s'<n'$.
 	Zafixujme $n'$ a tvrdíme:
-	\begin{equation}\label{T-intervalSize-P-144}
+	\begin{equation}\label{thm:intervalSize:prf:144}
 		\forall s'\in (s-\frac{1}{2},s): s'<n'\leq s
 	\end{equation}
 	A tedy $s\leq n'\leq s$. Definujme
@@ -424,7 +424,7 @@ Každý otevřený interval obsahuje nekonečně racionálních i nekonečně ir
 \end{proof}
 
 \begin{proof}
-	\autoref{T-intervalSize-P-144} Vol. $s''\in (s-\frac{1}{2},s)$ pak $\exists n''\in M: s''<n''$
+	\autoref{thm:intervalSize:prf:144} Vol. $s''\in (s-\frac{1}{2},s)$ pak $\exists n''\in M: s''<n''$
 	\begin{alignat}{3}
 		s-\frac{1}{2}&<s'&<n'&\leq s \\
 		s-\frac{1}{2}&<s''&<n''&\leq s

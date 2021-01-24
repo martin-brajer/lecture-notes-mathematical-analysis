@@ -6,14 +6,14 @@ Funkce z $M$ do $N$ je předpis, který každému prvku $M$ přiřadí nejvýše
     \item $B\subset M:f^{-1}(B)=\left\{x\in M: f(x)\in B\right\}\subset M$
 \end{itemize}
 
-\begin{definition}[name={Prostá funkce, injekce, monomorfismus}, label=D-injection]
+\begin{definition}[name={Prostá funkce, injekce, monomorfismus}, label=def:injection]
     Funkce je \textbf{prostá}, pokud
     \begin{equation}
         x\neq y \Rightarrow f(x)\neq f(y)
     \end{equation}
 \end{definition}
 
-\begin{definition}[name={Na funkce, surjekce, epimorfismus}, label=D-surjection]
+\begin{definition}[name={Na funkce, surjekce, epimorfismus}, label=def:surjection]
     Funkce $f:M\rightarrow N$ je \textbf{na} (zobrazuje $M$ na $N$), pokud
     \begin{equation}
         \forall n\in\mathbb{N}~\exists m\in M: f(m)=n
@@ -34,12 +34,12 @@ Funkce z $M$ do $N$ je předpis, který každému prvku $M$ přiřadí nejvýše
     \end{alignat}
 \end{definition}
 
-\begin{definition}[name={Vzájemně jednoznačné zobrazení, bijekce , isomorfismus}, label=D-bijection]
-    Je-li $f:M\rightarrow N$ \hyperref[D-injection]{prostá} a \hyperref[D-surjection]{na}
+\begin{definition}[name={Vzájemně jednoznačné zobrazení, bijekce , isomorfismus}, label=def:bijection]
+    Je-li $f:M\rightarrow N$ \hyperref[def:injection]{prostá} a \hyperref[def:surjection]{na}
     říkáme, že je vzájemně jednoznačná
 \end{definition}
 
-Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverzní funkci:
+Pro \hyperref[def:bijection]{vzájemně jednoznačnou funkci} lze definovat inverzní funkci:
 \begin{equation}
     f_{-1}:N\rightarrow M; y\in N\rightarrow \text{jediné }x\in M: f(x)=y
 \end{equation}
@@ -82,7 +82,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \end{equation*}
 \end{example}
 
-\begin{definition}[name=Monotónost funkce, label=D-monotonic]
+\begin{definition}[name=Monotónost funkce, label=def:monotonic]
     Nechť $f:\mathbb{R}\rightarrow\mathbb{R}$; $M\subset D(f)$. Řeknu, že $f$
     \[
         \text{je}\left.
@@ -109,7 +109,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \end{figure}\FloatBarrier
 \end{definition}
 
-\begin{definition}[name=Omezenost funkce, label=D-bounded]
+\begin{definition}[name=Omezenost funkce, label=def:bounded]
     Řekněme, že $f$
     \[
         \text{je}\left.
@@ -128,7 +128,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \]
 \end{definition}
 
-\begin{definition}[name=Symetrie funkce, label=D-symetry]
+\begin{definition}[name=Symetrie funkce, label=def:symetry]
     Řekněme, že $f$
     \begin{alignat}{1}
         \text{je}\left.
@@ -160,7 +160,7 @@ Druhou variantu chápeme jako:
     f=f_1+if_2;~f_1,f_2:\mathbb{R}\rightarrow\mathbb{R}
 \end{equation}
 
-\begin{definition}[name=Okolí, label=D-neighbourhood]
+\begin{definition}[name=Okolí, label=def:neighbourhood]
     Nechť $x_0\in\mathbb{R}, \delta\in(0,\infty)$
     \begin{itemize}
         \item kruhové okolí\quad $U(x_0,\delta):=(x_0-\delta, x_0+\delta)=
@@ -180,7 +180,7 @@ Poznámky:
         $\exists\delta>0:\forall x\in U(x_0,\delta)$ platí \ldots
 \end{itemize}
 
-\begin{theorem}[name=Hausedorfův princip oddělení, label=T-hausedorf]
+\begin{theorem}[name=Hausedorfův princip oddělení, label=thm:hausedorf]
     Nechť $x_1,x_2\in\mathbb{R};~ x_1\neq x_2$, pak \\
     $\exists\delta>0$ tak, že $U(x_1,\delta)\cap U(x_2,\delta)=\varnothing$
 
@@ -192,17 +192,17 @@ Poznámky:
     Sporem: ať $\exists y\in U(x_1,\delta)\cap U(x_2,\delta)$, pak
     \begin{gather}
         \abs{x_1-x_2} = \abs{x_1-y+y-x_2}
-            \overset{\autoref{T-triangleInequality}}{\leq} \nonumber \\
+            \overset{\autoref{thm:triangleInequality}}{\leq} \nonumber \\
         \abs{x_1-y}+\abs{y-x_2} < 2\delta = \abs{x_1-x_2}
     \end{gather}
     Tedy $\abs{x_1-x_2} < \abs{x_1-x_2}$, což je spor.
 \end{proof}
 
-\begin{definition}[name=Limita, label=D-limit]
+\begin{definition}[name=Limita, label=def:limit]
     Nechť $x_0\in\mathbb{R}$ a $f$ je fce def na jistém $P(x_0)$
 
     Číslo $A\in\mathbb{R}$ nazvu limitou $f$ v $x_0$, pokud
-    \begin{equation}\label{D-limit-215}
+    \begin{equation}\label{def:limit:215}
         \forall\epsilon>0~\exists\delta>0: x\in P(x_0,\delta) \Rightarrow f(x)\in U(A,\epsilon)
     \end{equation}
     
@@ -219,7 +219,7 @@ má vlastní limitu ve vlastním bodě
 Poznámky:
 \begin{itemize}
     \item Limita závisí na $f$ v okolí $x_0$
-    \item Jiné zápisy \autoref{D-limit-215}
+    \item Jiné zápisy \autoref{def:limit:215}
         \begin{alignat}{1}
             \forall\epsilon>0~\exists\delta>0&:f(P(x_0,\delta))\subset U(A,\epsilon) \\
             \forall\epsilon>0~\exists\delta>0&:\forall x\in\mathbb{R}:
@@ -235,11 +235,11 @@ Poznámky:
 \begin{proof}
     Sporem: ať $A\neq B$
     \begin{alignat}{1}
-        \text{\autoref{T-hausedorf}}&\quad \exists\epsilon>0:
+        \text{\autoref{thm:hausedorf}}&\quad \exists\epsilon>0:
             U(A,\epsilon)\cap U(B,\epsilon)=\varnothing \\
-        \text{\autoref{D-limit-215} pro $A$}&\quad \exists\delta_1>0:x\in P(x_0,\delta_1)
+        \text{\autoref{def:limit:215} pro $A$}&\quad \exists\delta_1>0:x\in P(x_0,\delta_1)
             \Rightarrow f(x)\in U(A,\epsilon) \\
-        \text{\autoref{D-limit-215} pro $B$}&\quad \exists\delta_2>0:x\in P(x_0,\delta_2)
+        \text{\autoref{def:limit:215} pro $B$}&\quad \exists\delta_2>0:x\in P(x_0,\delta_2)
             \Rightarrow f(x)\in U(B,\epsilon) \\
         \text{Definujme }&\quad \delta=min(\delta_1,\delta_1) \\
         \text{Odvodíme spor }&\quad \forall x\in U(x_0,\delta):f(x)\in
@@ -293,15 +293,15 @@ Poznámky:
     Buď $x_0\in\mathbb{R}$, $f$ definovaná na jistém $P(x_0,\delta)$, pak následující
     tvrzení jsou ekvivalentní
     \begin{alignat}{1}
-        \lim_{x\to x_0}&=A \label{T-1v2limit-241}\\
-        \lim_{x\to x_0+}&=A \land \lim_{x\to x_0-}=A \label{T-1v2limit-242}
+        \lim_{x\to x_0}&=A \label{thm:1v2limit:241}\\
+        \lim_{x\to x_0+}&=A \land \lim_{x\to x_0-}=A \label{thm:1v2limit:242}
     \end{alignat}
 \end{theorem}
 \begin{proof}
-    \autoref{T-1v2limit-241} $\Rightarrow$ \autoref{T-1v2limit-242} triviální
+    \autoref{thm:1v2limit:241} $\Rightarrow$ \autoref{thm:1v2limit:242} triviální
     
-    \autoref{T-1v2limit-242} $\Rightarrow$ \autoref{T-1v2limit-241} volme $\epsilon>0$,
-    podle \autoref{T-1v2limit-242}
+    \autoref{thm:1v2limit:242} $\Rightarrow$ \autoref{thm:1v2limit:241} volme $\epsilon>0$,
+    podle \autoref{thm:1v2limit:242}
     \begin{gather}
         \exists\delta_1>0:\forall x\in P_+(x_0,\delta_1):f(x)\in U(A,\epsilon) \\
         \exists\delta_2>0:\forall x\in P_-(x_0,\delta_1):f(x)\in U(A,\epsilon)
@@ -315,7 +315,7 @@ Poznámky:
     Neexistuje $\lim_{x\to 0}sgn(x)$
 \end{example}
 
-\begin{theoremAlph}[name=Ekvivalentní limity, label=T-equivalentLimits]
+\begin{theoremAlph}[name=Ekvivalentní limity, label=thm:equivalentLimits]
     Buď $x_0\in\mathbb{R}$, $f$ definovaná na jistém $P(x_0)$. Pak
     \begin{equation}
         \lim_{x\to x_0}f(x)=A \Leftrightarrow \lim_{x\to x_0}f(x)-A=0
@@ -329,16 +329,16 @@ Poznámky:
     \end{gather}
 \end{proof}
 
-\begin{lemma}[name=Chování funkce v okolí limity, label=L-limitNeighbourhood]\noindent
+\begin{lemma}[name=Chování funkce v okolí limity, label=lmm:limitNeighbourhood]\noindent
     \begin{enumerate}
         \item Nechť $f$ má v $x_0\in\mathbb{R}$ limitu $A\in\mathbb{R}$. Pak existuje
             $P(x_0)$ takové, že $f$ je na $P(x_0)$ omezená. Tj.
-            \label{L-limitNeighbourhood-bounded}
+            \label{lmm:limitNeighbourhood:bounded}
             \begin{equation}
                 \exists\delta>0\exists K>0:\forall x\in P(x_O,\delta): \abs{f(x)}<K
             \end{equation}
         \item Nechť $f$ má v $x_0\in\mathbb{R}$ limitu $A\neq 0$, pak
-            \label{L-limitNeighbourhood-nonzero}
+            \label{lmm:limitNeighbourhood:nonzero}
             \begin{equation}
                 \exists\Delta>0\exists\delta>0:\forall x\in P(x_O,\delta): \abs{f(x)}>\Delta
             \end{equation}
@@ -357,9 +357,9 @@ Poznámky:
         \item $A\neq 0$, předpokládejme $A>0$ ($A<0$ podobně)
         \begin{gather}
             \begin{alignat}{1}
-                \text{dle \autoref{T-hausedorf}} &\quad\exists\epsilon>0:
+                \text{dle \autoref{thm:hausedorf}} &\quad\exists\epsilon>0:
                     U(A,\epsilon)\cap U(0,\epsilon)=\varnothing \\
-                \text{z \autoref{D-limit}} &\quad\exists\delta>0:
+                \text{z \autoref{def:limit}} &\quad\exists\delta>0:
                     \forall x\in P(x_0,\delta):f(x)\in U(A,\epsilon) \\
                 \text{máme $\delta>0$ a volíme } &\quad\Delta=\epsilon/2 
             \end{alignat}\\
@@ -370,7 +370,7 @@ Poznámky:
     \end{enumerate}
 \end{proof}
 
-\begin{lemma}[name=Limita součinu, label=L-limitMultiplication]
+\begin{lemma}[name=Limita součinu, label=lmm:limitMultiplication]
     Buďte $f$, $g$ definované na jistém $P(x_0)$, $f$ omezená na $P(x_0)$ a
     $\lim_{x\to x_0}g(x)=0$. Pak
     \begin{equation}
@@ -381,9 +381,9 @@ Poznámky:
     Volme $\epsilon>0$ libovolné. Vím
     \begin{alignat}{1}
         \exists\delta_1>0,K>0: &\forall x\in P(x_0,\delta_1): \abs{f(X)}<K 
-            \label{L-limitMultiplication-P-258} \\
+            \label{lmm:limitMultiplication:prf:258} \\
         \exists\delta_2>0: &\forall x\in P(x_0,\delta_2): \abs{g(X)}<\epsilon/K
-            \label{L-limitMultiplication-P-259}
+            \label{lmm:limitMultiplication:prf:259}
     \end{alignat}
     Chci součin odhadnout epsilonem
     \begin{equation}
@@ -392,8 +392,8 @@ Poznámky:
     Volme $\delta=min(\delta_1,\delta_2)$. Potom platí
     \begin{equation}
         \forall x\in P(x_0,\delta):
-            \abs{f(x)g(x)}\overset{\autoref{L-limitMultiplication-P-258}}{<}
-            K\abs{g(x)}\overset{\autoref{L-limitMultiplication-P-259}}{<}K\frac{\epsilon}{K}
+            \abs{f(x)g(x)}\overset{\autoref{lmm:limitMultiplication:prf:258}}{<}
+            K\abs{g(x)}\overset{\autoref{lmm:limitMultiplication:prf:259}}{<}K\frac{\epsilon}{K}
             =\epsilon
     \end{equation}
     Tzn. $f(x)g(x)\in U(0,\epsilon)$
@@ -414,19 +414,19 @@ Poznámky:
     \end{figure}\FloatBarrier
 \end{example}
 
-\begin{theorem}[name=Aritmetika limit, label=T-limitArithmetic]
+\begin{theorem}[name=Aritmetika limit, label=thm:limitArithmetic]
     Nechť $x_0\in\mathbb{R}$, $A,B\in\mathbb{R}:$ $\lim_{x\to x_0}f(x)=A$,
     $\lim_{x\to x_0}g(x)=B$. Pak platí
     \begin{alignat}{1}
-        \lim_{x\to x_0}\left(f(x)\pm g(x)\right) &= A\pm B \label{T-limitArithmetic-addition} \\
-        \lim_{x\to x_0}\left(f(x)g(x)\right) &= AB \label{T-limitArithmetic-multiplication} \\
+        \lim_{x\to x_0}\left(f(x)\pm g(x)\right) &= A\pm B \label{thm:limitArithmetic:addition} \\
+        \lim_{x\to x_0}\left(f(x)g(x)\right) &= AB \label{thm:limitArithmetic:multiplication} \\
         \text{je-li navíc $B\neq 0$ }\quad \lim_{x\to x_0}\left(\frac{f(x)}{g(x)}\right)
-            &= \frac{A}{B} \label{T-limitArithmetic-division}
+            &= \frac{A}{B} \label{thm:limitArithmetic:division}
     \end{alignat}
 \end{theorem}
 \begin{proof}\noindent
     \begin{enumerate}
-        \item \autoref{T-limitArithmetic-addition} pro $\oplus$ ($\ominus$ obdobně).
+        \item \autoref{thm:limitArithmetic:addition} pro $\oplus$ ($\ominus$ obdobně).
         
             Chceme
             \begin{equation}
@@ -436,21 +436,21 @@ Poznámky:
             Víme
             \begin{alignat}{4}
                 &\forall\epsilon'>0&\exists\delta'>0: &\forall x\in P(x_0,\delta'):
-                    ~&f(x)\in U(A,\epsilon') \label{T-limitArithmetic-P-266} \\
+                    ~&f(x)\in U(A,\epsilon') \label{thm:limitArithmetic:prf:266} \\
                 &\forall\epsilon''>0&\exists\delta''>0: &\forall x\in P(x_0,\delta''):
-                    ~&g(x)\in U(B,\epsilon'') \label{T-limitArithmetic-P-267}
+                    ~&g(x)\in U(B,\epsilon'') \label{thm:limitArithmetic:prf:267}
             \end{alignat}
             Předběžně
             \begin{equation}
-                \abs{f(x)+g(x)-A-B} \overset{\autoref{T-triangleInequality}}{\leq}
+                \abs{f(x)+g(x)-A-B} \overset{\autoref{thm:triangleInequality}}{\leq}
                     \abs{f(x)-A} + \abs{g(x)-B}
             \end{equation}
             Fix $\epsilon>0$ libovolné.
             
-            Z \autoref{T-limitArithmetic-P-266} s $\epsilon'=\epsilon/2$ dostanu $\delta'>0$
-            (takové, že platí zbytek \autoref{T-limitArithmetic-P-266})
+            Z \autoref{thm:limitArithmetic:prf:266} s $\epsilon'=\epsilon/2$ dostanu $\delta'>0$
+            (takové, že platí zbytek \autoref{thm:limitArithmetic:prf:266})
             
-            Z \autoref{T-limitArithmetic-P-267} s $\epsilon''=\epsilon/2$ dostanu $\delta''>0$
+            Z \autoref{thm:limitArithmetic:prf:267} s $\epsilon''=\epsilon/2$ dostanu $\delta''>0$
             
             Definujme $\delta=min(\delta',\delta'')$ (aby pro $\delta$ platily obe rovnice). Pak
             \begin{equation}
@@ -462,13 +462,13 @@ Poznámky:
                 f(x)g(x)\pm f(x)B-AB = f(x)(g(x)-B) + (f(x)-A)B
             \end{equation}
             \begin{itemize}
-                \item $f(x)$ je omezená na jistém $P(x_0)$ podle \autoref{L-limitNeighbourhood}
-                \item $(g(x)-B)\rightarrow 0$ podle \autoref{T-equivalentLimits}
-                \item $f(x)(g(x)-B)\rightarrow 0$ podle \autoref{L-limitMultiplication}
+                \item $f(x)$ je omezená na jistém $P(x_0)$ podle \autoref{lmm:limitNeighbourhood}
+                \item $(g(x)-B)\rightarrow 0$ podle \autoref{thm:equivalentLimits}
+                \item $f(x)(g(x)-B)\rightarrow 0$ podle \autoref{lmm:limitMultiplication}
                     a prvních dvou bodů
                 \item obdobně $(f(x)-A)B\rightarrow 0$ (konstanta $B$ je omezená funkce)
                 \item a tedy celá pravá strana $\rightarrow 0$ podle
-                    \autoref*{T-limitArithmetic}:\autoref{T-limitArithmetic-addition}
+                    \autoref*{thm:limitArithmetic}:\autoref{thm:limitArithmetic:addition}
             \end{itemize}
         \item Ukážu $1/g(x)\rightarrow 1/B$ pro $x\rightarrow x_0$, respektive
             \begin{gather}
@@ -476,20 +476,20 @@ Poznámky:
                 \frac{1}{g(x)}-\frac{1}{B} = (B-g(x))\frac{1}{Bg(x)}
             \end{gather}
             \begin{itemize}
-                \item $(B-g(x))\rightarrow 0$ podle \autoref{T-equivalentLimits}
+                \item $(B-g(x))\rightarrow 0$ podle \autoref{thm:equivalentLimits}
                 \item $\exists\Delta>0:\abs{g(x)}>\Delta$ na jistém $P(x_0)$ podle
-                    \autoref{L-limitNeighbourhood}:\autoref{L-limitNeighbourhood-nonzero},
+                    \autoref{lmm:limitNeighbourhood}:\autoref{lmm:limitNeighbourhood:nonzero},
                     protože $B\neq 0$
                 \item tedy $1/Bg(x)$ je omezená na jistém $P(x_0)$, protože
                     $\abs{1/Bg(x)}<1/B\Delta$ (dá se odhadnout)
                 \item tedy celý výraz na pravé straně $\rightarrow 0$ podle
-                    \autoref{L-limitMultiplication}
+                    \autoref{lmm:limitMultiplication}
             \end{itemize}
     \end{enumerate}
 \end{proof}
-Pozn.: platí jednostranné verze \autoref{T-limitArithmetic}
+Pozn.: platí jednostranné verze \autoref{thm:limitArithmetic}
 
-\begin{theorem}[name=O strážnících, label=T-patrolmen]
+\begin{theorem}[name=O strážnících, label=thm:patrolmen]
     Buď $x_0, A\in\mathbb{R}$, (tiše předpokládám, že $f$, $g$, $h$ jsou definované na jistém $P(x_0)$)
     \begin{gather}
         \lim_{x\to x_0}f(x)=A \\
@@ -504,7 +504,7 @@ Pozn.: platí jednostranné verze \autoref{T-limitArithmetic}
     \end{figure}\FloatBarrier
 \end{theorem}
 \begin{proof}
-    Z definice (zkusit také podle \autoref{L-limitMultiplication}). Chci
+    Z definice (zkusit také podle \autoref{lmm:limitMultiplication}). Chci
     \begin{equation}
         \forall\epsilon>0\exists\delta_1>0:\forall x\in P(x_0,\delta_1):h(x)\in U(A,\epsilon)
     \end{equation}
@@ -538,12 +538,12 @@ Pozn.: platí jednostranné verze \autoref{T-limitArithmetic}
     \textbf{Varování!} Neplatí $f<g\implies A<B$. Například pro $x^2<x^4 \text{ pro }x\in P(0,1)$
 \end{theorem}
 \begin{proof}
-    Obměnou. Buď $A>B$. Dle \autoref{T-hausedorf}
+    Obměnou. Buď $A>B$. Dle \autoref{thm:hausedorf}
     \begin{gather}
         \exists\epsilon>0:U(A,\epsilon)\cap U(B,\epsilon)=\varnothing \\
         \text{speciálně }B<B+\epsilon<A-\epsilon<A
     \end{gather}
-    Z definice limity \autoref{D-limit}
+    Z definice limity \autoref{def:limit}
     \begin{alignat}{1}
         &\exists\delta_1>0:\forall x\in P(x_0,\delta_1):f(x)\in U(A,\epsilon)
             \quad\text{speciálně }f(x)>A-\epsilon \\
@@ -567,16 +567,16 @@ Pozn.: platí jednostranné verze \autoref{T-limitArithmetic}
     \begin{equation}
         \lim_{x\to b^-}f(x) = \sup_{x\in(a,b)}f(x)=s
     \end{equation}
-    Toto supremum existuje, podle \autoref{D-A3} ($\left\{f(x),x\in(a,b)\right\}$
+    Toto supremum existuje, podle \autoref{def:A3} ($\left\{f(x),x\in(a,b)\right\}$
     je omezená). Chceme
     \begin{equation}
         \forall\epsilon>0\exists\delta>0:\forall x\in P_-(b,\delta):s-\epsilon<f(x)<s+\epsilon
     \end{equation}
-    Fixujme $\epsilon$. Pozorování (podle \autoref*{D-supremum}:\autoref{D-supremum-1})
+    Fixujme $\epsilon$. Pozorování (podle \autoref*{def:supremum}:\autoref{def:supremum:1})
     \begin{equation}
         \forall x\in(a,b):f(x)\leq s<s+\epsilon
     \end{equation}
-    Podle \autoref*{D-supremum}:\autoref{D-supremum-2} $\exists x_1\in(a,b):f(x_1)\geq s-\epsilon$
+    Podle \autoref*{def:supremum}:\autoref{def:supremum:2} $\exists x_1\in(a,b):f(x_1)\geq s-\epsilon$
 
     Definujme $\delta=\abs{x_1-b}=b-x_1$. Pak díky monotónnosti ($f$ je neklesající)
     \begin{equation}
@@ -593,7 +593,7 @@ Pozn.: platí jednostranné verze \autoref{T-limitArithmetic}
 Poznámka: monotónní je i každý podinterval $(a,b)$, tedy každý bod z (a,b) má $\lim_+$ a $\lim_-$.
 Neříká nic o obecné limitě.
 
-\begin{definition}[name=Spojitost, label=D-continuity]
+\begin{definition}[name=Spojitost, label=def:continuity]
     Nechť $x_0\in\mathbb{R}$, $f$ je definovaná na jistém $U(x_0)$. Řekneme, že $f$ je v $x_0$
     spojitá, pokud
     \begin{equation}
@@ -602,25 +602,25 @@ Neříká nic o obecné limitě.
     \end{equation}
 \end{definition}
 
-\begin{theorem}[name=Limita a spojitost, label=T-limitAndContinuity]
+\begin{theorem}[name=Limita a spojitost, label=thm:limitAndContinuity]
     Funkce je v $x_0$ spojitá, právě když
     \begin{equation}
         \lim_{x\to x_0}f(x)=f(x_0)
     \end{equation}
 \end{theorem}
 \textbf{Varování!} Existuje více typů nespojitosti: 1. druhu (jen limity zprava
-a zleva) a 2. druhu (limita neexistuje). Viz \autoref{F-discontinuity}.
+a zleva) a 2. druhu (limita neexistuje). Viz \autoref{fig:discontinuity}.
 \begin{figure}[ht!]
     \begin{center}
         \includegraphics[width=0.49\textwidth,keepaspectratio]{../img/chapter2/typesOfDiscontinuity_1.png}
         \includegraphics[width=0.49\textwidth,keepaspectratio]{../img/chapter2/typesOfDiscontinuity_2.png}
         \caption{Limita 1. druhu (vlevo, znaménková funkce) a 2. druhu (vpravo, $sin(1/x)$).}
-        \label{F-discontinuity}
+        \label{fig:discontinuity}
     \end{center}
 \end{figure}\FloatBarrier
 \begin{proof}
     Pozorování: $U(x_0,\delta)=P(x_0,\delta)\cup\left\{x_0\right\}$
-    \label{T-limitAndContinuity-P-neighbourhood}
+    \label{thm:limitAndContinuity:prf:neighbourhood}
 
     „$\Rightarrow$“ je triviální: $U()\supset P()$
     
@@ -628,7 +628,7 @@ a zleva) a 2. druhu (limita neexistuje). Viz \autoref{F-discontinuity}.
     \begin{equation}
         \forall\epsilon>0\exists\delta>0:\forall x\in P(x_0,\delta):f(x)\in U\left(f(x_0),\epsilon\right)
     \end{equation}
-    Stačí přidat $x_0$ podle \hyperref[T-limitAndContinuity-P-neighbourhood]{pozorování}.
+    Stačí přidat $x_0$ podle \hyperref[thm:limitAndContinuity:prf:neighbourhood]{pozorování}.
     Navíc $f(x_0)\in U\left(f(x_0),\epsilon\right)$. Tedy
     \begin{equation}
         \forall\epsilon>0\exists\delta>0:\forall x\in U(x_0,\delta):f(x)\in U\left(f(x_0),\epsilon\right)
@@ -636,25 +636,25 @@ a zleva) a 2. druhu (limita neexistuje). Viz \autoref{F-discontinuity}.
 \end{proof}
 \textbf{Heslo!} Limitu spojité funkce lze počítat dosazením.
 
-\begin{theorem}[name=Aritmetika spojitosti, label=T-continuityArithmetic]
+\begin{theorem}[name=Aritmetika spojitosti, label=thm:continuityArithmetic]
     Buď $f$, $g$ spojité v $x_0\in\mathbb{R}$ (Nevysloveně $f$, $g$ jsou definované na jistém
     $P(x_0)$). Pak $f+g$, $f-g$, $fg$ jsou spojité v $x_0$. Pokud $g(x_0)\neq 0$, pak $f/g$ je
     spojitá v $x_0$.
 \end{theorem}
 \begin{proof}
-    Důsledek \autoref{T-limitArithmetic} a \autoref{T-continuityArithmetic}.
+    Důsledek \autoref{thm:limitArithmetic} a \autoref{thm:continuityArithmetic}.
 \end{proof}
 \begin{example}\noindent
     \begin{enumerate}
         \item $f(x)=x$ je spojitá $\forall x\in\mathbb{R}$ Fix $\epsilon>0$,
-            volím $\delta=\epsilon$. Pak \label{T-continuityArithmetic-E-1}
+            volím $\delta=\epsilon$. Pak \label{thm:continuityArithmetic:exm:1}
             \begin{equation}
                 \forall x\in U(x_0,\delta):\abs{f(x)-f(x_0)}=\abs{x-x_0}<\delta=\epsilon
             \end{equation}
         \item Polynom $p(x)=a_0x^n+a_1x^{n-1}+\ldots+a_n$, kde $n\in\mathbb{R}$,
             $a_0,\ldots,a_n\in\mathbb{R}$ (ukaž, že konstanty jsou spojité funkce). Potom polynomy
-            jsou spojité $\forall x\in\mathbb{R}$. Plyne z \autoref{T-continuityArithmetic-E-1}
-            a \autoref{T-continuityArithmetic}.
+            jsou spojité $\forall x\in\mathbb{R}$. Plyne z \autoref{thm:continuityArithmetic:exm:1}
+            a \autoref{thm:continuityArithmetic}.
         \item Racionální funkce $R(x)=\frac{P(x)}{Q(x)}$, kde $P$, $Q$ jsou polynomy. Potom
             $R(x)$ je spojitá v $x_0\in\mathbb{R}$, pokud $Q(x_0)\neq 0$.
         \item $sin(x)$, $cos(x)$, $e^x$, $ln(x)$, $\sqrt[n]{x}$ jsou spojité ve svých definičních
@@ -665,14 +665,14 @@ a zleva) a 2. druhu (limita neexistuje). Viz \autoref{F-discontinuity}.
     \end{enumerate}
 \end{example}
 
-\begin{definition}[name=Složená funkce, label=compoundFunction]
+\begin{definition}[name=Složená funkce, label=def:compoundFunction]
     Složenou funkci $h$ definujeme
     \begin{equation*}
          h = g\circ f:\quad \mathbb{R}\xrightarrow{f}\mathbb{R}\xrightarrow{g}\mathbb{R}
     \end{equation*}
 \end{definition}
 
-\begin{theorem}[name=Limita superpozice, label=T-limitSuperposition]
+\begin{theorem}[name=Limita superpozice, label=thm:limitSuperposition]
     Buď
     \begin{align}
         \lim_{x\to x_0}f(x)=y_0 \\
@@ -681,8 +681,8 @@ a zleva) a 2. druhu (limita neexistuje). Viz \autoref{F-discontinuity}.
     navíc ať platí alespoň jedno z následujícího
     \begin{enumerate}
         \item $\exists\tilde{\delta}>0:\forall x\in P(x_0,\tilde{\delta}):f(x)\neq y_0$
-            \label{T-limitSuperposition-1}
-        \item $g$ je spojitá v $y_0$ \label{T-limitSuperposition-2}
+            \label{thm:limitSuperposition:1}
+        \item $g$ je spojitá v $y_0$ \label{thm:limitSuperposition:2}
     \end{enumerate}
     Pak
     \begin{equation}
@@ -703,24 +703,24 @@ a zleva) a 2. druhu (limita neexistuje). Viz \autoref{F-discontinuity}.
     Fixuji $\epsilon>0$, hledám $\delta$. Vím
     \begin{enumerate}[I]
         \item z limity $g$: $\exists\delta_1>0:\forall y\in P(y_0,\delta_1):
-            g(y)\in U(A,\epsilon)$ \label{T-limitSuperposition-P-I}
+            g(y)\in U(A,\epsilon)$ \label{thm:limitSuperposition:prf:I}
         \item z limity $f$: $\exists\delta_2>0:\forall x\in P(x_0,\delta_2):
-            f(x)\in U(y_0,\delta_1)$ \label{T-limitSuperposition-P-II}
+            f(x)\in U(y_0,\delta_1)$ \label{thm:limitSuperposition:prf:II}
     \end{enumerate}
-    Problém! Chci volit $\delta=\delta_2$, ale co s $g(y_0)$? Podle \autoref{T-limitSuperposition-P-II}
+    Problém! Chci volit $\delta=\delta_2$, ale co s $g(y_0)$? Podle \autoref{thm:limitSuperposition:prf:II}
     je možné, že všechny hodnoty $f(x)=y_0$ a tedy $P(f(x))=\varnothing$. Řešíme podle extra
     podmínek:
     \begin{enumerate}
-        \item[\autoref{T-limitSuperposition-1}] Volíme $\delta=min(\delta_2,\tilde{\delta})$. Pak
+        \item[\autoref{thm:limitSuperposition:1}] Volíme $\delta=min(\delta_2,\tilde{\delta})$. Pak
             \begin{equation}
                 \forall x\in P(x_0,\delta):f(x)\in U(y_0,\delta_1)-\left\{y_0\right\}=P(x_0,\delta_1)
             \end{equation}
-            a tedy podle \autoref{T-limitSuperposition-P-II} $g\left(f(x)\right)\in U(A,\epsilon)$
-        \item[\autoref{T-limitSuperposition-2}] $g(y_0)=A\in U(A,\epsilon)$ Stačí volit
+            a tedy podle \autoref{thm:limitSuperposition:prf:II} $g\left(f(x)\right)\in U(A,\epsilon)$
+        \item[\autoref{thm:limitSuperposition:2}] $g(y_0)=A\in U(A,\epsilon)$ Stačí volit
             $\delta=\delta_2$. Potom
             \begin{enumerate}
-                \item buď $f(x)=y_0 \rightarrow$ \autoref{T-limitSuperposition-P-II}
-                \item nebo $f(x)\neq y_0 \rightarrow$ \autoref{T-limitSuperposition-P-I}
+                \item buď $f(x)=y_0 \rightarrow$ \autoref{thm:limitSuperposition:prf:II}
+                \item nebo $f(x)\neq y_0 \rightarrow$ \autoref{thm:limitSuperposition:prf:I}
             \end{enumerate}
     \end{enumerate}
 \end{proof}
@@ -735,7 +735,7 @@ a zleva) a 2. druhu (limita neexistuje). Viz \autoref{F-discontinuity}.
             \begin{itemize}
                 \item vnitřní $\rightarrow 2$
                 \item vnější je spojitá
-                \item platí podmínka \autoref{T-limitSuperposition-2}, ale ne \autoref{T-limitSuperposition-1}
+                \item platí podmínka \autoref{thm:limitSuperposition:2}, ale ne \autoref{thm:limitSuperposition:1}
             \end{itemize}
     \end{enumerate}
 \end{example}
