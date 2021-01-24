@@ -103,10 +103,7 @@ Pro \hyperref[D-bijection]{vzájemně jednoznačnou funkci} lze definovat inverz
     \]
     \begin{figure}[ht!]
         \begin{center}
-            \includegraphics[width=0.24\textwidth,keepaspectratio]{../img/chapter2/monotonic1.png}
-            \includegraphics[width=0.24\textwidth,keepaspectratio]{../img/chapter2/monotonic2.png}
-            \includegraphics[width=0.24\textwidth,keepaspectratio]{../img/chapter2/monotonic3.png}
-            \includegraphics[width=0.24\textwidth,keepaspectratio]{../img/chapter2/monotonic4.png}
+            \includegraphics[width=\textwidth,keepaspectratio]{../img/chapter2/monotonic.png}
             \caption{Ilustrace.}
         \end{center}
     \end{figure}\FloatBarrier
@@ -164,7 +161,7 @@ Druhou variantu chápeme jako:
 \end{equation}
 
 \begin{definition}[name=Okolí, label=D-neighbourhood]
-    Nechť $x_0\mathbb{R}, \delta\in(0,\infty)$
+    Nechť $x_0\in\mathbb{R}, \delta\in(0,\infty)$
     \begin{itemize}
         \item kruhové okolí\quad $U(x_0,\delta):=(x_0-\delta, x_0+\delta)=
             \left\{x\in\mathbb{R}:x_0-\delta<x<x_0+\delta\right\}$ \\
@@ -611,13 +608,14 @@ Neříká nic o obecné limitě.
         \lim_{x\to x_0}f(x)=f(x_0)
     \end{equation}
 \end{theorem}
-\textbf{Varování!} Existuje více typů nespojitosti: 1. druhu (jen limity zprava a zleva),
-2. druhu(limita neexistuje)
+\textbf{Varování!} Existuje více typů nespojitosti: 1. druhu (jen limity zprava
+a zleva) a 2. druhu (limita neexistuje). Viz \autoref{F-discontinuity}.
 \begin{figure}[ht!]
     \begin{center}
         \includegraphics[width=0.49\textwidth,keepaspectratio]{../img/chapter2/typesOfDiscontinuity_1.png}
         \includegraphics[width=0.49\textwidth,keepaspectratio]{../img/chapter2/typesOfDiscontinuity_2.png}
         \caption{Limita 1. druhu (vlevo, znaménková funkce) a 2. druhu (vpravo, $sin(1/x)$).}
+        \label{F-discontinuity}
     \end{center}
 \end{figure}\FloatBarrier
 \begin{proof}
